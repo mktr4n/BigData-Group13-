@@ -6,7 +6,7 @@
 
 ## Getting Started
 1. Clone this repository.
-2. Download the project dataset files and place them inside the `data/` folder:
+2. Download the project dataset files and extract them to the `data/` folder:
    - `financial_data.archive.gz`
    - `enheter_alle.json.gz`
 3. Start the Docker containers:
