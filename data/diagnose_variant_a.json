@@ -1,0 +1,93 @@
+{
+  "mongodb_version": "8.3.8",
+  "collection_counts": {
+    "companies": 1171373,
+    "financial_data": 1170290
+  },
+  "expected_counts": {
+    "companies": 1171373,
+    "financial_data": 1170290
+  },
+  "indexes": {
+    "companies": {
+      "_id_": [
+        [
+          "_id",
+          1
+        ]
+      ],
+      "organisasjonsnummer_1": [
+        [
+          "organisasjonsnummer",
+          1
+        ]
+      ],
+      "organisasjonsform.kode_1": [
+        [
+          "organisasjonsform.kode",
+          1
+        ]
+      ]
+    },
+    "financial_data": {
+      "_id_": [
+        [
+          "_id",
+          1
+        ]
+      ]
+    }
+  },
+  "w1_timings_seconds": {
+    "False": [
+      41.79843987499953,
+      42.01355122200039,
+      43.34514332099934
+    ],
+    "True": [
+      41.4687366520011,
+      41.67226821999975,
+      41.75166085899946
+    ]
+  },
+  "w1_result": {
+    "False": [
+      [
+        "no_data",
+        27670
+      ],
+      [
+        "success",
+        403782
+      ]
+    ],
+    "True": [
+      [
+        "no_data",
+        27670
+      ],
+      [
+        "success",
+        403782
+      ]
+    ]
+  },
+  "cache_before": {
+    "in_cache_bytes": 2724076342,
+    "max_bytes": 7620001792,
+    "read_into_cache_bytes": 2471836775,
+    "pages_evicted": 29507
+  },
+  "cache_after": {
+    "in_cache_bytes": 2724076920,
+    "max_bytes": 7620001792,
+    "read_into_cache_bytes": 2471836775,
+    "pages_evicted": 29507
+  },
+  "cache_delta": {
+    "read_into_cache_bytes": 0,
+    "pages_evicted": 0
+  },
+  "earlier_benchmark_w1_seconds": 7.13,
+  "current_benchmark_w1_seconds": 45.97
+}

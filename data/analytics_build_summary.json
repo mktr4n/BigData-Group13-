@@ -1,0 +1,104 @@
+{
+  "rows": 444645,
+  "source_filings": 444645,
+  "spark_version": "4.2.0",
+  "cpu_cores": 12,
+  "repeats": 3,
+  "thread_counts": [
+    1,
+    2,
+    4,
+    8,
+    12
+  ],
+  "status_counts": {
+    "computed": 293155,
+    "revenue_missing": 91026,
+    "revenue_zero": 59206,
+    "revenue_negative": 875,
+    "income_missing": 383
+  },
+  "flag_counts": {
+    "avviklingsregnskap": 317,
+    "is_full_year": 425548,
+    "morselskap": 57002,
+    "smaa_foretak": 434467
+  },
+  "valuta_counts": {
+    "NOK": 443461,
+    "USD": 670,
+    "EUR": 332,
+    "SEK": 97,
+    "DKK": 54,
+    "GBP": 20,
+    "JPY": 2,
+    "EDT": 2,
+    "SGD": 2,
+    "CHF": 2,
+    "CAD": 1,
+    "HKD": 1,
+    "PLZ": 1
+  },
+  "regnskapstype_counts": {
+    "SELSKAP": 444645
+  },
+  "margin_quantiles": {
+    "p0.1": -50338.88888888889,
+    "p1": -1974.8175182481752,
+    "p5": -192.1303455450277,
+    "p25": -4.129082592339262,
+    "median": 6.527706217836227,
+    "p75": 31.63105710411659,
+    "p95": 79.27009167701627,
+    "p99": 97.56488812392426,
+    "p99.9": 184.22022022022023
+  },
+  "margin_min_pct": -2731645700.0,
+  "margin_max_pct": 1800100.0,
+  "mean_margin_pct": -11786.560485053084,
+  "pooled_margin_pct": 5.511382066044706,
+  "scalability_seconds": {
+    "local[1]": {
+      "times": [
+        10.81376697900123,
+        9.628816349999397,
+        10.211670971002604
+      ],
+      "error": null
+    },
+    "local[2]": {
+      "times": [
+        7.370642317997408,
+        6.855382271001872,
+        7.417443959999218
+      ],
+      "error": null
+    },
+    "local[4]": {
+      "times": [
+        6.048638494001352,
+        5.681932691997645,
+        5.861829125999066
+      ],
+      "error": null
+    },
+    "local[8]": {
+      "times": [
+        5.827830393001932,
+        5.463349204001133,
+        5.46649474899823
+      ],
+      "error": null
+    },
+    "local[12]": {
+      "times": [
+        6.028982478001126,
+        6.1940941699976975,
+        5.461591025999951
+      ],
+      "error": null
+    }
+  },
+  "output_file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
+  "output_bytes": 30998241
+}

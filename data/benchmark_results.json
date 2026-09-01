@@ -1,0 +1,185 @@
+{
+  "repeats": 3,
+  "cpu_cores": 12,
+  "spark_master": "local[4]",
+  "driver_max_heap_gb": 8.0,
+  "spark_version": "4.2.0",
+  "mongodb_version": "8.3.8",
+  "connector": "org.mongodb.spark:mongo-spark-connector_2.13:11.1.0",
+  "raw_json_bytes": 2001085762,
+  "read_only_seconds": {
+    "B: Spark + Mongo connector | companies": {
+      "times": [
+        6.782205403000262
+      ],
+      "error": null
+    },
+    "B: Spark + Mongo connector | financial_data": {
+      "times": [
+        6.132028067999272
+      ],
+      "error": null
+    },
+    "C: Spark + Parquet | companies": {
+      "times": [
+        1.8227738570003567
+      ],
+      "error": null
+    },
+    "C: Spark + Parquet | financial_data": {
+      "times": [
+        1.039803056000892
+      ],
+      "error": null
+    },
+    "D: Spark + JSON | companies": {
+      "times": [
+        34.927445786001044
+      ],
+      "error": null
+    },
+    "D: Spark + JSON | financial_data": {
+      "times": [
+        4.149474075999024
+      ],
+      "error": null
+    }
+  },
+  "workloads": {
+    "W1": {
+      "A: MongoDB aggregation": {
+        "times": [
+          44.93948625600024,
+          44.95326472299894,
+          44.76533301100062
+        ],
+        "error": null,
+        "rows": 2
+      },
+      "B: Spark + Mongo connector": {
+        "times": [
+          9.458972678999999,
+          9.390225769000608,
+          9.215397145999304
+        ],
+        "error": null,
+        "rows": 2
+      },
+      "C: Spark + Parquet": {
+        "times": [
+          3.4065712170013285,
+          2.3543970240007184,
+          2.605540208000093
+        ],
+        "error": null,
+        "rows": 2
+      },
+      "D: Spark + JSON": {
+        "times": [
+          39.29939347599975,
+          39.63527096299913,
+          38.22400976899917
+        ],
+        "error": null,
+        "rows": 2
+      }
+    },
+    "W3": {
+      "A: MongoDB aggregation": {
+        "times": [
+          0.42095813200103294,
+          0.49599609799952304,
+          0.4533854590008559
+        ],
+        "error": null,
+        "rows": 11
+      },
+      "B: Spark + Mongo connector": {
+        "times": [
+          1.5580644519995985,
+          1.5409311080002226,
+          1.4375594619996264
+        ],
+        "error": null,
+        "rows": 11
+      },
+      "C: Spark + Parquet": {
+        "times": [
+          1.465697919999002,
+          1.5601200399996742,
+          1.3268232919999718
+        ],
+        "error": null,
+        "rows": 11
+      },
+      "D: Spark + JSON": {
+        "times": [
+          35.05489076400045,
+          35.28812300499885,
+          34.715946185000575
+        ],
+        "error": null,
+        "rows": 11
+      }
+    },
+    "W4": {
+      "A: MongoDB aggregation": {
+        "times": [
+          20.409908284000267,
+          20.356330546001118,
+          20.36331086699829
+        ],
+        "error": null,
+        "rows": 45033
+      },
+      "B: Spark + Mongo connector": {
+        "times": [
+          20.224609658998816,
+          21.236751397000262,
+          18.295054917000016
+        ],
+        "error": null,
+        "rows": 45033
+      },
+      "C: Spark + Parquet": {
+        "times": [
+          3.6966272150002624,
+          2.9609531270016305,
+          3.01691037800083
+        ],
+        "error": null,
+        "rows": 45033
+      },
+      "D: Spark + JSON": {
+        "times": [
+          51.821111182000095,
+          47.68688732899864,
+          55.02641658799985
+        ],
+        "error": null,
+        "rows": 45033
+      }
+    }
+  },
+  "agreement": {
+    "W1": {
+      "A: MongoDB aggregation": true,
+      "B: Spark + Mongo connector": true,
+      "C: Spark + Parquet": true,
+      "D: Spark + JSON": true
+    },
+    "W3": {
+      "A: MongoDB aggregation": true,
+      "B: Spark + Mongo connector": true,
+      "C: Spark + Parquet": true,
+      "D: Spark + JSON": true
+    },
+    "W4": {
+      "A: MongoDB aggregation": true,
+      "B: Spark + Mongo connector": true,
+      "C: Spark + Parquet": true,
+      "D: Spark + JSON": true
+    }
+  },
+  "float_tolerance": 1e-09
+}

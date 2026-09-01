@@ -1,0 +1,1126 @@
+{
+  "source": "/home/jovyan/data/enheter_alle.json",
+  "records": 1171373,
+  "paths": [
+    {
+      "path": "links",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "array": 1171373
+      },
+      "empty": 1171373,
+      "max_array_len": null
+    },
+    {
+      "path": "organisasjonsnummer",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "string": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "navn",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "string": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "organisasjonsform",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "object": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "organisasjonsform.links",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "array": 1171373
+      },
+      "empty": 1171373,
+      "max_array_len": null
+    },
+    {
+      "path": "organisasjonsform.kode",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "string": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "organisasjonsform.beskrivelse",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "string": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "historiskeNavn",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "array": 1171373
+      },
+      "empty": 951504,
+      "max_array_len": 24
+    },
+    {
+      "path": "registreringsdatoEnhetsregisteret",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "string": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registrertIMvaregisteret",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "harRegistrertAntallAnsatte",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registrertIForetaksregisteret",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registrertIStiftelsesregisteret",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registrertIFrivillighetsregisteret",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "konkurs",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "underAvvikling",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "underTvangsavviklingEllerTvangsopplosning",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "maalform",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "string": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "aktivitet",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "array": 1171373
+      },
+      "empty": 319,
+      "max_array_len": 111
+    },
+    {
+      "path": "registrertIPartiregisteret",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "paategninger",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "array": 1171373
+      },
+      "empty": 1168671,
+      "max_array_len": 2
+    },
+    {
+      "path": "erIKonsern",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "bool": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "respons_klasse",
+      "present": 1171373,
+      "pct": 100.0,
+      "types": {
+        "string": 1171373
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse",
+      "present": 1153055,
+      "pct": 98.44,
+      "types": {
+        "object": 1153055
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse.land",
+      "present": 1153055,
+      "pct": 98.44,
+      "types": {
+        "string": 1153055
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse.landkode",
+      "present": 1153055,
+      "pct": 98.44,
+      "types": {
+        "string": 1153055
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse.poststed",
+      "present": 1153055,
+      "pct": 98.44,
+      "types": {
+        "string": 1153055
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse.adresse",
+      "present": 1153055,
+      "pct": 98.44,
+      "types": {
+        "array": 1153055
+      },
+      "empty": 11344,
+      "max_array_len": 3
+    },
+    {
+      "path": "naeringskode1",
+      "present": 1135646,
+      "pct": 96.95,
+      "types": {
+        "object": 1135646
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode1.kode",
+      "present": 1135646,
+      "pct": 96.95,
+      "types": {
+        "string": 1135646
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode1.beskrivelse",
+      "present": 1135646,
+      "pct": 96.95,
+      "types": {
+        "string": 1135646
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse.postnummer",
+      "present": 1108985,
+      "pct": 94.67,
+      "types": {
+        "string": 1108985
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse.kommune",
+      "present": 1108985,
+      "pct": 94.67,
+      "types": {
+        "string": 1108985
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "forretningsadresse.kommunenummer",
+      "present": 1108985,
+      "pct": 94.67,
+      "types": {
+        "string": 1108985
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "institusjonellSektorkode",
+      "present": 1074769,
+      "pct": 91.75,
+      "types": {
+        "object": 1074769
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "institusjonellSektorkode.kode",
+      "present": 1074769,
+      "pct": 91.75,
+      "types": {
+        "string": 1074769
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "institusjonellSektorkode.beskrivelse",
+      "present": 1074769,
+      "pct": 91.75,
+      "types": {
+        "string": 1074769
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "stiftelsesdato",
+      "present": 675310,
+      "pct": 57.65,
+      "types": {
+        "string": 675310
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsdatoForetaksregisteret",
+      "present": 576309,
+      "pct": 49.2,
+      "types": {
+        "string": 576309
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "vedtektsdato",
+      "present": 490328,
+      "pct": 41.86,
+      "types": {
+        "string": 490328
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "vedtektsfestetFormaal",
+      "present": 489373,
+      "pct": 41.78,
+      "types": {
+        "array": 489373
+      },
+      "empty": 0,
+      "max_array_len": 107
+    },
+    {
+      "path": "sisteInnsendteAarsregnskap",
+      "present": 449653,
+      "pct": 38.39,
+      "types": {
+        "string": 449653
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital",
+      "present": 437842,
+      "pct": 37.38,
+      "types": {
+        "object": 437842
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.belop",
+      "present": 437842,
+      "pct": 37.38,
+      "types": {
+        "float": 437842
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.type",
+      "present": 437842,
+      "pct": 37.38,
+      "types": {
+        "string": 437842
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.valuta",
+      "present": 437842,
+      "pct": 37.38,
+      "types": {
+        "string": 437842
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.innfortDato",
+      "present": 437842,
+      "pct": 37.38,
+      "types": {
+        "string": 437842
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.antallAksjer",
+      "present": 426413,
+      "pct": 36.4,
+      "types": {
+        "int": 426413
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret",
+      "present": 408955,
+      "pct": 34.91,
+      "types": {
+        "string": 408955
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsdatoMerverdiavgiftsregisteret",
+      "present": 408951,
+      "pct": 34.91,
+      "types": {
+        "string": 408951
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "epostadresse",
+      "present": 324954,
+      "pct": 27.74,
+      "types": {
+        "string": 324954
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "mobil",
+      "present": 309247,
+      "pct": 26.4,
+      "types": {
+        "string": 309247
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "fravalgRevisjonDato",
+      "present": 293355,
+      "pct": 25.04,
+      "types": {
+        "string": 293355
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "historiskeNavn[].navn",
+      "present": 288994,
+      "pct": 24.67,
+      "types": {
+        "string": 288994
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "historiskeNavn[].fraDato",
+      "present": 288994,
+      "pct": 24.67,
+      "types": {
+        "string": 288994
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "historiskeNavn[].tilDato",
+      "present": 288994,
+      "pct": 24.67,
+      "types": {
+        "string": 288994
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "fravalgRevisjonBeslutningsDato",
+      "present": 211976,
+      "pct": 18.1,
+      "types": {
+        "string": 211976
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse",
+      "present": 203002,
+      "pct": 17.33,
+      "types": {
+        "object": 203002
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse.land",
+      "present": 203002,
+      "pct": 17.33,
+      "types": {
+        "string": 203002
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse.landkode",
+      "present": 203002,
+      "pct": 17.33,
+      "types": {
+        "string": 203002
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse.poststed",
+      "present": 203002,
+      "pct": 17.33,
+      "types": {
+        "string": 203002
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse.adresse",
+      "present": 203002,
+      "pct": 17.33,
+      "types": {
+        "array": 203002
+      },
+      "empty": 1236,
+      "max_array_len": 3
+    },
+    {
+      "path": "telefon",
+      "present": 195344,
+      "pct": 16.68,
+      "types": {
+        "string": 195344
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse.postnummer",
+      "present": 193612,
+      "pct": 16.53,
+      "types": {
+        "string": 193612
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse.kommune",
+      "present": 193612,
+      "pct": 16.53,
+      "types": {
+        "string": 193612
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "postadresse.kommunenummer",
+      "present": 193612,
+      "pct": 16.53,
+      "types": {
+        "string": 193612
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsdatoAntallAnsatteEnhetsregisteret",
+      "present": 177578,
+      "pct": 15.16,
+      "types": {
+        "string": 177578
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsdatoAntallAnsatteNAVAaregisteret",
+      "present": 177487,
+      "pct": 15.15,
+      "types": {
+        "string": 177487
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "hjemmeside",
+      "present": 113940,
+      "pct": 9.73,
+      "types": {
+        "string": 113940
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsdatoFrivillighetsregisteret",
+      "present": 72690,
+      "pct": 6.21,
+      "types": {
+        "string": 72690
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "antallAnsatte",
+      "present": 72155,
+      "pct": 6.16,
+      "types": {
+        "int": 72155
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "frivilligMvaRegistrertBeskrivelser",
+      "present": 49010,
+      "pct": 4.18,
+      "types": {
+        "array": 49010
+      },
+      "empty": 0,
+      "max_array_len": 2
+    },
+    {
+      "path": "registreringsdatoFrivilligMerverdiavgiftsregisteret",
+      "present": 49010,
+      "pct": 4.18,
+      "types": {
+        "string": 49010
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "hjelpeenhetskode",
+      "present": 29675,
+      "pct": 2.53,
+      "types": {
+        "object": 29675
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "hjelpeenhetskode.kode",
+      "present": 29675,
+      "pct": 2.53,
+      "types": {
+        "string": 29675
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "hjelpeenhetskode.beskrivelse",
+      "present": 29675,
+      "pct": 2.53,
+      "types": {
+        "string": 29675
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "foretaksformIHjemlandet",
+      "present": 24343,
+      "pct": 2.08,
+      "types": {
+        "object": 24343
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "foretaksformIHjemlandet.links",
+      "present": 24343,
+      "pct": 2.08,
+      "types": {
+        "array": 24343
+      },
+      "empty": 24343,
+      "max_array_len": null
+    },
+    {
+      "path": "foretaksformIHjemlandet.kode",
+      "present": 24343,
+      "pct": 2.08,
+      "types": {
+        "string": 24343
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "foretaksformIHjemlandet.beskrivelse",
+      "present": 24343,
+      "pct": 2.08,
+      "types": {
+        "string": 24343
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "foretaksformIHjemlandet.beskrivelseBokmaal",
+      "present": 24343,
+      "pct": 2.08,
+      "types": {
+        "string": 24343
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "underlagtLovgivningLand",
+      "present": 24343,
+      "pct": 2.08,
+      "types": {
+        "string": 24343
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "underlagtLovgivningLandKode",
+      "present": 24343,
+      "pct": 2.08,
+      "types": {
+        "string": 24343
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsnummerIHjemlandet",
+      "present": 22357,
+      "pct": 1.91,
+      "types": {
+        "string": 22357
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "utenlandskRegisterNavn",
+      "present": 22357,
+      "pct": 1.91,
+      "types": {
+        "string": 22357
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "utenlandskRegisterAdresse",
+      "present": 22357,
+      "pct": 1.91,
+      "types": {
+        "object": 22357
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "utenlandskRegisterAdresse.land",
+      "present": 22357,
+      "pct": 1.91,
+      "types": {
+        "string": 22357
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "utenlandskRegisterAdresse.adresse",
+      "present": 22357,
+      "pct": 1.91,
+      "types": {
+        "array": 22357
+      },
+      "empty": 219,
+      "max_array_len": 3
+    },
+    {
+      "path": "utenlandskRegisterAdresse.poststed",
+      "present": 22268,
+      "pct": 1.9,
+      "types": {
+        "string": 22268
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode2",
+      "present": 18334,
+      "pct": 1.57,
+      "types": {
+        "object": 18334
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode2.kode",
+      "present": 18334,
+      "pct": 1.57,
+      "types": {
+        "string": 18334
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode2.beskrivelse",
+      "present": 18334,
+      "pct": 1.57,
+      "types": {
+        "string": 18334
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "underAvviklingDato",
+      "present": 6797,
+      "pct": 0.58,
+      "types": {
+        "string": 6797
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.innbetalt",
+      "present": 5972,
+      "pct": 0.51,
+      "types": {
+        "float": 5972
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.fulltInnbetalt",
+      "present": 5862,
+      "pct": 0.5,
+      "types": {
+        "bool": 5862
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "konkursdato",
+      "present": 3194,
+      "pct": 0.27,
+      "types": {
+        "string": 3194
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "paategninger[].infotype",
+      "present": 2708,
+      "pct": 0.23,
+      "types": {
+        "string": 2708
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "paategninger[].tekst",
+      "present": 2708,
+      "pct": 0.23,
+      "types": {
+        "string": 2708
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "paategninger[].innfoertDato",
+      "present": 2708,
+      "pct": 0.23,
+      "types": {
+        "string": 2708
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "overordnetEnhet",
+      "present": 1758,
+      "pct": 0.15,
+      "types": {
+        "string": 1758
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode3",
+      "present": 1576,
+      "pct": 0.13,
+      "types": {
+        "object": 1576
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode3.kode",
+      "present": 1576,
+      "pct": 0.13,
+      "types": {
+        "string": 1576
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "naeringskode3.beskrivelse",
+      "present": 1576,
+      "pct": 0.13,
+      "types": {
+        "string": 1576
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "tvangsopplostPgaManglendeRegnskapDato",
+      "present": 1316,
+      "pct": 0.11,
+      "types": {
+        "string": 1316
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "tvangsopplostPgaManglendeRevisorDato",
+      "present": 294,
+      "pct": 0.03,
+      "types": {
+        "string": 294
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "kapital.bundet",
+      "present": 118,
+      "pct": 0.01,
+      "types": {
+        "float": 118
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "tvangsavvikletPgaManglendeSlettingDato",
+      "present": 110,
+      "pct": 0.01,
+      "types": {
+        "string": 110
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "tvangsopplostPgaMangelfulltStyreDato",
+      "present": 101,
+      "pct": 0.01,
+      "types": {
+        "string": 101
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "registreringsdatoPartiregisteret",
+      "present": 24,
+      "pct": 0.0,
+      "types": {
+        "string": 24
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "underRekonstruksjonsforhandlingDato",
+      "present": 13,
+      "pct": 0.0,
+      "types": {
+        "string": 13
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "underUtenlandskInsolvensbehandlingDato",
+      "present": 2,
+      "pct": 0.0,
+      "types": {
+        "string": 2
+      },
+      "empty": 0,
+      "max_array_len": null
+    },
+    {
+      "path": "tvangsopplostPgaManglendeDagligLederDato",
+      "present": 1,
+      "pct": 0.0,
+      "types": {
+        "string": 1
+      },
+      "empty": 0,
+      "max_array_len": null
+    }
+  ]
+}
