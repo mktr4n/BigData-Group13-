@@ -1,0 +1,14 @@
+data/*.json 
+data/*.gz 
+data/*.archive 
+.ipynb_checkpoints/ 
+data/ndjson/
+data/parquet/
+data/*.json
+data/*.gz
+data/*.archive
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.crc
+_SUCCESS
