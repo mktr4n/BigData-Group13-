@@ -1,0 +1,41 @@
+name: group_13
+
+services:
+
+  mongodb:
+    image: mongodb/mongodb-community-server:latest
+    container_name: group13_mongodb
+    # Host port shifted to 27018 so this stack can run alongside the older
+    # ML_assignment_test stack, which holds 27017. The container still listens
+    # on 27017, so "mongodb://mongodb:27017" is unchanged for other containers.
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+      # Host ./data is visible inside the container as /import, so mongoimport
+      # and mongodump can read/write host files without any docker cp step.
+      - ./data:/import
+    restart: unless-stopped
+
+  jupyter:
+    build:
+      context: ./jupyter
+      dockerfile: Dockerfile
+    container_name: group13_jupyter
+    # 8889 = JupyterLab, 4041 = Spark application UI (both shifted by one).
+    ports:
+      - "8889:8888"
+      - "4041:4040"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+networks:
+  default:
+    name: group_13_net
+
+volumes:
+  mongo_data:

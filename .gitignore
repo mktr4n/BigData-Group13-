@@ -1,0 +1,4 @@
+data/*.json 
+data/*.gz 
+data/*.archive 
+.ipynb_checkpoints/ 
