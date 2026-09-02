@@ -1,28 +1,93 @@
 {
-  "rows": 444645,
-  "source_filings": 444645,
+  "built_at": "2026-09-02T15:08:56.104446+00:00",
   "spark_version": "4.2.0",
+  "spark_master": "local[4]",
+  "driver_max_heap_gb": 8.0,
+  "default_parallelism": 4,
   "cpu_cores": 12,
-  "repeats": 3,
-  "thread_counts": [
-    1,
-    2,
-    4,
-    8,
-    12
-  ],
+  "cardinality": {
+    "register_entities": 1171373,
+    "rows": 1171373,
+    "distinct_organisasjonsnummer": 1171373,
+    "source_filings": 444645,
+    "rows_filed": 444645
+  },
   "status_counts": {
+    "no_filing": 726728,
     "computed": 293155,
     "revenue_missing": 91026,
     "revenue_zero": 59206,
     "revenue_negative": 875,
     "income_missing": 383
   },
+  "coverage_by_legal_form": {
+    "ENK": {
+      "antall": 461154,
+      "med_regnskap": 3266,
+      "dekning_pst": 0.7082232833283458
+    },
+    "AS": {
+      "antall": 431581,
+      "med_regnskap": 403782,
+      "dekning_pst": 93.55879892766363
+    },
+    "FLI": {
+      "antall": 128677,
+      "med_regnskap": 2810,
+      "dekning_pst": 2.183762443948802
+    },
+    "ESEK": {
+      "antall": 33212,
+      "med_regnskap": 10324,
+      "dekning_pst": 31.085149945802723
+    },
+    "UTLA": {
+      "antall": 28118,
+      "med_regnskap": 0,
+      "dekning_pst": 0.0
+    },
+    "NUF": {
+      "antall": 25838,
+      "med_regnskap": 3545,
+      "dekning_pst": 13.72010217509095
+    },
+    "DA": {
+      "antall": 10531,
+      "med_regnskap": 1211,
+      "dekning_pst": 11.499382774665275
+    },
+    "BRL": {
+      "antall": 10244,
+      "med_regnskap": 9995,
+      "dekning_pst": 97.56930886372511
+    },
+    "KBO": {
+      "antall": 7519,
+      "med_regnskap": 0,
+      "dekning_pst": 0.0
+    },
+    "ANS": {
+      "antall": 7290,
+      "med_regnskap": 897,
+      "dekning_pst": 12.304526748971194
+    },
+    "SAM": {
+      "antall": 7270,
+      "med_regnskap": 404,
+      "dekning_pst": 5.557083906464924
+    },
+    "SA": {
+      "antall": 6849,
+      "med_regnskap": 1900,
+      "dekning_pst": 27.74127609870054
+    }
+  },
   "flag_counts": {
     "avviklingsregnskap": 317,
     "is_full_year": 425548,
     "morselskap": 57002,
-    "smaa_foretak": 434467
+    "smaa_foretak": 434467,
+    "currency_comparable": 443461
   },
   "valuta_counts": {
     "NOK": 443461,
@@ -42,63 +107,178 @@
   "regnskapstype_counts": {
     "SELSKAP": 444645
   },
-  "margin_quantiles": {
-    "p0.1": -50338.88888888889,
-    "p1": -1974.8175182481752,
-    "p5": -192.1303455450277,
-    "p25": -4.129082592339262,
-    "median": 6.527706217836227,
-    "p75": 31.63105710411659,
-    "p95": 79.27009167701627,
-    "p99": 97.56488812392426,
-    "p99.9": 184.22022022022023
+  "margin": {
+    "computed_rows": 293155,
+    "quantiles": {
+      "p0.1": -50338.88888888889,
+      "p1": -1974.8175182481752,
+      "p5": -192.1303455450277,
+      "p25": -4.129082592339262,
+      "median": 6.527706217836227,
+      "p75": 31.63105710411659,
+      "p95": 79.27009167701627,
+      "p99": 97.56488812392426,
+      "p99.9": 184.22022022022023
+    },
+    "min_pct": -2731645700.0,
+    "max_pct": 1800100.0,
+    "mean_pct": -11786.560485053084,
+    "pooled_pct": 5.511382066044706,
+    "pooled_pct_nok_only": 5.30884157554138,
+    "pooled_currency_effect_pp": 0.2025404905033259,
+    "excluded_from_pooled_rows": 812,
+    "excluded_from_pooled_revenue_share_pct": 1.9379496225881088
   },
-  "margin_min_pct": -2731645700.0,
-  "margin_max_pct": 1800100.0,
-  "mean_margin_pct": -11786.560485053084,
-  "pooled_margin_pct": 5.511382066044706,
-  "scalability_seconds": {
-    "local[1]": {
-      "times": [
-        10.81376697900123,
-        9.628816349999397,
-        10.211670971002604
-      ],
-      "error": null
+  "output": {
+    "file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
+    "bytes": 95444964,
+    "columns": 61
+  },
+  "verification": {
+    "rows_on_disk": 1171373,
+    "margin_status_contradictions": 0,
+    "no_filing_mislabelled": 0,
+    "worst_relative_recomputation_error": 0.0,
+    "computed_rows_with_nonpositive_revenue": 0,
+    "balance_identity_checked": 444645,
+    "balance_identity_violations": 15462
+  },
+  "revenue_missing_diagnostic": {
+    "n_revenue_missing": 91026,
+    "by_oppstillingsplan": {
+      "store": {
+        "n": 444645,
+        "revenue_missing": 91026,
+        "revenue_zero": 59206,
+        "pct_missing": 20.47161218500152,
+        "pct_zero": 13.315341452169708
+      }
     },
-    "local[2]": {
-      "times": [
-        7.370642317997408,
-        6.855382271001872,
-        7.417443959999218
-      ],
-      "error": null
+    "other_fields_present": {
+      "operating_costs": {
+        "present": 83543,
+        "pct": 91.77927185639268
+      },
+      "operating_income": {
+        "present": 84024,
+        "pct": 92.3076923076923
+      },
+      "sum_eiendeler": {
+        "present": 91026,
+        "pct": 100.0
+      },
+      "sum_egenkapital": {
+        "present": 89508,
+        "pct": 98.33234460483818
+      }
     },
-    "local[4]": {
-      "times": [
-        6.048638494001352,
-        5.681932691997645,
-        5.861829125999066
-      ],
-      "error": null
+    "top_legal_forms": {
+      "AS": 87486,
+      "STI": 1518,
+      "NUF": 489,
+      "BRL": 425,
+      "ESEK": 246,
+      "ANS": 192,
+      "ENK": 169,
+      "DA": 143,
+      "FLI": 127,
+      "SA": 65
     },
-    "local[8]": {
-      "times": [
-        5.827830393001932,
-        5.463349204001133,
-        5.46649474899823
-      ],
-      "error": null
-    },
-    "local[12]": {
-      "times": [
-        6.028982478001126,
-        6.1940941699976975,
-        5.461591025999951
-      ],
-      "error": null
+    "status_by_morselskap": {
+      "True": {
+        "income_missing": 4,
+        "revenue_negative": 142,
+        "revenue_missing": 21208,
+        "computed": 25066,
+        "revenue_zero": 10582
+      },
+      "False": {
+        "revenue_negative": 733,
+        "income_missing": 379,
+        "computed": 268089,
+        "revenue_missing": 69818,
+        "revenue_zero": 48624
+      }
     }
   },
-  "output_file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
-  "output_bytes": 30998241
+  "scalability": {
+    "thread_counts": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ],
+    "repeats": 3,
+    "seconds": {
+      "local[1]": {
+        "times": [
+          19.597372030999395,
+          17.096043716999702,
+          17.742370826992556
+        ],
+        "error": null
+      },
+      "local[2]": {
+        "times": [
+          13.110603555993293,
+          13.344841519996407,
+          13.342566927996813
+        ],
+        "error": null
+      },
+      "local[4]": {
+        "times": [
+          11.539094038002077,
+          11.406955520011252,
+          11.337513663995196
+        ],
+        "error": null
+      },
+      "local[8]": {
+        "times": [
+          11.417653069001972,
+          10.56793373900291,
+          10.454139401001157
+        ],
+        "error": null
+      },
+      "local[12]": {
+        "times": [
+          11.630469181996887,
+          11.799726322002243,
+          11.166850109992083
+        ],
+        "error": null
+      }
+    },
+    "derived": {
+      "local[1]": {
+        "median_s": 17.742370826992556,
+        "speedup": 1.0,
+        "efficiency": 1.0
+      },
+      "local[2]": {
+        "median_s": 13.342566927996813,
+        "speedup": 1.3297569292879918,
+        "efficiency": 0.6648784646439959
+      },
+      "local[4]": {
+        "median_s": 11.406955520011252,
+        "speedup": 1.5553993171856477,
+        "efficiency": 0.38884982929641193
+      },
+      "local[8]": {
+        "median_s": 10.56793373900291,
+        "speedup": 1.67888740270116,
+        "efficiency": 0.209860925337645
+      },
+      "local[12]": {
+        "median_s": 11.630469181996887,
+        "speedup": 1.5255077460208093,
+        "efficiency": 0.1271256455017341
+      }
+    },
+    "fastest_setting": "local[8]"
+  }
 }
