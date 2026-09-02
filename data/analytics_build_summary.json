@@ -1,16 +1,38 @@
 {
-  "built_at": "2026-09-02T15:08:56.104446+00:00",
+  "built_at": "2026-09-02T20:31:54.241109+00:00",
   "spark_version": "4.2.0",
   "spark_master": "local[4]",
   "driver_max_heap_gb": 8.0,
   "default_parallelism": 4,
   "cpu_cores": 12,
+  "date_parse_check": {
+    "stiftelsesdato": {
+      "non_null": 675310,
+      "unparseable": 0,
+      "pct": 0.0
+    },
+    "konkursdato": {
+      "non_null": 3194,
+      "unparseable": 0,
+      "pct": 0.0
+    },
+    "registreringsdatoEnhetsregisteret": {
+      "non_null": 1171373,
+      "unparseable": 0,
+      "pct": 0.0
+    }
+  },
   "cardinality": {
     "register_entities": 1171373,
     "rows": 1171373,
     "distinct_organisasjonsnummer": 1171373,
     "source_filings": 444645,
     "rows_filed": 444645
+  },
+  "fetch_status_counts": {
+    "no_data": 725646,
+    "success": 444645,
+    "no_document": 1082
   },
   "status_counts": {
     "no_filing": 726728,
@@ -82,6 +104,69 @@
       "dekning_pst": 27.74127609870054
     }
   },
+  "stiftelsesdato_missing_total": 496063,
+  "stiftelsesdato_coverage_by_legal_form": {
+    "ENK": {
+      "antall": 461154,
+      "uten_stiftelsesdato": 461154,
+      "mangler_pst": 100.0
+    },
+    "AS": {
+      "antall": 431581,
+      "uten_stiftelsesdato": 0,
+      "mangler_pst": 0.0
+    },
+    "FLI": {
+      "antall": 128677,
+      "uten_stiftelsesdato": 521,
+      "mangler_pst": 0.40488976273926186
+    },
+    "ESEK": {
+      "antall": 33212,
+      "uten_stiftelsesdato": 0,
+      "mangler_pst": 0.0
+    },
+    "UTLA": {
+      "antall": 28118,
+      "uten_stiftelsesdato": 5473,
+      "mangler_pst": 19.464400028451525
+    },
+    "NUF": {
+      "antall": 25838,
+      "uten_stiftelsesdato": 25838,
+      "mangler_pst": 100.0
+    },
+    "DA": {
+      "antall": 10531,
+      "uten_stiftelsesdato": 8,
+      "mangler_pst": 0.07596619504320577
+    },
+    "BRL": {
+      "antall": 10244,
+      "uten_stiftelsesdato": 0,
+      "mangler_pst": 0.0
+    },
+    "KBO": {
+      "antall": 7519,
+      "uten_stiftelsesdato": 0,
+      "mangler_pst": 0.0
+    },
+    "ANS": {
+      "antall": 7290,
+      "uten_stiftelsesdato": 42,
+      "mangler_pst": 0.5761316872427984
+    },
+    "SAM": {
+      "antall": 7270,
+      "uten_stiftelsesdato": 371,
+      "mangler_pst": 5.103163686382393
+    },
+    "SA": {
+      "antall": 6849,
+      "uten_stiftelsesdato": 0,
+      "mangler_pst": 0.0
+    }
+  },
   "flag_counts": {
     "avviklingsregnskap": 317,
     "is_full_year": 425548,
@@ -131,17 +216,87 @@
   },
   "output": {
     "file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
-    "bytes": 95444964,
+    "bytes": 95566079,
     "columns": 61
   },
   "verification": {
     "rows_on_disk": 1171373,
     "margin_status_contradictions": 0,
+    "har_regnskap_nulls": 0,
     "no_filing_mislabelled": 0,
     "worst_relative_recomputation_error": 0.0,
     "computed_rows_with_nonpositive_revenue": 0,
-    "balance_identity_checked": 444645,
-    "balance_identity_violations": 15462
+    "balance_identity": {
+      "checked": 444645,
+      "violations": 15462,
+      "pct": 3.4773808318996053,
+      "discrepancy_abs_nok": {
+        "p50": 1.0,
+        "p90": 2000.0,
+        "p99": 1159611.0
+      },
+      "discrepancy_relative": {
+        "p50": 7.07639964108501e-07,
+        "p90": 0.006103630043365497,
+        "p99": 30000.0
+      },
+      "threshold_relative": 0.001,
+      "violations_trivial": 13701,
+      "violations_material": 1761,
+      "violations_material_pct_of_checked": 0.39604628411429343,
+      "material_by_regnskapsregler": {
+        "regnskapslovenAlminneligRegler": {
+          "filings": 442947,
+          "material": 1748,
+          "pct": 0.3946296057993394
+        },
+        "forenkletAnvendelseIFRS": {
+          "filings": 1476,
+          "material": 9,
+          "pct": 0.6097560975609756
+        },
+        "IFRS": {
+          "filings": 222,
+          "material": 4,
+          "pct": 1.8018018018018018
+        }
+      },
+      "material_by_smaa_foretak": {
+        "True": {
+          "filings": 434467,
+          "material": 1717,
+          "pct": 0.3951968734104086
+        },
+        "False": {
+          "filings": 10178,
+          "material": 44,
+          "pct": 0.43230497150717234
+        }
+      },
+      "all_violations_by_smaa_foretak": {
+        "True": {
+          "filings": 434467,
+          "any": 14088,
+          "pct": 3.242593798838577
+        },
+        "False": {
+          "filings": 10178,
+          "any": 1374,
+          "pct": 13.499705246610336
+        }
+      },
+      "material_with_zero_assets": 369
+    }
+  },
+  "zero_revenue_test": {
+    "revenue_missing_tested": 83394,
+    "revenue_missing_consistent": 83272,
+    "revenue_missing_pct": 99.85370650166679,
+    "revenue_zero_tested": 58703,
+    "revenue_zero_consistent": 58570,
+    "revenue_zero_pct": 99.77343576989252,
+    "combined_no_revenue_filings": 150232,
+    "combined_pct_of_filed": 33.78695363717123
   },
   "revenue_missing_diagnostic": {
     "n_revenue_missing": 91026,
@@ -213,70 +368,70 @@
     "seconds": {
       "local[1]": {
         "times": [
-          19.597372030999395,
-          17.096043716999702,
-          17.742370826992556
+          20.88579653800116,
+          20.36798407099559,
+          20.52472189400578
         ],
         "error": null
       },
       "local[2]": {
         "times": [
-          13.110603555993293,
-          13.344841519996407,
-          13.342566927996813
+          15.196128049996332,
+          15.44950980899739,
+          15.668819078011438
         ],
         "error": null
       },
       "local[4]": {
         "times": [
-          11.539094038002077,
-          11.406955520011252,
-          11.337513663995196
+          15.085058130003745,
+          14.261654248999548,
+          13.222173857007874
         ],
         "error": null
       },
       "local[8]": {
         "times": [
-          11.417653069001972,
-          10.56793373900291,
-          10.454139401001157
+          14.955451369009097,
+          13.51404448899848,
+          12.837030525013688
         ],
         "error": null
       },
       "local[12]": {
         "times": [
-          11.630469181996887,
-          11.799726322002243,
-          11.166850109992083
+          15.620574120999663,
+          14.80054822799866,
+          15.271639047001372
         ],
         "error": null
       }
     },
     "derived": {
       "local[1]": {
-        "median_s": 17.742370826992556,
+        "median_s": 20.52472189400578,
         "speedup": 1.0,
         "efficiency": 1.0
       },
       "local[2]": {
-        "median_s": 13.342566927996813,
-        "speedup": 1.3297569292879918,
-        "efficiency": 0.6648784646439959
+        "median_s": 15.44950980899739,
+        "speedup": 1.3285031141928345,
+        "efficiency": 0.6642515570964173
       },
       "local[4]": {
-        "median_s": 11.406955520011252,
-        "speedup": 1.5553993171856477,
-        "efficiency": 0.38884982929641193
+        "median_s": 14.261654248999548,
+        "speedup": 1.4391543600522767,
+        "efficiency": 0.3597885900130692
       },
       "local[8]": {
-        "median_s": 10.56793373900291,
-        "speedup": 1.67888740270116,
-        "efficiency": 0.209860925337645
+        "median_s": 13.51404448899848,
+        "speedup": 1.5187697443733115,
+        "efficiency": 0.18984621804666393
       },
       "local[12]": {
-        "median_s": 11.630469181996887,
-        "speedup": 1.5255077460208093,
-        "efficiency": 0.1271256455017341
+        "median_s": 15.271639047001372,
+        "speedup": 1.3439763623823904,
+        "efficiency": 0.11199803019853254
       }
     },
     "fastest_setting": "local[8]"
