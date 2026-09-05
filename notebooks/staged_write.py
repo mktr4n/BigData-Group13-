@@ -21,13 +21,17 @@ write leaves no export at all.
 
 Writing plain files into the folder does work - that is what Dropbox is built
 for. Only the rename dance fails. So Spark writes to container-local disk, where
-Dropbox cannot see it, and the finished files are copied across afterwards. This
-is the same approach `Build_analytics.ipynb` uses for the analytics file.
+Dropbox cannot see it, and the finished files are copied across afterwards.
+
+Two shapes are published: `write_staged` for a directory of part files, which is
+what the exports produce, and `write_staged_file` for the single analytics file
+PowerBI reads, where a part-file directory would force a Folder/Combine step.
 
 The cost is one extra pass over the data on local disk. At these sizes that is
 seconds, against an export that cannot be relied on to finish.
 """
 
+import glob
 import os
 import shutil
 
@@ -95,3 +99,43 @@ def write_staged(df, target, fmt, **options):
     print("  staged write: %d files, %.2f GB copied to %s"
           % (files, size / 1024 ** 3, target))
     return files
+
+
+def write_staged_file(df, target, fmt="parquet"):
+    """
+    Write `df` as a single file at `target` on the mount.
+
+    Used where a reader wants a plain file path rather than a part-file
+    directory - PowerBI's Parquet connector takes a file and would otherwise
+    need a Folder/Combine step.
+
+    The caller coalesces. How many partitions the data is reduced to is a
+    property of the data and of what the write costs, not of this mechanism, so
+    it stays visible at the call site; this only checks that the result really
+    was a single part file before publishing it under the expected name.
+
+    Returns the size written, in bytes.
+    """
+    staging = os.path.join(STAGING_ROOT, os.path.basename(target) + ".staging")
+    shutil.rmtree(staging, ignore_errors=True)
+    os.makedirs(STAGING_ROOT, exist_ok=True)
+
+    getattr(df.write.mode("overwrite"), fmt)(staging)
+
+    try:
+        parts = sorted(glob.glob(os.path.join(staging, "part-*")))
+        if len(parts) != 1:
+            raise RuntimeError("expected exactly one part file in %s, got %d: "
+                               "coalesce(1) before calling this" % (staging, len(parts)))
+        if os.path.exists(target):
+            os.remove(target)
+        # copyfile rather than move: staging and the mount are different
+        # filesystems, and a copy leaves the source intact if the destination
+        # write is interrupted.
+        shutil.copyfile(parts[0], target)
+        size = os.path.getsize(target)
+    finally:
+        shutil.rmtree(staging, ignore_errors=True)
+
+    print("  staged write: 1 file, %.1f MB copied to %s" % (size / 1024 ** 2, target))
+    return size

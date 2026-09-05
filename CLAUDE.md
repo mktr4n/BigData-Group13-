@@ -142,12 +142,14 @@ a failed write leaves nothing. Ordinary file writes into the folder are fine;
 only the rename dance fails.
 
 So every Spark write is staged on container-local disk and copied across
-afterwards. `notebooks/staged_write.py` does this for the export notebooks
-(`write_staged(df, target, "parquet"|"json")`), and `Build_analytics.ipynb` does
-the same inline for its single analytics file. Publishing removes the previous
-output file by file rather than with `rmtree`, because directory removal is the
-other operation that fails on this mount, and a stale part file left behind would
-be read back as data. With this in place Dropbox no longer has to be paused.
+afterwards, through `notebooks/staged_write.py` — `write_staged(df, target,
+"parquet"|"json")` for a directory of part files, `write_staged_file(df.coalesce(1),
+target)` for the single analytics file PowerBI reads. Publishing removes the
+previous output file by file rather than with `rmtree`, because directory removal
+is the other operation that fails on this mount, and a stale part file left behind
+would be read back as data. With this in place Dropbox no longer has to be paused.
+A new Spark write that lands anywhere under `data/` should go through this module
+rather than calling `df.write` on the target directly.
 
 **Spark 4 runs with ANSI mode on.** Casting a malformed string to DATE raises
 `CAST_INVALID_INPUT` rather than returning null, so register date columns use
