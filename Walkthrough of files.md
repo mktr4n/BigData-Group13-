@@ -8,18 +8,29 @@ Regnskapsregisteret API.
 ```
 group_13/
 ├── data/
-│   └── enheter_alle.json        <- the dataset (2.0 GB, not included in submission)
+│   ├── enheter_alle.json        <- the dataset (2.0 GB, not included in submission)
+│   ├── parquet/                 <- written by Export_to_parquet.ipynb
+│   ├── ndjson/                  <- written by Export_to_ndjson.ipynb
+│   └── *.json                   <- recorded results: benchmark, build summary, profiles
 ├── jupyter/
 │   ├── Dockerfile
 │   └── spark-defaults.conf
 ├── notebooks/
 │   ├── discover_mongo.py
+│   ├── schemas.py               <- Spark schemas shared by the exports and the benchmark
+│   ├── staged_write.py          <- writes Spark output without committing on the synced mount
 │   ├── Fetch_all_financial_data.ipynb
 │   ├── Analyse_data.ipynb
 │   ├── Export_to_parquet.ipynb
-│   └── Benchmark_engines.ipynb
+│   ├── Export_to_ndjson.ipynb
+│   ├── Benchmark_engines.ipynb
+│   ├── Build_analytics.ipynb
+│   ├── Diagnose_variant_a.ipynb
+│   ├── Diagnose_balance_and_layout.ipynb
+│   └── README_benchmark_section.md
 ├── docker-compose.yml
-└── README.md
+├── README.md
+└── Walkthrough of files.md
 ```
 
 `data/` and `notebooks/` are bind-mounted into the containers, so the paths
@@ -106,9 +117,16 @@ code, so the measured configuration is reproducible:
 | Index | Created by |
 |---|---|
 | `companies.organisasjonsnummer` | `Analyse_data.ipynb`, first cell |
-| `companies.organisasjonsform.kode` | `Benchmark_engines.ipynb`, variant A cell |
+| `companies.organisasjonsform.kode` | `Benchmark_engines.ipynb`, setup cell |
 
-Both calls are idempotent.
+The benchmark's setup cell creates **both**, so it can be run against a fresh
+import without `Analyse_data.ipynb` having gone first. Without them it would
+silently measure a different access path than the one reported, which is the
+subject of the A1/A2 comparison.
+
+Both calls are idempotent, and the benchmark records the full index inventory of
+both collections in its results file, because which formulations are
+index-served depends on it.
 
 ## Fetch the financial statement data
 
@@ -159,18 +177,33 @@ continues from where it left off. Nothing already fetched is re-requested.
 
 ### Known limitation
 
-A fixed set of approximately 1,083 organisation numbers (0.09% of the register)
-returns **HTTP 500** from the Regnskapsregisteret API deterministically. This
-was reproduced across separate runs on different days, and at a deliberately
-throttled rate of 1 request per second, which rules out client-side rate
-limiting — the responses carry no `Retry-After` header. The failures are spread
-across 16 different legal forms and are not explained by entity type.
+A persistent set of roughly 1,081 organisation numbers (0.09% of the register)
+returns **HTTP 500** from the Regnskapsregisteret API. This was reproduced
+across separate runs on different days, and at a deliberately throttled rate of
+1 request per second, which rules out client-side rate limiting — the responses
+carry no `Retry-After` header. The failures are spread across 16 different legal
+forms and are not explained by entity type.
 
-Because the fetch script classifies any non-200/404 response as transient,
-these records are never written and are retried on every subsequent run. The
-practical consequence is that `financial_data` converges to approximately
-1,170,290 of 1,171,373 records (99.9%) and every further run reports the same
-~1,083 skips.
+Because the fetch script classifies any non-200/404 response as transient, these
+records are never written and are retried on every subsequent run. The practical
+consequence is that `financial_data` sits at roughly 99.9% of the register and
+every further run reports a similar number of skips.
+
+The set is persistent but **not fixed**, and the report should not call it
+deterministic without saying so. The shortfall measured 1,083 on 2026-08-31,
+1,082 in the benchmark run recorded in `data/benchmark_results.json`, and 1,081
+on 2026-09-04 — so a small number do eventually succeed on a later attempt,
+while the great majority do not. Counts quoted anywhere in this repository are
+therefore a state of the collection on a date, not a constant:
+
+| Date | `financial_data` | of which filed (`success`) | Shortfall |
+|---|---|---|---|
+| 2026-08-31 | 1,170,290 | 444,644 | 1,083 |
+| 2026-09-01 (exports) | 1,170,291 | — | 1,082 |
+| 2026-09-04 | 1,170,292 | 444,646 | 1,081 |
+
+`companies` does not move: it is a bulk import of the 2026-08-25 snapshot,
+1,171,373 records, of which 431,581 (36.8%) are AS.
 
 ---
 
@@ -201,35 +234,63 @@ period, so the assumption can be checked rather than assumed.
 
 ---
 
-## Export to Parquet
+## Export to Parquet and NDJSON
 
-Run `Export_to_parquet.ipynb`. It writes both collections to Parquet under
-`data/parquet/`, for use as a third data source in the engine benchmark.
+Run `Export_to_parquet.ipynb`, which writes both collections to Parquet under
+`data/parquet/`, and `Export_to_ndjson.ipynb`, which writes `financial_data` to
+`data/ndjson/`. Together they give the benchmark its file-based sources.
 
-**Pause Dropbox before running.** The output folder is inside a synced
-directory, and Dropbox locking files mid-write breaks Spark writes.
+`companies` needs no NDJSON export: the bulk download `enheter_alle.json` already
+is the file, and the profiling pass confirmed the raw file and the MongoDB
+collection hold an identical set of 64 top-level fields. `financial_data` has no
+file equivalent, because it was assembled from ~1.17M individual API calls.
 
-The export reads from MongoDB, not from `enheter_alle.json`. `financial_data`
-exists only in MongoDB — it was fetched from the API — so half the dataset has
-no file equivalent, and reading both from one source guarantees the benchmark
-variants see identical content.
+**Both exports stage their output.** The target folders are inside a
+Dropbox-synced directory, and Spark's committer renames files into place rather
+than writing them there — renames that fail intermittently while Dropbox holds
+the files it is uploading:
 
-### Projected schemas
+```
+java.io.IOException: Could not rename
+file:/home/jovyan/data/parquet/financial_data/_temporary/0/_temporary/attempt_...
+to file:/home/jovyan/data/parquet/financial_data/_temporary/0/task_...
+```
 
-Both collections are written with explicit schemas rather than in full.
-`companies` keeps the fields the analysis uses; `financial_data` omits the
-nested `data` statement blob, which no analysis reads.
+The failure is destructive, because `mode("overwrite")` deletes the previous
+export before writing: one such run left no `financial_data` mirror at all.
+Spark therefore writes to container-local `/tmp` and `notebooks/staged_write.py`
+copies the finished files onto the mount, replacing the previous export file by
+file. Plain file writes are what a sync client is built for, so no pausing is
+needed.
 
-This was necessary as well as convenient: reading whole documents exhausted the
-Spark driver heap during BSON decoding. An explicit schema skips the
-connector's inference pass and limits each decoded document to the listed
-fields.
+Both exports read from MongoDB, not from `enheter_alle.json`, so the variants
+provably see identical content. The NDJSON export is therefore a reconstruction
+rather than the original ingestion path — a genuinely file-native pipeline would
+have written each API response to disk as it arrived, which would also have
+produced ~1.17M small files. The report states this rather than implying the
+file variant is independent of the database.
 
-It is also a limitation of the benchmark. The Parquet copies are narrower than
-the MongoDB collections, so part of Parquet's column-pruning advantage is
-realised at export time rather than at query time. The benchmark applies the
-same schemas when reading from MongoDB, so the variants compare like with like
-on the same columns.
+### Full-width schemas
+
+Both collections are written at **full width**, using the explicit schemas in
+`notebooks/schemas.py` — every observed field, including the nested `data`
+statement blob. An earlier version exported a fourteen-column subset, which
+banked Parquet's column-pruning advantage at export time rather than measuring it
+at query time; exporting at full width moves pruning inside the query, where it
+is the thing being measured.
+
+The schemas are hardcoded rather than inferred. Inference on JSON requires a full
+scan before any query runs, which would land as a cost on the JSON variant alone,
+and sampled inference is demonstrably unsafe on this data — `totalresultat`
+appears in 54% of filings but in none of a ten-record sample, and `naeringskode3`
+in 1,576 of 1,171,373 records. Pinning the schema also skips the connector's
+inference pass, which matters because reading whole documents without one
+exhausted the Spark driver heap during BSON decoding.
+
+Three field names from the Regnskapsregisteret API are misspelled at source and
+are reproduced verbatim in the schema — `regnkapsprinsipper`,
+`sumInnskuttEgenkaptial` and `omloepsmidler`. Correcting any of them resolves the
+column to null across every record.
 
 ### Change detection
 
@@ -252,74 +313,200 @@ current.
 
 ## Engine benchmark
 
-Run `Benchmark_engines.ipynb` after the Parquet export. It times the same
-question three ways: join `companies` to `financial_data` on the organisation
-number, keep AS entities, count by `fetch_status`.
+Run `Benchmark_engines.ipynb` after both exports. It answers three questions
+five ways each. A **variant** is the storage and execution path; a **workload**
+is the question.
 
-| Variant | Where the join runs | Source |
-|---|---|---|
-| A | `mongod`, server-side | MongoDB collections |
-| B | Spark JVM, `local[4]` | MongoDB via connector |
-| C | Spark JVM, `local[4]` | Parquet files |
+| Variant | Execution | Companies source | Financial source |
+|---|---|---|---|
+| A1 | `mongod`, server-side | MongoDB | MongoDB |
+| A2 | `mongod`, server-side | MongoDB | MongoDB |
+| B | Spark JVM, `local[4]` | MongoDB via connector | MongoDB via connector |
+| C | Spark JVM, `local[4]` | Parquet | Parquet |
+| D | Spark JVM, `local[4]` | raw `enheter_alle.json` | NDJSON export |
 
-Variant A is not a Python join. pymongo sends the pipeline to `mongod`, which
-executes it; Python only deserialises the small result. The comparison is
-between a database engine and a distributed framework, not between languages.
+A1 and A2 are the same engine, data, hardware and session, and differ only in how
+the aggregation is written. **Query formulation is an experimental dimension in
+its own right here**, because measurement showed it outweighing engine choice.
+A1 drives from `financial_data`, `$lookup`s into `companies` and filters to AS
+after the join. A2 matches AS first through `organisasjonsform.kode_1`, cutting
+the driving set to 431,581, then probes `financial_data._id` — the primary index.
+
+Neither MongoDB variant is a Python join. pymongo sends the pipeline to `mongod`,
+which executes it; Python only deserialises the result. The comparison is between
+a database engine and a distributed framework, not between languages.
+
+| Workload | Question |
+|---|---|
+| W1 | Selective join: join on organisation number, keep AS, count by `fetch_status`. Two output rows. |
+| W3 | Unindexed predicate, no join: count `konkurs = true` by legal form. No index on `konkurs`, so MongoDB must scan. |
+| W4 | Wide read plus aggregation: revenue, operating profit, equity and debt for AS filers, grouped by industry code and municipality. 45,033 groups. |
 
 Each variant runs once untimed to warm caches and let the JVM JIT-compile, then
-three timed runs. The median is reported rather than the mean, so a single GC
-pause or scheduling hiccup does not dominate. All three results are compared
-for equality before any timing is reported.
+three timed runs, and the median is reported rather than the mean so a single GC
+pause does not dominate. Results are compared across every variant that
+completed, against the first of them, before any timing is quoted.
 
 ### Results
 
-Measured on 12 cores, 8 GB Spark driver heap, `local[4]`, Spark 4.2.0,
-connector 11.1.0.
+Measured on 12 cores, 8 GB Spark driver heap, `local[4]`, Spark 4.2.0, connector
+11.1.0, MongoDB 8.3.8. Medians in seconds, from `data/benchmark_results.json`.
+All five variants agreed on all three workloads.
 
-| Variant | Median | vs fastest |
-|---|---|---|
-| C: Spark + Parquet | 2.13 s | 1.0× |
-| A: MongoDB `$lookup` (AS-first) | 6.81 s | 3.2× |
-| B: Spark + connector | 8.87 s | 4.2× |
+| Variant | W1 | W3 | W4 |
+|---|---|---|---|
+| A1: MongoDB, financial-first | 38.82 | 0.38 (single formulation) | 18.74 |
+| A2: MongoDB, AS-first | **6.94** | — | 16.42 |
+| B: Spark + connector | 9.89 | 1.40 | 19.68 |
+| C: Spark + Parquet | **2.62** | 1.55 | **3.25** |
+| D: Spark + JSON | 36.95 | 34.15 | 48.59 |
 
-An earlier formulation of variant A ran at **49.35 s** — 7.2× slower than the
-version above. It differed in two ways: it was driven from `financial_data`
-(1,170,290 documents) rather than from the AS subset of `companies` (431,581),
-and it joined against a secondary field rather than against `financial_data._id`,
-which is the primary index. `$lookup` is a nested-loop join, so both changes
-matter.
+**Formulation against engine.** On W1 the two MongoDB formulations differ by
+5.6×, against 2.6× between the best MongoDB and the best Spark result. How the
+query was written mattered more than which engine ran it. Quoting the naive
+A1-against-Parquet ratio alone would attribute to the engine what the formulation
+caused. On W4 the formulation effect nearly vanishes (1.14×), because the
+aggregation, not the join order, dominates.
 
-That difference is the main finding. Measured against the naive pipeline, Spark
-appeared three times faster than MongoDB. Measured against a correctly written
-one, MongoDB is faster than Spark reading from MongoDB, and what remains is a
-storage-format result rather than an engine result: Parquet wins because it
-reads two columns from a columnar file with no BSON decoding.
+**Where each wins.** MongoDB takes W3 outright (0.38 s against Spark's 1.40 s):
+a single-collection scan with no join is what a database is for, and Spark pays
+JVM and shuffle overhead for nothing. Parquet takes W1 and W4, and its margin
+widens as the read gets wider — 2.6× on W1, 5.1× on W4 — because it reads only
+the columns asked for and does no BSON decoding.
 
-Variant B is slowest because it pays MongoDB's read cost and Spark's shuffle
-cost without benefiting from either engine's strengths.
+**Variant D is slow everywhere, and asymmetrically so.** `enheter_alle.json` is a
+single pretty-printed array of 2.00 GB, which Spark can read only with
+`multiLine=true`; that mode is not splittable, so one thread parses the whole
+file regardless of `local[4]`. The financial side is NDJSON and does read in
+parallel. Applying a narrow projection to a JSON read does not avoid the I/O
+either: the parser tokenises every byte and then discards what it was not asked
+for. Column pruning is close to worthless in row-oriented text, which is why the
+gap widens on wide-schema workloads rather than narrowing.
 
 ### Correctness check
 
-The result totals 431,452 AS entities against 431,581 in the register. The
-difference of 129 is exactly the number of AS entities among the ~1,083
-organisation numbers that return HTTP 500 and were therefore never written to
-`financial_data`.
+W1 totals 431,452 AS entities against 431,581 in the register. The difference of
+129 is exactly the number of AS entities among the ~1,081 organisation numbers
+that return HTTP 500 and were therefore never written to `financial_data`.
+
+Group keys and integer counts are compared exactly; sums of floating-point
+columns with a relative tolerance of 1e-9, because `mongod` and Spark's shuffle
+accumulate in different orders. Two genuine semantic differences are reconciled
+explicitly rather than absorbed by that tolerance: a `$group` `_id` sub-field
+whose source path is missing is omitted by MongoDB but null in Spark, and `$sum`
+over an all-missing group is `0` in MongoDB but `null` in Spark.
 
 ### Caveats
 
-- **The three timings are not independent measurements.** They run sequentially
-  against one MongoDB instance and share its cache. Between two runs of the
-  benchmark, variants B and C changed timing (B from 16.00 s to 8.87 s) although
-  their code did not — most plausibly because the lighter variant A left more of
-  the WiredTiger cache intact for the variants that follow. This was not
-  verified. For cold-cache numbers, run each variant in its own kernel with
+- **The timings are not independent measurements.** They run sequentially against
+  one MongoDB instance and share its cache. For cold-cache numbers, run each
+  variant in its own kernel through `SELECTED_VARIANTS`, with
   `docker compose restart mongodb` between them.
-- **Variant A uses indexes that Spark cannot.** The primary index on
+- **The MongoDB variants use indexes Spark cannot.** The primary index on
   `financial_data._id` and the secondary index on
   `companies.organisasjonsform.kode` are the database's native optimisations.
   Letting each engine use its own strengths is the intended methodology, not an
   oversight.
-- The Parquet dataset is projected, as described in the export section above.
+- **Variant D's NDJSON side is a reconstruction**, exported from MongoDB rather
+  than captured during ingestion, and its write is repartitioned to one split per
+  core. That is a deliberate advantage handed to the file variant; the raw
+  `companies` file gets no such help because it arrives as one unsplittable array.
+- **Single-node.** `local[4]` measures intra-node parallelism, not distribution
+  across nodes, and the results should not be extrapolated to a cluster.
+
+---
+
+## Build the analytics table
+
+Run `Build_analytics.ipynb` after the Parquet export. It flattens the single
+annual statement out of `data[0]`, joins the register attributes, derives the
+operating margin, and writes
+`data/parquet/analytics_company_financials.parquet` — 1,171,373 rows, 61
+columns, 91 MB, one row per registered entity. This is the file PowerBI
+connects to. Figures below are from `data/analytics_build_summary.json`, which
+the notebook writes as it measures.
+
+**Every entity is kept, not only filers.** The join is a left join, so the
+726,728 entities with no statement stay in the table with null financial columns
+and `operating_margin_status = 'no_filing'`. An inner join would have been
+simpler but would have deleted exactly the rows that make the coverage gap
+visible, and the near-total absence of filings outside AS is itself a result:
+
+| Legal form | Entities | With accounts | Coverage |
+|---|---|---|---|
+| BRL (housing co-ops) | 10,244 | 9,995 | 97.6% |
+| AS | 431,581 | 403,782 | 93.6% |
+| ESEK | 33,212 | 10,324 | 31.1% |
+| FLI (associations) | 128,677 | 2,810 | 2.2% |
+| ENK (sole proprietorships) | 461,154 | 3,266 | 0.7% |
+| UTLA | 28,118 | 0 | 0.0% |
+
+**The margin carries a reason when it is undefined.** `operating_margin_pct` is
+`(driftsresultat / sumDriftsinntekter) × 100`, stored unrounded and unbounded,
+and null whenever the ratio would be undefined or misleading —
+`operating_margin_status` records why. Of 444,645 filings: 293,155 `computed`,
+91,026 `revenue_missing`, 59,206 `revenue_zero`, 875 `revenue_negative`, 383
+`income_missing`. A third of all filed statements therefore report no operating
+revenue at all, which the diagnostics notebook investigates rather than leaving
+as a footnote.
+
+**Ratios must be recomputed from components, never averaged.** The per-company
+median margin is 6.53% while the pooled margin — `SUM(operating_income) /
+SUM(revenue)` — is 5.51%, and the distribution runs from -192% at the 5th
+percentile to +79% at the 95th. Averaging the stored ratio across a group gives
+neither figure. The numerator and denominator are kept as columns so PowerBI can
+divide sums; equity and current ratios are deliberately *not* stored for the
+same reason.
+
+**Currency is flagged, not converted.** 443,461 of 444,645 filings are in NOK;
+the rest span twelve currencies. Summing them would add unlike units, so
+`currency_comparable` gates money aggregates while leaving every row in the
+table. The effect is small but measured rather than assumed: the pooled margin
+is 5.51% over all rows against 5.31% over NOK rows only, a 0.20 percentage-point
+difference over 1.94% of total revenue.
+
+### Verification
+
+The table is re-read from disk rather than trusted in memory. Row count matches,
+no row contradicts its own status, and the stored margin agrees with a
+recomputation from its two components to a worst relative error of 0.0.
+
+The balance sheet identity is the sharper check: total assets must equal equity
+plus liabilities in every filing, which is an accounting constraint rather than
+an assumption about this dataset. 15,462 of 444,645 filings (3.48%) violate it
+at a 0.5 NOK threshold — but the deltas are whole numbers with a median of 1
+NOK, because the Regnskapsregisteret reports whole kroner and two independently
+rounded subtotals can differ by one as a matter of arithmetic. At a relative
+threshold of 0.1% only 1,761 filings (0.40%) remain, and the rate rises with the
+accounting regime, from 0.39% under the ordinary Norwegian rules to 1.80% under
+IFRS, whose balance sheet does not map onto the template the API populates.
+`Diagnose_balance_and_layout.ipynb` decomposes the remainder, including 369
+filings that report zero assets against a multi-billion funding side.
+
+Date parsing is checked before the build rather than after: 0 unparseable values
+across all three cast date columns. Spark 4 runs with ANSI mode on, where a
+malformed string cast to DATE aborts the job, so the build uses `try_cast` and
+this cell counts what that would null.
+
+### Scalability
+
+The same `build` function, run at increasing thread counts on a 12-core host with
+the driver heap held constant at 8 GB, one discarded warm-up and three timed runs
+each, ending in a write so shuffle and output cost are included.
+
+| Setting | Median | Speedup | Efficiency |
+|---|---|---|---|
+| `local[1]` | 20.52 s | 1.00× | 1.00 |
+| `local[2]` | 15.45 s | 1.33× | 0.66 |
+| `local[4]` | 14.26 s | 1.44× | 0.36 |
+| `local[8]` | 13.51 s | 1.52× | 0.19 |
+| `local[12]` | 15.27 s | 1.34× | 0.11 |
+
+Speedup saturates around 1.5× and then regresses. The serial fraction dominates:
+the `coalesce(1)` write is single-threaded by construction, and at 12 threads the
+executor threads contend with the driver on the same machine. This is the
+practical form of Amdahl's law on a single node, and it is a more useful result
+than a scaling curve that was never pushed far enough to bend.
 
 ---
 
@@ -337,10 +524,15 @@ written to exploit its indexes.
 Used here to test whether distributed processing pays off at this scale. The
 benchmark shows that it does not when reading from MongoDB, and does when
 reading columnar files, which is a more useful result than assuming either.
+`Build_analytics.ipynb` extends this with a thread-count experiment, running the
+same build at `local[1]` through `local[12]` to measure how far the speedup
+tracks the ideal line.
 
-**Parquet** — columnar storage. Fastest of the three variants by a factor of
-three, from reading only the required columns and avoiding per-document BSON
-deserialisation entirely.
+**Parquet** — columnar storage. Fastest variant on both join workloads, by 2.6×
+on the selective join and 5.1× on the wide aggregation, from reading only the
+required columns and avoiding per-document BSON deserialisation entirely. It does
+not win everywhere: MongoDB takes the single-collection scan, which is the more
+useful result than a blanket claim either way.
 
 **Docker Compose** — makes the environment reproducible on any machine with
 Docker installed, with no host-level Python, Java, or MongoDB installation.

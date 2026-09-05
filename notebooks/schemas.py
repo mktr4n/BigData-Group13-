@@ -3,7 +3,9 @@ Hardcoded Spark schemas for the Brreg company register and the
 Regnskapsregisteret financial statements.
 
 Derived from a full profiling pass over all 1,171,373 raw records and all
-1,170,290 financial_data documents (see Analyse_data.ipynb). Every path below
+1,170,290 financial_data documents held at the time of profiling (see
+Analyse_data.ipynb; financial_data grows on each fetch run, and stood at
+1,170,292 on 2026-09-04). Every path below
 was observed with exactly one BSON/JSON type, so no field is at risk of being
 silently nulled by a type mismatch.
 
@@ -167,9 +169,10 @@ COMPANIES_SCHEMA = StructType([
 # financial_data - the annual accounts themselves
 # --------------------------------------------------------------------------
 
-# `data` is an array in the API response but holds exactly one element in all
-# 444,644 populated records (verified: max_array_len = 1 over the full
-# collection). The join therefore stays one-to-one and no explode is required.
+# `data` is an array in the API response but holds exactly one element in every
+# populated record (verified: max_array_len = 1 over the full collection;
+# 444,644 such records when profiled, 444,646 on 2026-09-04). The join
+# therefore stays one-to-one and no explode is required.
 # It is still typed as an array so the schema matches the source rather than an
 # assumption about it.
 STATEMENT_STRUCT = StructType([
@@ -234,8 +237,8 @@ STATEMENT_STRUCT = StructType([
     StructField("resultatregnskapResultat", StructType([
         StructField("ordinaertResultatFoerSkattekostnad", DoubleType()),
         StructField("aarsresultat", DoubleType()),
-        # Present in 241,560 of 444,644 filings, and in none of the ten records
-        # in financial_test_10.json. Only the full profile surfaced it.
+        # Present in 241,560 of 444,644 filings at profiling time, and in none
+        # of a ten-record sample. Only the full profile surfaced it.
         StructField("totalresultat", DoubleType()),
         StructField("finansresultat", StructType([
             StructField("nettoFinans", DoubleType()),

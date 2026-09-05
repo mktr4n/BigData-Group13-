@@ -13,6 +13,13 @@ _SUCCESS
 !data/analytics_build_summary.json
 !data/benchmark_results.json
 !data/diagnose_variant_a.json
+!data/diagnostics_balance_and_layout.json
 !data/profile_mongo.json
 !data/profile_raw_companies.json
+!data/w4_industry_municipality.json
 !data/parquet/analytics_company_financials.parquet
+
+# Course reading material and the assignment brief - local reference only,
+# not part of the deliverable.
+Articles/
+Assignment_brief.md
