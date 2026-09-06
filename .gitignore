@@ -12,11 +12,13 @@ __pycache__/
 data/pipeline_run.log
 *.crc
 _SUCCESS
+.DS_Store
 
 !data/analytics_build_summary.json
 !data/benchmark_results.json
 !data/diagnose_variant_a.json
 !data/diagnostics_balance_and_layout.json
+!data/geography_analysis.json
 !data/profile_mongo.json
 !data/profile_raw_companies.json
 !data/w4_industry_municipality.json

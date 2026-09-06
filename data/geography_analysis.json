@@ -1,0 +1,1598 @@
+{
+  "created_at": "2026-09-06T13:43:41.855791+00:00",
+  "source_file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
+  "rows": 1171373,
+  "population_bands": [
+    {
+      "population_band": "under_5k",
+      "count": 100610
+    },
+    {
+      "population_band": "5k_to_20k",
+      "count": 211108
+    },
+    {
+      "population_band": "20k_to_100k",
+      "count": 387799
+    },
+    {
+      "population_band": "100k_plus",
+      "count": 408807
+    },
+    {
+      "population_band": "missing",
+      "count": 63049
+    }
+  ],
+  "legal_form_by_band": [
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "AS",
+      "entities": 174885,
+      "filed": 162817,
+      "filing_rate_pct": 93.0994653629528
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "ENK",
+      "entities": 162325,
+      "filed": 1259,
+      "filing_rate_pct": 0.7756044971507777
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "FLI",
+      "entities": 32289,
+      "filed": 1403,
+      "filing_rate_pct": 4.345133017436279
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "ESEK",
+      "entities": 15504,
+      "filed": 6312,
+      "filing_rate_pct": 40.71207430340557
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "BRL",
+      "entities": 4488,
+      "filed": 4291,
+      "filing_rate_pct": 95.61051693404634
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "DA",
+      "entities": 3577,
+      "filed": 480,
+      "filing_rate_pct": 13.419066256639642
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "KBO",
+      "entities": 3080,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "NUF",
+      "entities": 2769,
+      "filed": 1152,
+      "filing_rate_pct": 41.603466955579634
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "STI",
+      "entities": 2518,
+      "filed": 2358,
+      "filing_rate_pct": 93.64575059571088
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "ANS",
+      "entities": 2412,
+      "filed": 457,
+      "filing_rate_pct": 18.9469320066335
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "SAM",
+      "entities": 2107,
+      "filed": 281,
+      "filing_rate_pct": 13.336497389653536
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "SA",
+      "entities": 904,
+      "filed": 372,
+      "filing_rate_pct": 41.150442477876105
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "ANNA",
+      "entities": 514,
+      "filed": 37,
+      "filing_rate_pct": 7.198443579766537
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "VPFO",
+      "entities": 374,
+      "filed": 95,
+      "filing_rate_pct": 25.40106951871658
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "ORGL",
+      "entities": 303,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "KIRK",
+      "entities": 172,
+      "filed": 2,
+      "filing_rate_pct": 1.1627906976744187
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "ASA",
+      "entities": 156,
+      "filed": 140,
+      "filing_rate_pct": 89.74358974358974
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "KS",
+      "entities": 72,
+      "filed": 71,
+      "filing_rate_pct": 98.61111111111111
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "BA",
+      "entities": 46,
+      "filed": 1,
+      "filing_rate_pct": 2.1739130434782608
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "PK",
+      "entities": 45,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "IKS",
+      "entities": 34,
+      "filed": 22,
+      "filing_rate_pct": 64.70588235294117
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "OPMV",
+      "entities": 31,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "S\u00c6R",
+      "entities": 26,
+      "filed": 24,
+      "filing_rate_pct": 92.3076923076923
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "UTLA",
+      "entities": 26,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "BO",
+      "entities": 22,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "STAT",
+      "entities": 19,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "ADOS",
+      "entities": 17,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "BBL",
+      "entities": 12,
+      "filed": 12,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "KF",
+      "entities": 10,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "PRE",
+      "entities": 10,
+      "filed": 9,
+      "filing_rate_pct": 90.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "GFS",
+      "entities": 10,
+      "filed": 1,
+      "filing_rate_pct": 10.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "KOMM",
+      "entities": 8,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "KTRF",
+      "entities": 7,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "SPA",
+      "entities": 7,
+      "filed": 1,
+      "filing_rate_pct": 14.285714285714286
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "SF",
+      "entities": 6,
+      "filed": 6,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "FYLK",
+      "entities": 5,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "FKF",
+      "entities": 5,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "PERS",
+      "entities": 5,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "SE",
+      "entities": 4,
+      "filed": 4,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "100k_plus",
+      "organisasjonsform_kode": "TVAM",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "ENK",
+      "entities": 159953,
+      "filed": 1310,
+      "filing_rate_pct": 0.8189905784824292
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "AS",
+      "entities": 153715,
+      "filed": 143823,
+      "filing_rate_pct": 93.56471391861562
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "FLI",
+      "entities": 40584,
+      "filed": 779,
+      "filing_rate_pct": 1.9194756554307115
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "ESEK",
+      "entities": 11380,
+      "filed": 3264,
+      "filing_rate_pct": 28.68189806678383
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "BRL",
+      "entities": 4606,
+      "filed": 4566,
+      "filing_rate_pct": 99.13156752062527
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "DA",
+      "entities": 3453,
+      "filed": 401,
+      "filing_rate_pct": 11.613090066608747
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "KBO",
+      "entities": 2819,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "ANS",
+      "entities": 2524,
+      "filed": 259,
+      "filing_rate_pct": 10.26148969889065
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "SAM",
+      "entities": 2112,
+      "filed": 96,
+      "filing_rate_pct": 4.545454545454546
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "SA",
+      "entities": 1930,
+      "filed": 682,
+      "filing_rate_pct": 35.33678756476684
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "STI",
+      "entities": 1511,
+      "filed": 1443,
+      "filing_rate_pct": 95.49966909331569
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "NUF",
+      "entities": 1476,
+      "filed": 657,
+      "filing_rate_pct": 44.51219512195122
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "KIRK",
+      "entities": 406,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "ORGL",
+      "entities": 384,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "ANNA",
+      "entities": 318,
+      "filed": 9,
+      "filing_rate_pct": 2.830188679245283
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "BA",
+      "entities": 128,
+      "filed": 8,
+      "filing_rate_pct": 6.25
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "IKS",
+      "entities": 106,
+      "filed": 48,
+      "filing_rate_pct": 45.283018867924525
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "KOMM",
+      "entities": 61,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "KF",
+      "entities": 55,
+      "filed": 1,
+      "filing_rate_pct": 1.8181818181818181
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "ASA",
+      "entities": 37,
+      "filed": 34,
+      "filing_rate_pct": 91.89189189189189
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "S\u00c6R",
+      "entities": 28,
+      "filed": 27,
+      "filing_rate_pct": 96.42857142857143
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "OPMV",
+      "entities": 28,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "SPA",
+      "entities": 25,
+      "filed": 2,
+      "filing_rate_pct": 8.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "PK",
+      "entities": 24,
+      "filed": 1,
+      "filing_rate_pct": 4.166666666666667
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "KS",
+      "entities": 23,
+      "filed": 22,
+      "filing_rate_pct": 95.65217391304348
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "PRE",
+      "entities": 22,
+      "filed": 21,
+      "filing_rate_pct": 95.45454545454545
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "BO",
+      "entities": 19,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "BBL",
+      "entities": 17,
+      "filed": 17,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "UTLA",
+      "entities": 14,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "GFS",
+      "entities": 9,
+      "filed": 2,
+      "filing_rate_pct": 22.22222222222222
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "FYLK",
+      "entities": 8,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "ADOS",
+      "entities": 8,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "KTRF",
+      "entities": 6,
+      "filed": 1,
+      "filing_rate_pct": 16.666666666666668
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "PERS",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "VPFO",
+      "entities": 2,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "FKF",
+      "entities": 2,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "TVAM",
+      "entities": 2,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "20k_to_100k",
+      "organisasjonsform_kode": "SF",
+      "entities": 1,
+      "filed": 1,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "ENK",
+      "entities": 91789,
+      "filed": 501,
+      "filing_rate_pct": 0.5458170368998464
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "AS",
+      "entities": 73536,
+      "filed": 69368,
+      "filing_rate_pct": 94.33202785030461
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "FLI",
+      "entities": 28323,
+      "filed": 337,
+      "filing_rate_pct": 1.1898457084348408
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "ESEK",
+      "entities": 4685,
+      "filed": 613,
+      "filing_rate_pct": 13.084311632870865
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "SA",
+      "entities": 2213,
+      "filed": 526,
+      "filing_rate_pct": 23.76863985539991
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "DA",
+      "entities": 2183,
+      "filed": 191,
+      "filing_rate_pct": 8.749427393495191
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "ANS",
+      "entities": 1530,
+      "filed": 130,
+      "filing_rate_pct": 8.49673202614379
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "SAM",
+      "entities": 1511,
+      "filed": 11,
+      "filing_rate_pct": 0.727994705493051
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "KBO",
+      "entities": 1147,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "BRL",
+      "entities": 1068,
+      "filed": 1059,
+      "filing_rate_pct": 99.15730337078652
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "STI",
+      "entities": 878,
+      "filed": 843,
+      "filing_rate_pct": 96.01366742596811
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "NUF",
+      "entities": 531,
+      "filed": 242,
+      "filing_rate_pct": 45.5743879472693
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "KIRK",
+      "entities": 484,
+      "filed": 3,
+      "filing_rate_pct": 0.6198347107438017
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "ORGL",
+      "entities": 374,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "BA",
+      "entities": 251,
+      "filed": 3,
+      "filing_rate_pct": 1.1952191235059761
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "ANNA",
+      "entities": 219,
+      "filed": 9,
+      "filing_rate_pct": 4.109589041095891
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "KOMM",
+      "entities": 114,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "IKS",
+      "entities": 51,
+      "filed": 31,
+      "filing_rate_pct": 60.78431372549019
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "KF",
+      "entities": 50,
+      "filed": 2,
+      "filing_rate_pct": 4.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "OPMV",
+      "entities": 29,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "PRE",
+      "entities": 26,
+      "filed": 26,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "SPA",
+      "entities": 22,
+      "filed": 1,
+      "filing_rate_pct": 4.545454545454546
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "ASA",
+      "entities": 21,
+      "filed": 20,
+      "filing_rate_pct": 95.23809523809524
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "KS",
+      "entities": 18,
+      "filed": 16,
+      "filing_rate_pct": 88.88888888888889
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "BBL",
+      "entities": 14,
+      "filed": 14,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "BO",
+      "entities": 14,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "GFS",
+      "entities": 8,
+      "filed": 3,
+      "filing_rate_pct": 37.5
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "S\u00c6R",
+      "entities": 6,
+      "filed": 4,
+      "filing_rate_pct": 66.66666666666667
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "UTLA",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "TVAM",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "PK",
+      "entities": 2,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "PERS",
+      "entities": 2,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "SF",
+      "entities": 1,
+      "filed": 1,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "FYLK",
+      "entities": 1,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "5k_to_20k",
+      "organisasjonsform_kode": "FKF",
+      "entities": 1,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "UTLA",
+      "entities": 28073,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "NUF",
+      "entities": 20905,
+      "filed": 1400,
+      "filing_rate_pct": 6.696962449174839
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "FLI",
+      "entities": 11884,
+      "filed": 176,
+      "filing_rate_pct": 1.4809828340626052
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "STI",
+      "entities": 609,
+      "filed": 582,
+      "filing_rate_pct": 95.56650246305419
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "ESEK",
+      "entities": 540,
+      "filed": 19,
+      "filing_rate_pct": 3.5185185185185186
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "SAM",
+      "entities": 366,
+      "filed": 12,
+      "filing_rate_pct": 3.278688524590164
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "AS",
+      "entities": 293,
+      "filed": 265,
+      "filing_rate_pct": 90.44368600682594
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "ENK",
+      "entities": 231,
+      "filed": 1,
+      "filing_rate_pct": 0.4329004329004329
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "BA",
+      "entities": 60,
+      "filed": 1,
+      "filing_rate_pct": 1.6666666666666667
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "ANNA",
+      "entities": 54,
+      "filed": 3,
+      "filing_rate_pct": 5.555555555555555
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "KBO",
+      "entities": 11,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "ORGL",
+      "entities": 5,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "ANS",
+      "entities": 4,
+      "filed": 1,
+      "filing_rate_pct": 25.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "OPMV",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "DA",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "KIRK",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "SA",
+      "entities": 3,
+      "filed": 1,
+      "filing_rate_pct": 33.333333333333336
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "BO",
+      "entities": 1,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "missing",
+      "organisasjonsform_kode": "KS",
+      "entities": 1,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "ENK",
+      "entities": 46856,
+      "filed": 195,
+      "filing_rate_pct": 0.41616868704114734
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "AS",
+      "entities": 29152,
+      "filed": 27509,
+      "filing_rate_pct": 94.36402305159166
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "FLI",
+      "entities": 15597,
+      "filed": 115,
+      "filing_rate_pct": 0.737321279733282
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "SA",
+      "entities": 1799,
+      "filed": 319,
+      "filing_rate_pct": 17.73207337409672
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "DA",
+      "entities": 1315,
+      "filed": 138,
+      "filing_rate_pct": 10.494296577946768
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "SAM",
+      "entities": 1174,
+      "filed": 4,
+      "filing_rate_pct": 0.34071550255536626
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "ESEK",
+      "entities": 1103,
+      "filed": 116,
+      "filing_rate_pct": 10.516772438803264
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "ANS",
+      "entities": 820,
+      "filed": 50,
+      "filing_rate_pct": 6.097560975609756
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "ORGL",
+      "entities": 539,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "STI",
+      "entities": 470,
+      "filed": 453,
+      "filing_rate_pct": 96.38297872340425
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "KBO",
+      "entities": 462,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "KIRK",
+      "entities": 354,
+      "filed": 1,
+      "filing_rate_pct": 0.2824858757062147
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "BA",
+      "entities": 236,
+      "filed": 3,
+      "filing_rate_pct": 1.271186440677966
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "ANNA",
+      "entities": 174,
+      "filed": 7,
+      "filing_rate_pct": 4.022988505747127
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "KOMM",
+      "entities": 174,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "NUF",
+      "entities": 157,
+      "filed": 94,
+      "filing_rate_pct": 59.87261146496815
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "BRL",
+      "entities": 82,
+      "filed": 79,
+      "filing_rate_pct": 96.34146341463415
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "PRE",
+      "entities": 40,
+      "filed": 40,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "KF",
+      "entities": 31,
+      "filed": 1,
+      "filing_rate_pct": 3.225806451612903
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "IKS",
+      "entities": 29,
+      "filed": 14,
+      "filing_rate_pct": 48.275862068965516
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "OPMV",
+      "entities": 15,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "SPA",
+      "entities": 13,
+      "filed": 2,
+      "filing_rate_pct": 15.384615384615385
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "KS",
+      "entities": 4,
+      "filed": 4,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "BO",
+      "entities": 3,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "GFS",
+      "entities": 2,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "UTLA",
+      "entities": 2,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "S\u00c6R",
+      "entities": 2,
+      "filed": 2,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "TVAM",
+      "entities": 1,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "PK",
+      "entities": 1,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "BBL",
+      "entities": 1,
+      "filed": 1,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "ASA",
+      "entities": 1,
+      "filed": 1,
+      "filing_rate_pct": 100.0
+    },
+    {
+      "population_band": "under_5k",
+      "organisasjonsform_kode": "STAT",
+      "entities": 1,
+      "filed": 0,
+      "filing_rate_pct": 0.0
+    }
+  ],
+  "financial_by_band": [
+    {
+      "population_band": "100k_plus",
+      "filed_entities": 181607,
+      "mean_margin_pct": -27331.66829343825,
+      "median_margin_pct": 6.905675675675675,
+      "mean_revenue": 135826339.5819225
+    },
+    {
+      "population_band": "20k_to_100k",
+      "filed_entities": 157474,
+      "mean_margin_pct": -3730.78077440724,
+      "median_margin_pct": 6.519276556885428,
+      "mean_revenue": 22374202.107519023
+    },
+    {
+      "population_band": "5k_to_20k",
+      "filed_entities": 73954,
+      "mean_margin_pct": -632.392175217849,
+      "median_margin_pct": 6.206376848886418,
+      "mean_revenue": 15828825.278973456
+    },
+    {
+      "population_band": "missing",
+      "filed_entities": 2461,
+      "mean_margin_pct": -11.776792109586914,
+      "median_margin_pct": 7.739605508222601,
+      "mean_revenue": 99396375.00330189
+    },
+    {
+      "population_band": "under_5k",
+      "filed_entities": 29148,
+      "mean_margin_pct": -592.5934947406986,
+      "median_margin_pct": 5.645167570834248,
+      "mean_revenue": 11732950.745060775
+    }
+  ],
+  "distress_by_band": [
+    {
+      "population_band": "100k_plus",
+      "entities": 408807,
+      "distressed": 4056,
+      "distress_rate_pct": 0.9921552223910061
+    },
+    {
+      "population_band": "20k_to_100k",
+      "entities": 387799,
+      "distressed": 3556,
+      "distress_rate_pct": 0.9169698735685239
+    },
+    {
+      "population_band": "5k_to_20k",
+      "entities": 211108,
+      "distressed": 1611,
+      "distress_rate_pct": 0.7631165090853971
+    },
+    {
+      "population_band": "missing",
+      "entities": 63049,
+      "distressed": 11,
+      "distress_rate_pct": 0.01744674776760932
+    },
+    {
+      "population_band": "under_5k",
+      "entities": 100610,
+      "distressed": 709,
+      "distress_rate_pct": 0.7047013219361893
+    }
+  ],
+  "industry_by_band": [
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "00.000",
+      "naeringskode1_beskrivelse": "Uoppgitt",
+      "count": 29183,
+      "rank": 1
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "68.200",
+      "naeringskode1_beskrivelse": "Utleie av egen eller leid fast eiendom",
+      "count": 26987,
+      "rank": 2
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "97.001",
+      "naeringskode1_beskrivelse": "Aktiviteter i borettslag og boligsameier",
+      "count": 21312,
+      "rank": 3
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "94.992",
+      "naeringskode1_beskrivelse": "Aktiviteter i andre medlemsorganisasjoner ellers",
+      "count": 19375,
+      "rank": 4
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "70.200",
+      "naeringskode1_beskrivelse": "Bedriftsr\u00e5dgivning og annen administrativ r\u00e5dgivning",
+      "count": 17048,
+      "rank": 5
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "90.201",
+      "naeringskode1_beskrivelse": "Ut\u00f8vende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+      "count": 13775,
+      "rank": 6
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "62.100",
+      "naeringskode1_beskrivelse": "Dataprogrammeringstjenester",
+      "count": 8850,
+      "rank": 7
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "62.200",
+      "naeringskode1_beskrivelse": "Konsulentvirksomhet tilknyttet informasjonsteknologi og forvaltning og drift av it-systemer",
+      "count": 8305,
+      "rank": 8
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "64.323",
+      "naeringskode1_beskrivelse": "Andre egeninvesteringsselskaper",
+      "count": 7215,
+      "rank": 9
+    },
+    {
+      "population_band": "100k_plus",
+      "naeringskode1_kode": "86.210",
+      "naeringskode1_beskrivelse": "Allmennlegetjenester",
+      "count": 7213,
+      "rank": 10
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "68.200",
+      "naeringskode1_beskrivelse": "Utleie av egen eller leid fast eiendom",
+      "count": 27801,
+      "rank": 1
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "94.992",
+      "naeringskode1_beskrivelse": "Aktiviteter i andre medlemsorganisasjoner ellers",
+      "count": 23660,
+      "rank": 2
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "00.000",
+      "naeringskode1_beskrivelse": "Uoppgitt",
+      "count": 19318,
+      "rank": 3
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "97.001",
+      "naeringskode1_beskrivelse": "Aktiviteter i borettslag og boligsameier",
+      "count": 16918,
+      "rank": 4
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "41.000",
+      "naeringskode1_beskrivelse": "Oppf\u00f8ring av bygninger",
+      "count": 9709,
+      "rank": 5
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "70.200",
+      "naeringskode1_beskrivelse": "Bedriftsr\u00e5dgivning og annen administrativ r\u00e5dgivning",
+      "count": 9562,
+      "rank": 6
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "90.201",
+      "naeringskode1_beskrivelse": "Ut\u00f8vende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+      "count": 8953,
+      "rank": 7
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "86.210",
+      "naeringskode1_beskrivelse": "Allmennlegetjenester",
+      "count": 6162,
+      "rank": 8
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "71.129",
+      "naeringskode1_beskrivelse": "Annen teknisk konsulentvirksomhet",
+      "count": 5841,
+      "rank": 9
+    },
+    {
+      "population_band": "20k_to_100k",
+      "naeringskode1_kode": "85.597",
+      "naeringskode1_beskrivelse": "Annen undervisning ellers",
+      "count": 5447,
+      "rank": 10
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "94.992",
+      "naeringskode1_beskrivelse": "Aktiviteter i andre medlemsorganisasjoner ellers",
+      "count": 15768,
+      "rank": 1
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "68.200",
+      "naeringskode1_beskrivelse": "Utleie av egen eller leid fast eiendom",
+      "count": 15201,
+      "rank": 2
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "00.000",
+      "naeringskode1_beskrivelse": "Uoppgitt",
+      "count": 8081,
+      "rank": 3
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "97.001",
+      "naeringskode1_beskrivelse": "Aktiviteter i borettslag og boligsameier",
+      "count": 6399,
+      "rank": 4
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "41.000",
+      "naeringskode1_beskrivelse": "Oppf\u00f8ring av bygninger",
+      "count": 5856,
+      "rank": 5
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "02.200",
+      "naeringskode1_beskrivelse": "Avvirkning",
+      "count": 5392,
+      "rank": 6
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "01.451",
+      "naeringskode1_beskrivelse": "Sauehold",
+      "count": 4850,
+      "rank": 7
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "01.410",
+      "naeringskode1_beskrivelse": "Melkeproduksjon p\u00e5 storfe og oppdrett av melkekyr",
+      "count": 4512,
+      "rank": 8
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "43.120",
+      "naeringskode1_beskrivelse": "Grunnarbeid",
+      "count": 4505,
+      "rank": 9
+    },
+    {
+      "population_band": "5k_to_20k",
+      "naeringskode1_kode": "90.201",
+      "naeringskode1_beskrivelse": "Ut\u00f8vende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+      "count": 4347,
+      "rank": 10
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "94.992",
+      "naeringskode1_beskrivelse": "Aktiviteter i andre medlemsorganisasjoner ellers",
+      "count": 6984,
+      "rank": 1
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "71.129",
+      "naeringskode1_beskrivelse": "Annen teknisk konsulentvirksomhet",
+      "count": 2824,
+      "rank": 2
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "78.200",
+      "naeringskode1_beskrivelse": "Utleie av arbeidskraft og andre personaladministrative tjenester",
+      "count": 1349,
+      "rank": 3
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "93.120",
+      "naeringskode1_beskrivelse": "Aktiviteter i idrettslag og -klubber",
+      "count": 1213,
+      "rank": 4
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "41.000",
+      "naeringskode1_beskrivelse": "Oppf\u00f8ring av bygninger",
+      "count": 1018,
+      "rank": 5
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "90.201",
+      "naeringskode1_beskrivelse": "Ut\u00f8vende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+      "count": 838,
+      "rank": 6
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "00.000",
+      "naeringskode1_beskrivelse": "Uoppgitt",
+      "count": 698,
+      "rank": 7
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "97.001",
+      "naeringskode1_beskrivelse": "Aktiviteter i borettslag og boligsameier",
+      "count": 637,
+      "rank": 8
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "94.920",
+      "naeringskode1_beskrivelse": "Aktiviteter i partipolitiske organisasjoner",
+      "count": 603,
+      "rank": 9
+    },
+    {
+      "population_band": "missing",
+      "naeringskode1_kode": "82.990",
+      "naeringskode1_beskrivelse": "Annen forretningsmessig tjenesteyting ikke nevnt annet sted",
+      "count": 552,
+      "rank": 10
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "94.992",
+      "naeringskode1_beskrivelse": "Aktiviteter i andre medlemsorganisasjoner ellers",
+      "count": 8327,
+      "rank": 1
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "68.200",
+      "naeringskode1_beskrivelse": "Utleie av egen eller leid fast eiendom",
+      "count": 6124,
+      "rank": 2
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "02.200",
+      "naeringskode1_beskrivelse": "Avvirkning",
+      "count": 4027,
+      "rank": 3
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "01.451",
+      "naeringskode1_beskrivelse": "Sauehold",
+      "count": 3857,
+      "rank": 4
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "01.410",
+      "naeringskode1_beskrivelse": "Melkeproduksjon p\u00e5 storfe og oppdrett av melkekyr",
+      "count": 3403,
+      "rank": 5
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "03.110",
+      "naeringskode1_beskrivelse": "Fiske og fangst i sj\u00f8",
+      "count": 3279,
+      "rank": 6
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "41.000",
+      "naeringskode1_beskrivelse": "Oppf\u00f8ring av bygninger",
+      "count": 2789,
+      "rank": 7
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "43.120",
+      "naeringskode1_beskrivelse": "Grunnarbeid",
+      "count": 2629,
+      "rank": 8
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "00.000",
+      "naeringskode1_beskrivelse": "Uoppgitt",
+      "count": 2472,
+      "rank": 9
+    },
+    {
+      "population_band": "under_5k",
+      "naeringskode1_kode": "68.320",
+      "naeringskode1_beskrivelse": "Eiendomsforvaltning p\u00e5 oppdrag",
+      "count": 2005,
+      "rank": 10
+    }
+  ]
+}

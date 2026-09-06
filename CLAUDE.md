@@ -62,12 +62,12 @@ docker exec group13_mongodb mongorestore --gzip --archive=/import/financial_data
 docker exec group13_jupyter python /home/jovyan/work/discover_mongo.py
 ```
 
-| Service | Address |
-|---|---|
-| JupyterLab | http://localhost:8889/lab?token=group13 (token is fixed in the Dockerfile) |
-| Spark UI | http://localhost:4041 (only while a job runs) |
-| MongoDB from host | `mongodb://localhost:27018` |
-| MongoDB from a container | `mongodb://mongodb:27017` |
+| Service                  | Address                                                                    |
+| ------------------------ | -------------------------------------------------------------------------- |
+| JupyterLab               | http://localhost:8889/lab?token=group13 (token is fixed in the Dockerfile) |
+| Spark UI                 | http://localhost:4041 (only while a job runs)                              |
+| MongoDB from host        | `mongodb://localhost:27018`                                                |
+| MongoDB from a container | `mongodb://mongodb:27017`                                                  |
 
 Host ports are shifted (27018/8889/4041) so the stack can coexist with another
 MongoDB or Jupyter instance; container-internal ports are standard.
@@ -158,7 +158,7 @@ against the engine that produced them. To move deliberately: pull the tag, read
 the digest with `docker image inspect --format "{{.RepoDigests}}"`, update it.
 
 **Spark JVM configuration lives in `jupyter/spark-defaults.conf`, never in a
-notebook.** `spark.driver.memory 8g`, `spark.master local[4]`, the Mongo
+notebook.** `spark.driver.memory 6g`, `spark.master local[4]`, the Mongo
 connector coordinate and the connection URIs are applied at JVM launch, so every
 kernel is configured identically. Changing them means editing that file and
 rebuilding the image; notebooks read the values back off `SparkConf` rather than
@@ -241,8 +241,7 @@ reference material.
 Verified over the full data, not sampled. Treat these as settled and cite them
 rather than re-running the check:
 
-- **A persistent set of roughly 1,081 organisation numbers (0.09%) returns HTTP
-  500.** Reproduced across different days and at a throttled 1 request/second,
+- **A persistent set of roughly 1,081 organisation numbers (0.09%) returns HTTP 500.** Reproduced across different days and at a throttled 1 request/second,
   with no `Retry-After` header, spread across 16 legal forms and unexplained by
   entity type. They are never written and are retried on every run. The set is
   persistent but **not fixed**: the shortfall measured 1,083 on 2026-08-31,
