@@ -82,11 +82,11 @@ is a nested-loop join, so both differences matter.
 
 Query formulation is treated as an experimental dimension in its own right
 because measurement showed it outweighing engine choice: on W1 the two
-formulations differ by 5.6×, against 2.6× between the best MongoDB and the best
+formulations differ by 5.7×, against 2.7× between the best MongoDB and the best
 Spark result. Carrying only one MongoDB formulation is what produced the
 6.4× apparent regression resolved below, and reporting the
 naive A1-against-Parquet ratio alone would attribute to the engine what the
-formulation caused. On W4 the effect nearly vanishes (1.14×), where the
+formulation caused. On W4 the effect nearly vanishes (1.17×), where the
 aggregation rather than the join order dominates.
 
 Variant D is deliberately asymmetric. `enheter_alle.json` is a single
@@ -206,13 +206,16 @@ the choice of engine.
 - **Roughly 1,081 organisation numbers (0.09%)** return HTTP 500 and are absent
   from `financial_data`: 1,171,373 − 1,170,292 = 1,081 as of 2026-09-04. The set
   is persistent but **not fixed** — the shortfall was 1,083 on 2026-08-31 and
-  1,082 in the run recorded in `data/benchmark_results.json` — so a few do
+  1,082 on 2026-09-01, and is 1,081 in the run recorded in
+  `data/benchmark_results.json` — so a few do
   eventually succeed on a later attempt and the report should not call the
   failures deterministic without that caveat. Any count of `financial_data` is a
   state on a date, not a constant, because the fetch notebook is re-run
   periodically.
-- **Counts move between the mirrors and MongoDB.** The Parquet and NDJSON exports
-  were taken at 1,170,291 rows. Re-run both exports before any benchmark run that
+- **Counts move between the mirrors and MongoDB.** In the recorded run both
+  financial mirrors match MongoDB exactly at 1,170,292 rows; the `companies`
+  Parquet row count was not captured, so its `mirror_sync` entry reads null
+  rather than a comparison. Re-run both exports before any benchmark run that
   is to be quoted, or the MongoDB variants will read a larger collection than the
   file variants and the correctness check will legitimately report disagreement.
   The exports' change detection catches this automatically, since the signature

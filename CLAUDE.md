@@ -214,8 +214,9 @@ rather than re-running the check:
   with no `Retry-After` header, spread across 16 legal forms and unexplained by
   entity type. They are never written and are retried on every run. The set is
   persistent but **not fixed**: the shortfall measured 1,083 on 2026-08-31,
-  1,082 in the committed benchmark run, and 1,081 on 2026-09-04, so a few do
-  eventually succeed. Do not describe it as deterministic without that caveat.
+  1,082 on 2026-09-01 and 1,081 on 2026-09-04, and is 1,081 in the committed
+  benchmark run, so a few do eventually succeed. Do not describe it as
+  deterministic without that caveat.
   **Decision taken: accept and document, do not work around.**
 - **ENK and Forening are near-100% `no_data`** — those forms are not required to
   file accounts, so the gap is a legal fact, not a fetch failure.

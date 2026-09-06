@@ -191,16 +191,18 @@ every further run reports a similar number of skips.
 
 The set is persistent but **not fixed**, and the report should not call it
 deterministic without saying so. The shortfall measured 1,083 on 2026-08-31,
-1,082 in the benchmark run recorded in `data/benchmark_results.json`, and 1,081
-on 2026-09-04 — so a small number do eventually succeed on a later attempt,
-while the great majority do not. Counts quoted anywhere in this repository are
-therefore a state of the collection on a date, not a constant:
+1,082 on 2026-09-01 and 1,081 on 2026-09-04, and was still 1,081 in the
+benchmark run recorded in `data/benchmark_results.json` — so a small number do
+eventually succeed on a later attempt, while the great majority do not. Counts
+quoted anywhere in this repository are therefore a state of the collection on a
+date, not a constant:
 
 | Date | `financial_data` | of which filed (`success`) | Shortfall |
 |---|---|---|---|
-| 2026-08-31 | 1,170,290 | 444,644 | 1,083 |
-| 2026-09-01 (exports) | 1,170,291 | — | 1,082 |
+| 2026-08-31 (variant-A diagnostic) | 1,170,290 | 444,644 | 1,083 |
+| 2026-09-01 | 1,170,291 | — | 1,082 |
 | 2026-09-04 | 1,170,292 | 444,646 | 1,081 |
+| 2026-09-05 (exports, benchmark, analytics build) | 1,170,292 | 444,646 | 1,081 |
 
 `companies` does not move: it is a bulk import of the 2026-08-25 snapshot,
 1,171,373 records, of which 431,581 (36.8%) are AS.
@@ -355,24 +357,24 @@ All five variants agreed on all three workloads.
 
 | Variant | W1 | W3 | W4 |
 |---|---|---|---|
-| A1: MongoDB, financial-first | 38.82 | 0.38 (single formulation) | 18.74 |
-| A2: MongoDB, AS-first | **6.94** | — | 16.42 |
-| B: Spark + connector | 9.89 | 1.40 | 19.68 |
-| C: Spark + Parquet | **2.62** | 1.55 | **3.25** |
-| D: Spark + JSON | 36.95 | 34.15 | 48.59 |
+| A1: MongoDB, financial-first | 42.00 | 0.43 (single formulation) | 20.39 |
+| A2: MongoDB, AS-first | **7.38** | — | 17.37 |
+| B: Spark + connector | 10.75 | 1.50 | 19.30 |
+| C: Spark + Parquet | **2.71** | 1.39 | **3.69** |
+| D: Spark + JSON | 35.99 | 31.16 | 44.78 |
 
 **Formulation against engine.** On W1 the two MongoDB formulations differ by
-5.6×, against 2.6× between the best MongoDB and the best Spark result. How the
+5.7×, against 2.7× between the best MongoDB and the best Spark result. How the
 query was written mattered more than which engine ran it. Quoting the naive
 A1-against-Parquet ratio alone would attribute to the engine what the formulation
-caused. On W4 the formulation effect nearly vanishes (1.14×), because the
+caused. On W4 the formulation effect nearly vanishes (1.17×), because the
 aggregation, not the join order, dominates.
 
-**Where each wins.** MongoDB takes W3 outright (0.38 s against Spark's 1.40 s):
-a single-collection scan with no join is what a database is for, and Spark pays
-JVM and shuffle overhead for nothing. Parquet takes W1 and W4, and its margin
-widens as the read gets wider — 2.6× on W1, 5.1× on W4 — because it reads only
-the columns asked for and does no BSON decoding.
+**Where each wins.** MongoDB takes W3 outright, 0.43 s against Spark's best of
+1.39 s: a single-collection scan with no join is what a database is for, and
+Spark pays JVM and shuffle overhead for nothing. Parquet takes W1 and W4, and
+its margin widens as the read gets wider — 2.7× on W1, 4.7× on W4 — because it
+reads only the columns asked for and does no BSON decoding.
 
 **Variant D is slow everywhere, and asymmetrically so.** `enheter_alle.json` is a
 single pretty-printed array of 2.00 GB, which Spark can read only with
@@ -385,9 +387,18 @@ gap widens on wide-schema workloads rather than narrowing.
 
 ### Correctness check
 
-W1 totals 431,452 AS entities against 431,581 in the register. The difference of
-129 is exactly the number of AS entities among the ~1,081 organisation numbers
-that return HTTP 500 and were therefore never written to `financial_data`.
+W1 totals 431,452 AS entities against 431,581 in the register, and the
+difference of 129 is exactly the number of AS entities among the organisation
+numbers that return HTTP 500 and were therefore never written to
+`financial_data`.
+
+Both figures come from `data/diagnose_variant_a.json` (2026-08-31), where
+`financial_data` held 1,170,290 documents and the shortfall was 1,083 — not from
+the benchmark run in the table above, which sat two documents later at 1,170,292.
+Neither of those two is an AS with a filing, because AS `success` is 403,782 in
+both that diagnostic and the 2026-09-05 analytics build, so the benchmark run's
+own W1 total is between 431,452 and 431,454. It was not recorded and cannot be
+recovered from the committed artefacts.
 
 Group keys and integer counts are compared exactly; sums of floating-point
 columns with a relative tolerance of 1e-9, because `mongod` and Spark's shuffle
@@ -512,13 +523,40 @@ than a scaling curve that was never pushed far enough to bend.
 
 ## Technology notes
 
-**MongoDB** — the register data is deeply nested and heterogeneous. Fields such
-as `vedtektsfestetFormaal` are arrays of strings, `kapital` and
-`organisasjonsform` are subdocuments, and many fields are absent on any given
-record. A document store accepts this shape directly, with no schema design or
-flattening step before the data can be queried. The benchmark also shows it
-completing a 431k × 1.17M join in under seven seconds when the pipeline is
-written to exploit its indexes.
+**MongoDB** — the database earns its place on the *enrichment* half of the
+pipeline rather than on the bulk load, and it is worth separating the two.
+
+`financial_data` is not a file that was downloaded. It is 1.17M individual API
+responses accumulated over hours, and `Fetch_all_financial_data.ipynb` depends on
+three properties a columnar file cannot provide. It recomputes its work list on
+every run as the set difference between `companies` and `financial_data`, which
+requires a keyed store that can be read back mid-pipeline; Parquet has no primary
+key and no point lookup. It writes each response as it arrives, so an interrupted
+run loses nothing already stored — the file-native equivalent is either 1.17M
+tiny files, which is a pathological input for distributed processing, or a buffer
+that is lost on interruption. And `_id = organisasjonsnummer` makes a re-run
+structurally incapable of duplicating a record, which `mongoimport` against the
+bulk file conspicuously is not.
+
+The schema argument runs the same way. Parquet requires the schema before the
+first write, but `schemas.py` was *derived* from a full profiling pass over the
+already-landed corpus — that is how `totalresultat` (54% of filings, yet absent
+from a ten-record sample), `naeringskode3` (1,576 records of 1,171,373) and the
+three source-side misspellings were found at all. Landing the data in a
+schema-on-read store first is what made the schema knowable. The nesting and
+heterogeneity of the register — `vedtektsfestetFormaal` an array of strings,
+`kapital` and `organisasjonsform` subdocuments, many fields absent on any given
+record — is accepted directly for the same reason, though on its own that is the
+weaker argument: Parquet handles nested structs and sparse columns perfectly
+well.
+
+For `companies` alone the database is not load-bearing. It is a static 2.0 GB
+download that a single Spark job could convert to Parquet directly; its role here
+is to host the join partner the enrichment probes against, and to supply variants
+A and B of the benchmark. That the benchmark then shows `mongod` completing a
+431k × 1.17M join in 7.38 s when the pipeline is written to exploit its indexes,
+and winning W3 outright, is a result of the comparison rather than the reason the
+collection is in a database.
 
 **PySpark** — provided by the `quay.io/jupyter/pyspark-notebook` base image.
 Used here to test whether distributed processing pays off at this scale. The
@@ -528,8 +566,8 @@ reading columnar files, which is a more useful result than assuming either.
 same build at `local[1]` through `local[12]` to measure how far the speedup
 tracks the ideal line.
 
-**Parquet** — columnar storage. Fastest variant on both join workloads, by 2.6×
-on the selective join and 5.1× on the wide aggregation, from reading only the
+**Parquet** — columnar storage. Fastest variant on both join workloads, by 2.7×
+on the selective join and 4.7× on the wide aggregation, from reading only the
 required columns and avoiding per-document BSON deserialisation entirely. It does
 not win everywhere: MongoDB takes the single-collection scan, which is the more
 useful result than a blanket claim either way.
