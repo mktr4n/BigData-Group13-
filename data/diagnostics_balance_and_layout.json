@@ -1,12 +1,12 @@
 {
   "tolerance_nok": 0.5,
-  "checked": 444645,
-  "violations": 15462,
-  "violation_pct": 3.4773808318996053,
+  "checked": 444646,
+  "violations": 15463,
+  "violation_pct": 3.4775979093481104,
   "mongodb": {
-    "checked": 444645,
-    "violations": 15462,
-    "agrees_with_analytics": true
+    "checked": 445225,
+    "violations": 15478,
+    "agrees_with_analytics": false
   },
   "magnitude": {
     "abs_delta_quantiles": {
@@ -20,7 +20,7 @@
     "rel_pct_quantiles": {
       "p1": 7.804466332344298e-08,
       "p25": 1.0015476916479034e-05,
-      "median": 7.07639964108501e-05,
+      "median": 7.077731898346783e-05,
       "p75": 0.0006992469110767704,
       "p90": 0.6103630043365497,
       "p99": 3000000.0
@@ -28,20 +28,20 @@
     "abs_delta_min": 1.0,
     "abs_delta_max": 73378000000.0,
     "assets_exceed_liabilities": 7577,
-    "liabilities_exceed_assets": 7885
+    "liabilities_exceed_assets": 7886
   },
   "rounding": {
-    "whole": 15462,
+    "whole": 15463,
     "mult_100": 1046,
     "mult_1000": 981,
     "mult_1e6": 44
   },
   "side_consistency": {
     "violating": {
-      "assets_checked": 13191,
-      "assets_ok": 12317,
-      "liab_checked": 14681,
-      "liab_ok": 13407
+      "assets_checked": 13192,
+      "assets_ok": 12318,
+      "liab_checked": 14682,
+      "liab_ok": 13408
     },
     "conforming": {
       "assets_checked": 374763,
@@ -68,9 +68,9 @@
         "pct": 1.710855427713857
       },
       "STI": {
-        "n": 5679,
-        "violations": 395,
-        "pct": 6.955449903151964
+        "n": 5680,
+        "violations": 396,
+        "pct": 6.971830985915493
       },
       "NUF": {
         "n": 3545,
@@ -115,9 +115,9 @@
     },
     "regnskapsaar": {
       "2025": {
-        "n": 417896,
-        "violations": 12712,
-        "pct": 3.041905163007064
+        "n": 417897,
+        "violations": 12713,
+        "pct": 3.042137177342742
       },
       "2024": {
         "n": 19133,
@@ -177,9 +177,9 @@
     },
     "valuta": {
       "NOK": {
-        "n": 443461,
-        "violations": 15334,
-        "pct": 3.4578012497153074
+        "n": 443462,
+        "violations": 15335,
+        "pct": 3.4580189508909442
       },
       "USD": {
         "n": 670,
@@ -239,9 +239,9 @@
     },
     "smaa_foretak": {
       "True": {
-        "n": 434467,
-        "violations": 14088,
-        "pct": 3.242593798838577
+        "n": 434468,
+        "violations": 14089,
+        "pct": 3.242816502020862
       },
       "False": {
         "n": 10178,
@@ -251,9 +251,9 @@
     },
     "avviklingsregnskap": {
       "False": {
-        "n": 444328,
-        "violations": 15434,
-        "pct": 3.4735600727390574
+        "n": 444329,
+        "violations": 15435,
+        "pct": 3.4737773136572225
       },
       "True": {
         "n": 317,
@@ -263,9 +263,9 @@
     },
     "is_full_year": {
       "True": {
-        "n": 425548,
-        "violations": 15058,
-        "pct": 3.538496244841945
+        "n": 425549,
+        "violations": 15059,
+        "pct": 3.538722920274751
       },
       "False": {
         "n": 19097,
@@ -275,9 +275,9 @@
     },
     "morselskap": {
       "False": {
-        "n": 387643,
-        "violations": 13012,
-        "pct": 3.3566967544880213
+        "n": 387644,
+        "violations": 13013,
+        "pct": 3.356946063914313
       },
       "True": {
         "n": 57002,
@@ -287,9 +287,9 @@
     },
     "ikke_revidert": {
       "False": {
-        "n": 444645,
-        "violations": 15462,
-        "pct": 3.4773808318996053
+        "n": 444646,
+        "violations": 15463,
+        "pct": 3.4775979093481104
       }
     }
   },
@@ -352,7 +352,7 @@
   ],
   "tolerance": {
     "absolute_scan": {
-      "0.5": 15462,
+      "0.5": 15463,
       "1.5": 3602,
       "2.5": 2682,
       "10.0": 2385,
@@ -361,8 +361,8 @@
       "100000.0": 536
     },
     "relative_scan": {
-      "1e-09": 15266,
-      "1e-06": 7013,
+      "1e-09": 15267,
+      "1e-06": 7014,
       "0.0001": 2107,
       "0.001": 1761,
       "0.01": 1491
@@ -370,8 +370,8 @@
     "adopted_abs_nok": 1.5,
     "adopted_rel": 1e-06,
     "violations_adopted": 2664,
-    "violations_original": 15462,
-    "pct_adopted": 0.5991296427487096
+    "violations_original": 15463,
+    "pct_adopted": 0.5991282953180732
   },
   "zero_sided": {
     "assets_zero": 369,
@@ -381,9 +381,9 @@
   "clustering_corrected": {
     "regnskapsregler": {
       "regnskapslovenAlminneligRegler": {
-        "n": 442947,
+        "n": 442948,
         "violations": 3458,
-        "pct": 0.7806803071247802
+        "pct": 0.7806785446598697
       },
       "forenkletAnvendelseIFRS": {
         "n": 1476,
@@ -413,9 +413,9 @@
         "pct": 0.24012006003001501
       },
       "STI": {
-        "n": 5679,
+        "n": 5680,
         "violations": 70,
-        "pct": 1.2326113752421202
+        "pct": 1.232394366197183
       },
       "NUF": {
         "n": 3545,
@@ -460,9 +460,9 @@
     },
     "smaa_foretak": {
       "True": {
-        "n": 434467,
+        "n": 434468,
         "violations": 3006,
-        "pct": 0.6918822373160677
+        "pct": 0.6918806448346023
       },
       "False": {
         "n": 10178,
@@ -472,9 +472,9 @@
     },
     "regnskapsaar": {
       "2025": {
-        "n": 417896,
+        "n": 417897,
         "violations": 2897,
-        "pct": 0.693234680398951
+        "pct": 0.6932330215340143
       },
       "2024": {
         "n": 19133,
@@ -534,9 +534,9 @@
     },
     "valuta": {
       "NOK": {
-        "n": 443461,
+        "n": 443462,
         "violations": 3509,
-        "pct": 0.7912758957382949
+        "pct": 0.7912741114233012
       },
       "USD": {
         "n": 670,
@@ -597,38 +597,38 @@
   },
   "decomposition": {
     "rounding_1nok": {
-      "n": 11860,
-      "pct": 76.70417798473677,
+      "n": 11861,
+      "pct": 76.70568453728255,
       "median_delta": 1.0
     },
     "unexplained": {
       "n": 3023,
-      "pct": 19.551157676885268,
+      "pct": 19.549893293668756,
       "median_delta": 1000.0
     },
     "zero_sided": {
       "n": 435,
-      "pct": 2.813348855258052,
+      "pct": 2.8131669145702647,
       "median_delta": 30000.0
     },
     "ifrs_regime": {
       "n": 144,
-      "pct": 0.9313154831199069,
+      "pct": 0.9312552544784324,
       "median_delta": 1000.0
     }
   },
   "oppstillingsplan": {
     "analytics": {
-      "store": 444645
+      "store": 444646
     },
     "regnskapsregler": {
       "IFRS": 222,
       "forenkletAnvendelseIFRS": 1476,
-      "regnskapslovenAlminneligRegler": 442947
+      "regnskapslovenAlminneligRegler": 442948
     }
   },
   "revenue_missing_by_division": {
-    "corpus_rate_pct": 20.47161218500152,
+    "corpus_rate_pct": 20.471566144753353,
     "top15": {
       "64": {
         "n": 15131,
@@ -646,9 +646,9 @@
         "pct": 31.20216118865376
       },
       "94": {
-        "n": 5372,
+        "n": 5373,
         "miss": 1484,
-        "pct": 27.624720774385704
+        "pct": 27.61957937837335
       },
       "09": {
         "n": 610,
@@ -737,8 +737,8 @@
         "median_employees": 19.0
       },
       "computed": {
-        "n": 293155,
-        "no_employees_pct": 78.44655557640156,
+        "n": 293156,
+        "no_employees_pct": 78.44662909850045,
         "median_employees": 12.0
       }
     },
@@ -749,9 +749,9 @@
         "nonzero_balance_sheet_pct": 96.69984400061522
       },
       "computed": {
-        "n": 293155,
-        "nonzero_netto_finans_pct": 92.30338899217138,
-        "nonzero_balance_sheet_pct": 99.4354522351657
+        "n": 293156,
+        "nonzero_netto_finans_pct": 92.30341524648992,
+        "nonzero_balance_sheet_pct": 99.43545416092456
       }
     }
   }

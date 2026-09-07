@@ -58,11 +58,6 @@ omitted. Each is an empty array in 1,171,373 of 1,171,373 records. Every other
 field is retained, including `historiskeNavn` (populated in 219,869 records,
 18.8%) and `paategninger` (2,702 records, 0.23%).
 
-An earlier iteration of this project exported a fourteen-column subset. That
-made Parquet's column-pruning advantage a property of the export rather than of
-the query, which the comparison could not then attribute correctly. Exporting at
-full width moves pruning inside the query, where it is the thing being measured.
-
 ## Variants
 
 | Variant | Execution | Companies | Financial statements |

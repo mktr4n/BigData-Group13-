@@ -1,0 +1,83 @@
+Project:
+• Should be working with using big data tools and technologies for collecting, managing, and analyzing big data in any domain.
+• Performing whole big data management life cycle.
+Technology usage:
+• Any big data tools and technologies must be used. Coding should be done in python.
+Grading:
+• The project will be graded on:
+o performing whole big data management life cycle
+o the quality of the produced code
+o effort (Scope and complexity of the project, amount and complexity of data handled, Technical challenges addressed, Experiments and evaluation performed, Iterative development)
+o originality / novelty
+o project report (see report outline below), and
+o the development processes.
+
+
+• This README file should include instructions about: how to run your project code and whether it requires additional packages or datasets before it can run.
+Code:
+• You should comment the code lightly in line. This does not mean one comment line for each code line but, e.g., one brief comment for each logical group of code lines.
+ Project Report:
+• The project should be written in the project template given to you and can be downloaded from Canvas.
+• The final project report should contain following sections:
+1. Introduction:
+▪ Domain and Motivation
+• Introduce the domain/context of the project.
+• Explain why the topic is relevant or interesting.
+• Explain why Big Data technologies are appropriate for the problem.
+• Provide the motivation for the project.
+▪ Problem Statement
+• What problem are you trying to solve?
+• Why is it a problem?
+• Who or what could benefit from solving it?
+▪ Project Objectives and Goals: State clearly what you intend to achieve.
+▪ Scope, Limitations and Assumptions: Explain what is and is not included in the
+project.
+▪ Project management and Group Contributions
+• For group projects, describe:
+o How the work was divided.
+o The contribution of each group member.
+o Any significant changes to the original plan.
+▪ Use of AI tools
+• Which AI tools were used.
+• What they were used for.
+• How AI contributed to the project.
+• How AI-generated information, code, or suggestions were
+checked/validated.
+• Any limitations or challenges associated with using AI.
+ 
+2. Background and literature review:
+▪ Explain why your final choices were appropriate for your specific project.
+▪ Previous research on the same or similar problem.
+▪ Previous research using similar datasets.
+▪ Similar Big Data solutions or architectures.
+▪ Methods used by other researchers.
+▪ How your project relates to or differs from existing work.
+ 
+3. Research Methodology:
+▪ Describe your dataset.
+▪ Data preprocessing
+▪ Big data life cycle (system architecture)
+• If you are reading/converting/lifting data from multiple sources and/or using
+existing tools in addition to your own program, you should probably include
+a flow chart or architecture sketch (which is different from a class diagram).
+▪ Explain how you evaluated your solution (in terms of e.g., processing time,
+throughput, latency, scalability and so on..).
+4. Results and discussion
+• Present the most important results using appropriate (Tables, Graphs, Figures,
+Measurements, Statistical results)
+▪ Do not simply include screenshots without explaining them. So, explain what the
+results show.
+▪ Interpret the results critically.
+▪ Discuss factors that may affect the validity or generalizability of your results.
+ 
+5. Conclusions
+▪ The conclusion should summaries the project and the main findings with future
+work.
+ 
+References:
+• Include all academic and technical sources cited in the report.
+• Use a consistent referencing style throughout the report.
+
+
+ 
+

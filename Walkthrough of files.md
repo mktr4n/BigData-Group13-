@@ -98,12 +98,11 @@ JVM configuration of its own. To change a setting, edit that file and rebuild.
 
 ## Load the register data into MongoDB
 
-**Run this once, against an empty collection.** `mongoimport` appends rather
-than replaces — running it twice produces duplicate documents.
+##Create the collection and index
+docker exec group13_jupyter python -c "import pymongo; pymongo.MongoClient('mongodb://mongodb:27017/')['companiesdb']['companies'].create_index('organisasjonsnummer', unique=True); print('unique index ready')"
 
-```
-docker exec group13_mongodb mongoimport --db companiesdb --collection companies --file /import/enheter_alle.json --jsonArray
-```
+##Import data from JSON (first and subsequent runs)
+docker exec group13_mongodb mongoimport --db companiesdb --collection companies --file /import/enheter_alle.json --jsonArray --mode merge --upsertFields organisasjonsnummer > data\ingest_2026-08-25.log 2>&1
 
 `/import` is the container-side mount of the host `data/` folder, so no file
 copying is needed.
@@ -111,7 +110,7 @@ copying is needed.
 The `--jsonArray` flag is required because the file is a single JSON array
 rather than newline-delimited JSON.
 
-Indexes are not created here. Each notebook creates the index it depends on, in
+Each notebook also creates the index it depends on, in
 code, so the measured configuration is reproducible:
 
 | Index | Created by |
