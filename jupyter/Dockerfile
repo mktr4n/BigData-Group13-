@@ -1,4 +1,11 @@
-FROM quay.io/jupyter/pyspark-notebook:latest
+# Pinned by digest, not :latest. The report quotes exact versions (Spark 4.2.0,
+# Python 3.13.15) and the benchmark timings are only meaningful against the
+# engine that produced them; a rebuild months later against :latest would
+# silently reproduce neither. To move deliberately, pull the new tag, read its
+# digest with `docker image inspect --format "{{.RepoDigests}}"`, and update it
+# here.
+# quay.io/jupyter/pyspark-notebook:latest as of 2026-08-24 - Spark 4.2.0, Python 3.13.15
+FROM quay.io/jupyter/pyspark-notebook@sha256:c6040f714d41191d1946fc3c438ee0282961b50172079f734b76b53741ae8c1c
 
 # The base image chain (pyspark-notebook -> scipy-notebook) already ships
 # PySpark, pandas, pyarrow, scikit-learn, scipy and matplotlib.

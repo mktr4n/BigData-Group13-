@@ -48,17 +48,27 @@ token needs to be read out of the container logs.
 Host `data/` is visible as `/import` inside the MongoDB container, so no file
 copying is needed.
 
+Create the collection and its unique index first. The index is what makes the
+import an upsert rather than an append:
+
 ```
-docker exec group13_mongodb mongoimport --db companiesdb --collection companies --file /import/enheter_alle.json --jsonArray
+docker exec group13_jupyter python -c "import pymongo; pymongo.MongoClient('mongodb://mongodb:27017/')['companiesdb']['companies'].create_index('organisasjonsnummer', unique=True); print('unique index ready')"
+```
+
+Then import. This command is safe to re-run: `--mode merge` with
+`--upsertFields organisasjonsnummer` updates the top-level fields of companies
+already present, inserts companies new to the file, and leaves companies that
+have dropped out of the export in place. The redirect keeps an audit trail of
+each load:
+
+```
+docker exec group13_mongodb mongoimport --db companiesdb --collection companies --file /import/enheter_alle.json --jsonArray --mode merge --upsertFields organisasjonsnummer > data\ingest_2026-08-25.log 2>&1
 docker exec group13_mongodb mongorestore --gzip --archive=/import/financial_data.archive.gz --drop
 ```
 
-`--jsonArray` is required because the register file is one JSON array rather
-than newline-delimited JSON.
-
-**Run `mongoimport` once, against an empty collection.** It appends rather than
-replaces, so running it twice produces duplicate documents. `mongorestore
---drop` is safe to repeat.
+`--jsonArray` is required because the register file is a single JSON array
+rather than newline-delimited JSON. `mongorestore --drop` replaces
+`financial_data` outright and is likewise safe to repeat.
 
 Verify the load — databases, collections, document counts and the top-level
 fields of a sample document:
@@ -71,6 +81,34 @@ Expect `companiesdb` with `companies` (1,171,373 documents in the 2026-08-25
 snapshot, 431,581 of them AS) and `financial_data` (~1.17M).
 
 ## 4. Run the notebooks
+
+### Unattended, in one command
+
+```
+run_pipeline.cmd
+```
+
+Runs the chain in dependency order — analysis, both exports, the benchmark, the
+curated build — saving each notebook with fresh outputs and stopping at the
+first failure, so a later stage cannot read a half-written mirror. A transcript
+is appended to `data\pipeline_run.log`.
+
+```
+run_pipeline.cmd --list                 :: the stages, and which are on by default
+run_pipeline.cmd --dry-run              :: print the plan without running it
+run_pipeline.cmd --include-fetch        :: prepend the hours-long API fetch
+run_pipeline.cmd --include-diagnostics  :: append the two investigation notebooks
+run_pipeline.cmd --only parquet ndjson  :: just these stages
+run_pipeline.cmd --from benchmark       :: resume after fixing a failure
+```
+
+Two stages are worth knowing about before running the whole chain. `benchmark`
+re-times every variant, so its results supersede any timing previously quoted;
+`analytics` rebuilds the curated table, so if the fetch has run since the last
+build, every downstream figure moves with it. `--only` and `--from` exist so
+neither has to be run by accident.
+
+### Or interactively
 
 Open http://localhost:8889/lab?token=group13. The notebooks form a chain — each
 one consumes what the previous one wrote.
@@ -87,8 +125,18 @@ one consumes what the previous one wrote.
 `Diagnose_variant_a.ipynb` and `Diagnose_balance_and_layout.ipynb` are
 investigations into specific results and are not part of the main chain.
 
-`notebooks/schemas.py` holds the Spark schemas both exports and the benchmark
-import, so every variant provably reads the same columns.
+Four modules are shared by the notebooks rather than copied into them:
+
+| Module | Holds |
+|---|---|
+| `notebooks/schemas.py` | the Spark schemas both exports and the benchmark import, so every variant provably reads the same columns |
+| `notebooks/bootstrap.py` | container paths, the Spark session, and the JVM readout, so every notebook documents the environment identically |
+| `notebooks/mirrors.py` | the source-signature bookkeeping that decides whether a mirror needs re-exporting |
+| `notebooks/staged_write.py` | the staged write that keeps Spark from committing onto the synced mount |
+
+No notebook configures the JVM. Driver memory, thread count, the connector
+package and the connection URIs are applied at JVM launch from
+`jupyter/spark-defaults.conf`; `bootstrap.py` only reads them back.
 
 If the project folder is synced by Dropbox or a similar client, no action is
 needed: Spark writes to container-local disk and the finished files are copied

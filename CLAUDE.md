@@ -50,8 +50,12 @@ docker compose up -d --build            :: build the image and start both contai
 docker compose up -d --build jupyter    :: after editing jupyter/Dockerfile or spark-defaults.conf
 docker compose restart mongodb          :: clear the WiredTiger cache between benchmark variants
 
-:: One-time data load (mongoimport APPENDS - never run twice against a populated collection)
-docker exec group13_mongodb mongoimport --db companiesdb --collection companies --file /import/enheter_alle.json --jsonArray
+:: One-time data load
+##Create the collection and index
+docker exec group13_jupyter python -c "import pymongo; pymongo.MongoClient('mongodb://mongodb:27017/')['companiesdb']['companies'].create_index('organisasjonsnummer', unique=True); print('unique index ready')"
+
+##Import data from JSON (first and subsequent runs)
+docker exec group13_mongodb mongoimport --db companiesdb --collection companies --file /import/enheter_alle.json --jsonArray --mode merge --upsertFields organisasjonsnummer > data\ingest_2026-08-25.log 2>&1
 docker exec group13_mongodb mongorestore --gzip --archive=/import/financial_data.archive.gz --drop
 
 :: Sanity check the load: databases, collections, counts, sample fields
@@ -84,6 +88,12 @@ stack's host ports are shifted by one.
 ## Pipeline order
 
 Notebooks are not independent; each consumes what the previous one wrote.
+`run_pipeline.cmd` (wrapping `notebooks/run_pipeline.py`) runs the chain
+unattended in this order, saving each notebook with fresh outputs and stopping
+at the first failure; `--list`, `--only`, `--from`, `--include-fetch` and
+`--dry-run` select stages. It sets `PYTHONPATH` for the kernel itself, which a
+plain `docker exec ... python` does not inherit — without that, pyspark is
+missing. Prefer it over hand-running notebooks when several need re-running.
 
 1. `Fetch_all_financial_data.ipynb` — needs `companies` populated. Calls the
    Regnskapsregisteret API per organisation number into `financial_data`
@@ -124,6 +134,28 @@ reproduced verbatim — "fixing" any of them resolves the column to null everywh
 when a cheap source signature (document count, plus newest `fetched_at` for
 `financial_data`) is unchanged, and a schema change does not move that signature.
 Set `FORCE_REFRESH = True` for the first run after any schema edit.
+
+**Four shared modules, not copied notebook preambles.** `schemas.py` (schemas),
+`bootstrap.py` (container paths, the Spark session, the JVM readout, the Mongo
+handle), `mirrors.py` (source-signature bookkeeping) and `staged_write.py` (the
+staged write). A notebook that opens a session calls
+`bootstrap.start_spark(app_name)`; one that only needs MongoDB calls
+`bootstrap.mongo_db()`, which takes the URI off `SparkConf` when a session
+exists so the two clients cannot end up on different databases. `bootstrap.py`
+imports pyspark lazily, so the pymongo-only notebooks do not depend on it.
+
+`mirrors.save_metadata` is called on **every** export run, not only runs that
+wrote something, and carries forward the entries for collections that were
+skipped as unchanged. Before that, a run where `companies` was unchanged left no
+row count for it, and the benchmark's staleness check reported a present, current
+mirror as `in_sync: false`. `exported_at` still advances only on a real write;
+`checked_at` advances every run.
+
+**Container images are pinned by digest**, in `jupyter/Dockerfile` and
+`docker-compose.yml`, because the report quotes exact versions (Spark 4.2.0,
+Python 3.13.15, MongoDB 8.3.8) and the benchmark timings only mean anything
+against the engine that produced them. To move deliberately: pull the tag, read
+the digest with `docker image inspect --format "{{.RepoDigests}}"`, update it.
 
 **Spark JVM configuration lives in `jupyter/spark-defaults.conf`, never in a
 notebook.** `spark.driver.memory 8g`, `spark.master local[4]`, the Mongo

@@ -3,7 +3,10 @@ name: group_13
 services:
 
   mongodb:
-    image: mongodb/mongodb-community-server:latest
+    # Pinned by digest for the same reason as the Jupyter base image: the
+    # benchmark reports a MongoDB version, and :latest would not reproduce it.
+    # mongodb-community-server:latest as of 2026-08-22 - MongoDB 8.3.8
+    image: mongodb/mongodb-community-server@sha256:97e5e35a2e62e1d79507db87db4718a47087d8366051b7200a6f4034d02106e7
     container_name: group13_mongodb
     # Host port shifted to 27018 so this stack can run alongside the older
     # ML_assignment_test stack, which holds 27017. The container still listens

@@ -7,6 +7,9 @@ data/ndjson/
 data/parquet/*
 __pycache__/
 *.pyc
+
+# Unattended pipeline transcript - a run log, not a result.
+data/pipeline_run.log
 *.crc
 _SUCCESS
 
