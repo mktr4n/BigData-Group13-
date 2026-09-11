@@ -22,9 +22,13 @@ _SUCCESS
 !data/profile_mongo.json
 !data/profile_raw_companies.json
 !data/w4_industry_municipality.json
-!data/parquet/analytics_company_financials.parquet
+
+# analytics_company_financials.parquet is deliberately NOT re-included. It is a
+# ~95 MB derived file that changes on every build, and Build_analytics.ipynb
+# rebuilds it in seconds. See "Data files and git" in CLAUDE.md.
 
 # Course reading material and the assignment brief - local reference only,
 # not part of the deliverable.
 Articles/
 Assignment_brief.md
+data/ingest_*.log

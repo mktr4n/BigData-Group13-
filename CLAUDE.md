@@ -229,9 +229,18 @@ directly; do not add an `explode` — the join is one-to-one by design.
 
 `.gitignore` excludes the bulk data (`data/*.json`, `*.gz`, `data/ndjson/`,
 `data/parquet/*`) and then re-includes the small result artefacts by name:
-`benchmark_results.json`, `analytics_build_summary.json`, the profile and
-diagnostic JSONs, and `analytics_company_financials.parquet`. A newly persisted
-result needs its own negation line or it will silently go uncommitted.
+`benchmark_results.json`, `analytics_build_summary.json`, `geography_analysis.json`,
+and the profile and diagnostic JSONs. A newly persisted result needs its own
+negation line or it will silently go uncommitted.
+
+**`analytics_company_financials.parquet` is no longer tracked** (untracked on
+2026-09-11, after six committed copies). It is a ~95 MB derived file rewritten
+on every build; those six copies were most of an 821 MB `.git`, and GitHub
+refuses any single file over 100 MiB — a ceiling this one was within 9 MiB of.
+`Build_analytics.ipynb` rebuilds it in seconds, so a fresh clone runs the
+notebook instead of pulling the file. The existing copies stay in history until
+someone rewrites it, which is a coordinated operation on a shared branch rather
+than a local cleanup.
 
 `enheter_alle.json` and `financial_data.archive.gz` are not in the repo and must
 be placed in `data/` by hand. The register snapshot is dated **2026-08-25**:

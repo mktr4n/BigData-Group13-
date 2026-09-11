@@ -161,6 +161,10 @@ because the committer renames files a sync client may be holding open. See
 | `data/profile_*.json`                                      | `Analyse_data.ipynb` — field-level profile of both sources                                |
 | `data/diagnos*.json`, `data/w4_industry_municipality.json` | the diagnostic notebooks and workload W4                                                  |
 
+Only the JSON artefacts in that table are committed. Both Parquet outputs are
+derived and are not in the repository, so a fresh clone builds them first:
+`run_pipeline.cmd --only ssb analytics`.
+
 In PowerBI: Get Data → Parquet → `data/parquet/analytics_company_financials.parquet`.
 Ratios must be computed from summed components
 (`DIVIDE(SUM(operating_income), SUM(revenue))`), not by averaging the stored
