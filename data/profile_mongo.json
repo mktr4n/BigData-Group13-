@@ -1125,615 +1125,615 @@
     ]
   },
   "financial_data": {
-    "docs": 1170292,
+    "docs": 1170290,
     "paths": [
       {
         "path": "_id",
-        "present": 1170292,
+        "present": 1170290,
         "pct": 100.0,
         "types": {
-          "string": 1170292
+          "string": 1170290
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "organisasjonsnummer",
-        "present": 1170292,
+        "present": 1170290,
         "pct": 100.0,
         "types": {
-          "string": 1170292
+          "string": 1170290
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "fetch_status",
-        "present": 1170292,
+        "present": 1170290,
         "pct": 100.0,
         "types": {
-          "string": 1170292
+          "string": 1170290
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "http_status",
-        "present": 1170292,
+        "present": 1170290,
         "pct": 100.0,
         "types": {
-          "int": 1170292
+          "int": 1170290
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "fetched_at",
-        "present": 1170292,
+        "present": 1170290,
         "pct": 100.0,
         "types": {
-          "datetime": 1170292
+          "datetime": 1170290
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data",
-        "present": 1170292,
+        "present": 1170290,
         "pct": 100.0,
         "types": {
-          "null": 725067,
-          "array": 445225
+          "null": 724931,
+          "array": 445359
         },
-        "empty": 725067,
+        "empty": 724931,
         "max_array_len": 1
       },
       {
         "path": "data[].id",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "int": 445225
+          "int": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].journalnr",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].regnskapstype",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].virksomhet",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].virksomhet.organisasjonsnummer",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].virksomhet.organisasjonsform",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].virksomhet.morselskap",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "bool": 445225
+          "bool": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].regnskapsperiode",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].regnskapsperiode.fraDato",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].regnskapsperiode.tilDato",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].valuta",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].avviklingsregnskap",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "bool": 445225
+          "bool": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].oppstillingsplan",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].revisjon",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].revisjon.ikkeRevidertAarsregnskap",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "bool": 445225
+          "bool": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].revisjon.fravalgRevisjon",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "bool": 445225
+          "bool": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].regnkapsprinsipper",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].regnkapsprinsipper.smaaForetak",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "bool": 445225
+          "bool": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].regnkapsprinsipper.regnskapsregler",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "string": 445225
+          "string": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.sumEgenkapitalGjeld",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "float": 445225
+          "float": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.egenkapital",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.egenkapital.opptjentEgenkapital",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 25297,
+        "empty": 25308,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.egenkapital.innskuttEgenkapital",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 21564,
+        "empty": 21566,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.gjeldOversikt",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.gjeldOversikt.kortsiktigGjeld",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 27069,
+        "empty": 27088,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.gjeldOversikt.langsiktigGjeld",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 237689,
+        "empty": 237738,
         "max_array_len": null
       },
       {
         "path": "data[].eiendeler",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].eiendeler.sumEiendeler",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "float": 445225
+          "float": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].eiendeler.omloepsmidler",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 5565,
+        "empty": 5566,
         "max_array_len": null
       },
       {
         "path": "data[].eiendeler.anleggsmidler",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 53790,
+        "empty": 53816,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.aarsresultat",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "float": 445225
+          "float": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.finansresultat",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.finansresultat.finansinntekt",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 81445,
+        "empty": 81482,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.finansresultat.finanskostnad",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 91171,
+        "empty": 91208,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.driftsresultat",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.driftsresultat.driftsinntekter",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 91148,
+        "empty": 91179,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.driftsresultat.driftskostnad",
-        "present": 445225,
-        "pct": 38.04,
+        "present": 445359,
+        "pct": 38.06,
         "types": {
-          "object": 445225
+          "object": 445359
         },
-        "empty": 8546,
+        "empty": 8554,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.egenkapital.sumEgenkapital",
-        "present": 443045,
-        "pct": 37.86,
+        "present": 443179,
+        "pct": 37.87,
         "types": {
-          "float": 443045
+          "float": 443179
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].eiendeler.omloepsmidler.sumOmloepsmidler",
-        "present": 439660,
-        "pct": 37.57,
+        "present": 439793,
+        "pct": 37.58,
         "types": {
-          "float": 439660
+          "float": 439793
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.driftsresultat.driftsresultat",
-        "present": 437784,
-        "pct": 37.41,
+        "present": 437912,
+        "pct": 37.42,
         "types": {
-          "float": 437784
+          "float": 437912
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.driftsresultat.driftskostnad.sumDriftskostnad",
-        "present": 436679,
-        "pct": 37.31,
+        "present": 436805,
+        "pct": 37.32,
         "types": {
-          "float": 436679
+          "float": 436805
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.gjeldOversikt.sumGjeld",
-        "present": 430208,
-        "pct": 36.76,
+        "present": 430327,
+        "pct": 36.77,
         "types": {
-          "float": 430208
+          "float": 430327
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.ordinaertResultatFoerSkattekostnad",
-        "present": 428665,
-        "pct": 36.63,
+        "present": 428793,
+        "pct": 36.64,
         "types": {
-          "float": 428665
+          "float": 428793
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.egenkapital.innskuttEgenkapital.sumInnskuttEgenkaptial",
-        "present": 423661,
-        "pct": 36.2,
+        "present": 423793,
+        "pct": 36.21,
         "types": {
-          "float": 423661
+          "float": 423793
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.egenkapital.opptjentEgenkapital.sumOpptjentEgenkapital",
-        "present": 419928,
-        "pct": 35.88,
+        "present": 420051,
+        "pct": 35.89,
         "types": {
-          "float": 419928
+          "float": 420051
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.gjeldOversikt.kortsiktigGjeld.sumKortsiktigGjeld",
-        "present": 418156,
-        "pct": 35.73,
+        "present": 418271,
+        "pct": 35.74,
         "types": {
-          "float": 418156
+          "float": 418271
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.finansresultat.nettoFinans",
-        "present": 408843,
+        "present": 408952,
         "pct": 34.94,
         "types": {
-          "float": 408843
+          "float": 408952
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].eiendeler.anleggsmidler.sumAnleggsmidler",
-        "present": 391435,
-        "pct": 33.45,
+        "present": 391543,
+        "pct": 33.46,
         "types": {
-          "float": 391435
+          "float": 391543
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.finansresultat.finansinntekt.sumFinansinntekter",
-        "present": 363780,
-        "pct": 31.08,
+        "present": 363877,
+        "pct": 31.09,
         "types": {
-          "float": 363780
+          "float": 363877
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.driftsresultat.driftsinntekter.sumDriftsinntekter",
-        "present": 354077,
+        "present": 354180,
         "pct": 30.26,
         "types": {
-          "float": 354077
+          "float": 354180
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.finansresultat.finanskostnad.sumFinanskostnad",
-        "present": 354054,
-        "pct": 30.25,
+        "present": 354151,
+        "pct": 30.26,
         "types": {
-          "float": 354054
+          "float": 354151
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].resultatregnskapResultat.totalresultat",
-        "present": 241962,
+        "present": 242047,
         "pct": 20.68,
         "types": {
-          "float": 241962
+          "float": 242047
         },
         "empty": 0,
         "max_array_len": null
       },
       {
         "path": "data[].egenkapitalGjeld.gjeldOversikt.langsiktigGjeld.sumLangsiktigGjeld",
-        "present": 207536,
-        "pct": 17.73,
+        "present": 207621,
+        "pct": 17.74,
         "types": {
-          "float": 207536
+          "float": 207621
         },
         "empty": 0,
         "max_array_len": null

@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-09-07T20:32:26.510233+00:00",
+  "built_at": "2026-09-11T11:00:18.418719+00:00",
   "spark_version": "4.2.0",
   "spark_master": "local[4]",
   "driver_max_heap_gb": 8.0,
@@ -26,20 +26,20 @@
     "register_entities": 1171373,
     "rows": 1171373,
     "distinct_organisasjonsnummer": 1171373,
-    "source_filings": 444646,
-    "rows_filed": 444646
+    "source_filings": 445359,
+    "rows_filed": 445359
   },
   "fetch_status_counts": {
-    "no_data": 725646,
-    "success": 444646,
-    "no_document": 1081
+    "no_data": 724931,
+    "success": 445359,
+    "no_document": 1083
   },
   "status_counts": {
-    "no_filing": 726727,
-    "computed": 293156,
-    "revenue_missing": 91026,
-    "revenue_zero": 59206,
-    "revenue_negative": 875,
+    "no_filing": 726014,
+    "computed": 293399,
+    "revenue_missing": 91179,
+    "revenue_zero": 59522,
+    "revenue_negative": 876,
     "income_missing": 383
   },
   "coverage_by_legal_form": {
@@ -50,8 +50,8 @@
     },
     "AS": {
       "antall": 431581,
-      "med_regnskap": 403782,
-      "dekning_pst": 93.55879892766363
+      "med_regnskap": 404497,
+      "dekning_pst": 93.72446887142854
     },
     "FLI": {
       "antall": 128677,
@@ -75,8 +75,8 @@
     },
     "DA": {
       "antall": 10531,
-      "med_regnskap": 1211,
-      "dekning_pst": 11.499382774665275
+      "med_regnskap": 1210,
+      "dekning_pst": 11.489887000284874
     },
     "BRL": {
       "antall": 10244,
@@ -168,16 +168,16 @@
     }
   },
   "flag_counts": {
-    "avviklingsregnskap": 317,
-    "is_full_year": 425549,
-    "morselskap": 57002,
-    "smaa_foretak": 434468,
-    "currency_comparable": 443462
+    "avviklingsregnskap": 318,
+    "is_full_year": 425686,
+    "morselskap": 57054,
+    "smaa_foretak": 435171,
+    "currency_comparable": 444172
   },
   "valuta_counts": {
-    "NOK": 443462,
-    "USD": 670,
-    "EUR": 332,
+    "NOK": 444172,
+    "USD": 671,
+    "EUR": 334,
     "SEK": 97,
     "DKK": 54,
     "GBP": 20,
@@ -190,33 +190,33 @@
     "PLZ": 1
   },
   "regnskapstype_counts": {
-    "SELSKAP": 444646
+    "SELSKAP": 445359
   },
   "margin": {
-    "computed_rows": 293156,
+    "computed_rows": 293399,
     "quantiles": {
-      "p0.1": -50338.88888888889,
-      "p1": -1974.8175182481752,
-      "p5": -192.1303455450277,
-      "p25": -4.129286318445901,
-      "median": 6.5274526304034834,
-      "p75": 31.629226438236035,
-      "p95": 79.27009167701627,
-      "p99": 97.56488812392426,
+      "p0.1": -50692.42424242424,
+      "p1": -1977.3900399854597,
+      "p5": -192.29322320035985,
+      "p25": -4.139209567175514,
+      "median": 6.526473354934077,
+      "p75": 31.632808774439674,
+      "p95": 79.2970878772698,
+      "p99": 97.57896650278649,
       "p99.9": 184.22022022022023
     },
     "min_pct": -2731645700.0,
     "max_pct": 1800100.0,
-    "mean_pct": -11786.520316624634,
-    "pooled_pct": 5.511378079261133,
-    "pooled_pct_nok_only": 5.308837560007985,
-    "pooled_currency_effect_pp": 0.20254051925314798,
-    "excluded_from_pooled_rows": 812,
-    "excluded_from_pooled_revenue_share_pct": 1.9379491530840287
+    "mean_pct": -11777.33464921411,
+    "pooled_pct": 5.511452277645794,
+    "pooled_pct_nok_only": 5.308917907285957,
+    "pooled_currency_effect_pp": 0.202534370359837,
+    "excluded_from_pooled_rows": 813,
+    "excluded_from_pooled_revenue_share_pct": 1.9378936863188923
   },
   "output": {
     "file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
-    "bytes": 95566174,
+    "bytes": 95615601,
     "columns": 61
   },
   "verification": {
@@ -227,108 +227,108 @@
     "worst_relative_recomputation_error": 0.0,
     "computed_rows_with_nonpositive_revenue": 0,
     "balance_identity": {
-      "checked": 444646,
-      "violations": 15463,
-      "pct": 3.4775979093481104,
+      "checked": 445359,
+      "violations": 15482,
+      "pct": 3.476296650567295,
       "discrepancy_abs_nok": {
         "p50": 1.0,
         "p90": 2000.0,
         "p99": 1159611.0
       },
       "discrepancy_relative": {
-        "p50": 7.077731898346783e-07,
-        "p90": 0.006103630043365497,
+        "p50": 7.112198487235382e-07,
+        "p90": 0.006582244323657531,
         "p99": 30000.0
       },
       "threshold_relative": 0.001,
-      "violations_trivial": 13702,
-      "violations_material": 1761,
-      "violations_material_pct_of_checked": 0.39604539341408673,
+      "violations_trivial": 13710,
+      "violations_material": 1772,
+      "violations_material_pct_of_checked": 0.3978812598375692,
       "material_by_regnskapsregler": {
         "regnskapslovenAlminneligRegler": {
-          "filings": 442948,
-          "material": 1748,
-          "pct": 0.3946287148830111
+          "filings": 443654,
+          "material": 1759,
+          "pct": 0.3964801399288635
         },
         "forenkletAnvendelseIFRS": {
-          "filings": 1476,
+          "filings": 1482,
           "material": 9,
-          "pct": 0.6097560975609756
+          "pct": 0.6072874493927125
         },
         "IFRS": {
-          "filings": 222,
+          "filings": 223,
           "material": 4,
-          "pct": 1.8018018018018018
+          "pct": 1.7937219730941705
         }
       },
       "material_by_smaa_foretak": {
         "True": {
-          "filings": 434468,
-          "material": 1717,
-          "pct": 0.39519596379940525
+          "filings": 435171,
+          "material": 1728,
+          "pct": 0.39708528371605645
         },
         "False": {
-          "filings": 10178,
+          "filings": 10188,
           "material": 44,
-          "pct": 0.43230497150717234
+          "pct": 0.43188064389477815
         }
       },
       "all_violations_by_smaa_foretak": {
         "True": {
-          "filings": 434468,
-          "any": 14089,
-          "pct": 3.242816502020862
+          "filings": 435171,
+          "any": 14107,
+          "pct": 3.2417141767259308
         },
         "False": {
-          "filings": 10178,
-          "any": 1374,
-          "pct": 13.499705246610336
+          "filings": 10188,
+          "any": 1375,
+          "pct": 13.496270121711818
         }
       },
-      "material_with_zero_assets": 369
+      "material_with_zero_assets": 376
     }
   },
   "zero_revenue_test": {
-    "revenue_missing_tested": 83394,
-    "revenue_missing_consistent": 83272,
-    "revenue_missing_pct": 99.85370650166679,
-    "revenue_zero_tested": 58703,
-    "revenue_zero_consistent": 58570,
-    "revenue_zero_pct": 99.77343576989252,
-    "combined_no_revenue_filings": 150232,
-    "combined_pct_of_filed": 33.786877650985275
+    "revenue_missing_tested": 83523,
+    "revenue_missing_consistent": 83401,
+    "revenue_missing_pct": 99.85393244974438,
+    "revenue_zero_tested": 59014,
+    "revenue_zero_consistent": 58881,
+    "revenue_zero_pct": 99.77462974887315,
+    "combined_no_revenue_filings": 150701,
+    "combined_pct_of_filed": 33.83809466071192
   },
   "revenue_missing_diagnostic": {
-    "n_revenue_missing": 91026,
+    "n_revenue_missing": 91179,
     "by_oppstillingsplan": {
       "store": {
-        "n": 444646,
-        "revenue_missing": 91026,
-        "revenue_zero": 59206,
-        "pct_missing": 20.471566144753353,
-        "pct_zero": 13.315311506231923
+        "n": 445359,
+        "revenue_missing": 91179,
+        "revenue_zero": 59522,
+        "pct_missing": 20.47314638303032,
+        "pct_zero": 13.3649482776816
       }
     },
     "other_fields_present": {
       "operating_costs": {
-        "present": 83543,
-        "pct": 91.77927185639268
+        "present": 83672,
+        "pct": 91.76674453547417
       },
       "operating_income": {
-        "present": 84024,
-        "pct": 92.3076923076923
+        "present": 84157,
+        "pct": 92.29866526283465
       },
       "sum_eiendeler": {
-        "present": 91026,
+        "present": 91179,
         "pct": 100.0
       },
       "sum_egenkapital": {
-        "present": 89508,
-        "pct": 98.33234460483818
+        "present": 89659,
+        "pct": 98.33294947301462
       }
     },
     "top_legal_forms": {
-      "AS": 87486,
+      "AS": 87639,
       "STI": 1518,
       "NUF": 489,
       "BRL": 425,
@@ -342,17 +342,17 @@
     "status_by_morselskap": {
       "True": {
         "income_missing": 4,
-        "revenue_negative": 142,
-        "revenue_missing": 21208,
-        "computed": 25066,
-        "revenue_zero": 10582
+        "revenue_negative": 143,
+        "revenue_missing": 21228,
+        "computed": 25078,
+        "revenue_zero": 10601
       },
       "False": {
         "revenue_negative": 733,
         "income_missing": 379,
-        "computed": 268090,
-        "revenue_missing": 69818,
-        "revenue_zero": 48624
+        "computed": 268321,
+        "revenue_missing": 69951,
+        "revenue_zero": 48921
       }
     }
   },
@@ -368,70 +368,70 @@
     "seconds": {
       "local[1]": {
         "times": [
-          19.318620443000327,
-          18.522072749000472,
-          19.816974017000575
+          19.116676637997443,
+          16.033362950998708,
+          17.187834309996106
         ],
         "error": null
       },
       "local[2]": {
         "times": [
-          15.060014396000042,
-          14.406224389000272,
-          14.243972817000213
+          12.729120125994086,
+          12.400199073003023,
+          12.947974740993232
         ],
         "error": null
       },
       "local[4]": {
         "times": [
-          13.234051060000638,
-          13.884506602999863,
-          12.541145524000058
+          12.190592558996286,
+          11.58508349499607,
+          11.527570957005082
         ],
         "error": null
       },
       "local[8]": {
         "times": [
-          12.256444624999858,
-          11.782724251999753,
-          12.368038147999869
+          13.500576409998757,
+          11.960099472002184,
+          11.663388692002627
         ],
         "error": null
       },
       "local[12]": {
         "times": [
-          11.858173126999645,
-          10.943799786999989,
-          10.952279201000238
+          12.044853897001303,
+          10.491340658998524,
+          10.471849262001342
         ],
         "error": null
       }
     },
     "derived": {
       "local[1]": {
-        "median_s": 19.318620443000327,
+        "median_s": 17.187834309996106,
         "speedup": 1.0,
         "efficiency": 1.0
       },
       "local[2]": {
-        "median_s": 14.406224389000272,
-        "speedup": 1.3409912216660227,
-        "efficiency": 0.6704956108330113
+        "median_s": 12.729120125994086,
+        "speedup": 1.350276699400212,
+        "efficiency": 0.675138349700106
       },
       "local[4]": {
-        "median_s": 13.234051060000638,
-        "speedup": 1.4597662012495964,
-        "efficiency": 0.3649415503123991
+        "median_s": 11.58508349499607,
+        "speedup": 1.4836176465555924,
+        "efficiency": 0.3709044116388981
       },
       "local[8]": {
-        "median_s": 12.256444624999858,
-        "speedup": 1.5762010137585516,
-        "efficiency": 0.19702512671981895
+        "median_s": 11.960099472002184,
+        "speedup": 1.4370979397146075,
+        "efficiency": 0.17963724246432594
       },
       "local[12]": {
-        "median_s": 10.952279201000238,
-        "speedup": 1.763890427595748,
-        "efficiency": 0.14699086896631233
+        "median_s": 10.491340658998524,
+        "speedup": 1.6382876954103986,
+        "efficiency": 0.1365239746175332
       }
     },
     "fastest_setting": "local[12]"
