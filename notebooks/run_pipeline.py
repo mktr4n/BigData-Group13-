@@ -4,7 +4,7 @@ Run the notebook pipeline end to end, unattended.
 Why this exists
 ---------------
 The notebooks are a chain: each one consumes what the previous one wrote, and
-running them by hand means opening five tabs in the right order and watching for
+running them by hand means opening seven tabs in the right order and watching for
 the one that fails. This runs them in dependency order in a single command, saves
 each notebook with its fresh outputs, and stops at the first failure so a later
 stage cannot read a half-written mirror.
@@ -28,14 +28,19 @@ Nothing here decides *whether* work is needed. The export notebooks skip
 themselves when the source signature is unchanged, and the fetch notebook
 recomputes its own work list. This only sequences them.
 
-Two stages are expensive and change published figures, so read before running
-the whole chain:
+Three stages replace published figures, so read before running the whole chain:
 
   * `benchmark` re-times every variant. New timings supersede whatever the
     report quotes, so the report's benchmark table has to be updated after it.
   * `analytics` rebuilds `analytics_company_financials.parquet` from the current
     mirror. If the fetch notebook has run since the last build, every figure in
     the analysis chapter and every PowerBI visual moves with it.
+  * `geography` recomputes `data/geography_analysis.json` from that table, so
+    the population-band findings move with it.
+
+`ssb` is the one stage that calls an external API on every run. It is two HTTP
+requests and a few hundred rows, not a fetch-sized job, and it is on by default
+because `analytics` refuses to build without the mirror it writes.
 
 `--only` and `--from` exist so neither has to be run by accident.
 """
@@ -77,10 +82,14 @@ STAGES = [
      "Mirror both collections to data/parquet/"),
     ("ndjson", "Export_to_ndjson.ipynb", True,
      "Mirror financial_data to data/ndjson/"),
+    ("ssb", "Import_ssb_population.ipynb", True,
+     "Municipality population from SSB table 06913 (live API, seconds)"),
     ("benchmark", "Benchmark_engines.ipynb", True,
      "Five variants x three workloads, timed - REPLACES data/benchmark_results.json"),
     ("analytics", "Build_analytics.ipynb", True,
      "Build the curated PowerBI table - REPLACES the analysis chapter's figures"),
+    ("geography", "Analyse_geography.ipynb", True,
+     "Population-band findings - REPLACES data/geography_analysis.json"),
     ("diag-variant-a", "Diagnose_variant_a.ipynb", False,
      "Investigation into the variant A formulation gap"),
     ("diag-balance", "Diagnose_balance_and_layout.ipynb", False,

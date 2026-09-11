@@ -62,12 +62,12 @@ docker exec group13_mongodb mongorestore --gzip --archive=/import/financial_data
 docker exec group13_jupyter python /home/jovyan/work/discover_mongo.py
 ```
 
-| Service | Address |
-|---|---|
-| JupyterLab | http://localhost:8889/lab?token=group13 (token is fixed in the Dockerfile) |
-| Spark UI | http://localhost:4041 (only while a job runs) |
-| MongoDB from host | `mongodb://localhost:27018` |
-| MongoDB from a container | `mongodb://mongodb:27017` |
+| Service                  | Address                                                                    |
+| ------------------------ | -------------------------------------------------------------------------- |
+| JupyterLab               | http://localhost:8889/lab?token=group13 (token is fixed in the Dockerfile) |
+| Spark UI                 | http://localhost:4041 (only while a job runs)                              |
+| MongoDB from host        | `mongodb://localhost:27018`                                                |
+| MongoDB from a container | `mongodb://mongodb:27017`                                                  |
 
 Host ports are shifted (27018/8889/4041) so the stack can coexist with another
 MongoDB or Jupyter instance; container-internal ports are standard.
@@ -106,14 +106,24 @@ missing. Prefer it over hand-running notebooks when several need re-running.
    `companies.organisasjonsnummer` index, so run that one first.
 3. `Export_to_parquet.ipynb` / `Export_to_ndjson.ipynb` — write the file mirrors
    under `data/parquet/` and `data/ndjson/` using the schemas from `schemas.py`.
-4. `Benchmark_engines.ipynb` — five variants (A1, A2 MongoDB server-side; B
+4. `Import_ssb_population.ipynb` — pulls municipality population (SSB table
+   06913) into `data/parquet/ssb_population_2026.parquet`, a third mirror beside
+   the two collection mirrors. Two HTTP calls, seconds. It is not covered by
+   `mirrors.py` bookkeeping, and `Build_analytics.ipynb` asserts the file exists
+   before it starts rather than failing later inside a Spark plan.
+5. `Benchmark_engines.ipynb` — five variants (A1, A2 MongoDB server-side; B
    Spark + connector; C Spark + Parquet; D Spark + raw JSON/NDJSON) × three
    workloads (W1 selective join, W3 unindexed predicate, W4 wide read plus
    aggregation). Writes `data/benchmark_results.json`.
-5. `Build_analytics.ipynb` — flattens the Parquet mirror into
+6. `Build_analytics.ipynb` — flattens the Parquet mirror into
    `data/parquet/analytics_company_financials.parquet` (one row per registered
-   entity, left join, financial columns null where nothing was filed) plus a
-   thread-count scalability experiment. Writes `data/analytics_build_summary.json`.
+   entity, left join, financial columns null where nothing was filed), left-joins
+   the SSB population dimension on `kommunenummer` for `municipality_population`
+   and `population_year`, plus a thread-count scalability experiment. Writes
+   `data/analytics_build_summary.json`.
+7. `Analyse_geography.ipynb` — population-band findings over the curated table:
+   company type, filing coverage, distress, financial performance and industry
+   mix by municipality size. Writes `data/geography_analysis.json`.
 
 `Diagnose_variant_a.ipynb` and `Diagnose_balance_and_layout.ipynb` are
 investigations spun out of the benchmark and the build; they write their own
@@ -241,8 +251,7 @@ reference material.
 Verified over the full data, not sampled. Treat these as settled and cite them
 rather than re-running the check:
 
-- **A persistent set of roughly 1,081 organisation numbers (0.09%) returns HTTP
-  500.** Reproduced across different days and at a throttled 1 request/second,
+- **A persistent set of roughly 1,081 organisation numbers (0.09%) returns HTTP 500.** Reproduced across different days and at a throttled 1 request/second,
   with no `Retry-After` header, spread across 16 legal forms and unexplained by
   entity type. They are never written and are retried on every run. The set is
   persistent but **not fixed**: the shortfall measured 1,083 on 2026-08-31,

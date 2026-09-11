@@ -32,12 +32,12 @@ containers, so the files must be in that folder before the load steps.
 docker compose up -d --build
 ```
 
-| Service | Address |
-|---|---|
-| JupyterLab | http://localhost:8889/lab?token=group13 |
-| Spark UI | http://localhost:4041 (only while a job runs) |
-| MongoDB, from the host | `mongodb://localhost:27018` |
-| MongoDB, from a container | `mongodb://mongodb:27017` |
+| Service                   | Address                                       |
+| ------------------------- | --------------------------------------------- |
+| JupyterLab                | http://localhost:8889/lab?token=group13       |
+| Spark UI                  | http://localhost:4041 (only while a job runs) |
+| MongoDB, from the host    | `mongodb://localhost:27018`                   |
+| MongoDB, from a container | `mongodb://mongodb:27017`                     |
 
 Host ports are shifted from the defaults so the stack can run alongside another
 MongoDB or Jupyter instance. The Jupyter token is fixed to `group13`, so no
@@ -110,29 +110,34 @@ neither has to be run by accident.
 
 ### Or interactively
 
-Open http://localhost:8889/lab?token=group13. The notebooks form a chain — each
-one consumes what the previous one wrote.
+Open http://localhost:8889/lab?token=group13 and run the core path in this order:
 
-| Order | Notebook | Purpose |
-|---|---|---|
-| 1 | `Fetch_all_financial_data.ipynb` | Fetches annual accounts from the Regnskapsregisteret API into `financial_data`. Only needed to extend or refresh the data; the provided archive already contains the result. |
-| 2 | `Analyse_data.ipynb` | Coverage, fiscal years, insolvency and liquidation flags, and the full profiling pass the schemas are derived from. Its first cell creates the `organisasjonsnummer` index — run that first. |
-| 3 | `Export_to_parquet.ipynb` | Writes both collections to `data/parquet/`. |
-| 3 | `Export_to_ndjson.ipynb` | Writes `financial_data` to `data/ndjson/`. |
-| 4 | `Benchmark_engines.ipynb` | Five variants × three workloads, timed and cross-checked. Writes `data/benchmark_results.json`. |
-| 5 | `Build_analytics.ipynb` | Builds the curated PowerBI table and runs the thread-count scalability experiment. Writes `data/analytics_build_summary.json`. |
+1. `Analyse_data.ipynb` — creates the company index and profiles the sources.
+2. `Export_to_parquet.ipynb` — writes the MongoDB collections to Parquet.
+3. `Import_ssb_population.ipynb` — downloads municipality population from SSB table 06913.
+4. `Build_analytics.ipynb` — joins SSB by `kommunenummer` and builds the curated PowerBI table.
+5. `Analyse_geography.ipynb` — compares company type, filing coverage, distress, financial performance, and industry mix across population bands.
+
+The provided financial archive already contains the API results. Run
+`Fetch_all_financial_data.ipynb` only when extending or refreshing that data;
+run `Export_to_ndjson.ipynb` and `Benchmark_engines.ipynb` separately when you
+want to reproduce the storage-format benchmark.
+
+`Analyse_data.ipynb` must be run before changing `schemas.py`, because the
+explicit schemas are derived from its full profiling pass. After a schema or
+source-data change, rerun the affected export before building analytics.
 
 `Diagnose_variant_a.ipynb` and `Diagnose_balance_and_layout.ipynb` are
 investigations into specific results and are not part of the main chain.
 
 Four modules are shared by the notebooks rather than copied into them:
 
-| Module | Holds |
-|---|---|
-| `notebooks/schemas.py` | the Spark schemas both exports and the benchmark import, so every variant provably reads the same columns |
-| `notebooks/bootstrap.py` | container paths, the Spark session, and the JVM readout, so every notebook documents the environment identically |
-| `notebooks/mirrors.py` | the source-signature bookkeeping that decides whether a mirror needs re-exporting |
-| `notebooks/staged_write.py` | the staged write that keeps Spark from committing onto the synced mount |
+| Module                      | Holds                                                                                                            |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `notebooks/schemas.py`      | the Spark schemas both exports and the benchmark import, so every variant provably reads the same columns        |
+| `notebooks/bootstrap.py`    | container paths, the Spark session, and the JVM readout, so every notebook documents the environment identically |
+| `notebooks/mirrors.py`      | the source-signature bookkeeping that decides whether a mirror needs re-exporting                                |
+| `notebooks/staged_write.py` | the staged write that keeps Spark from committing onto the synced mount                                          |
 
 No notebook configures the JVM. Driver memory, thread count, the connector
 package and the connection URIs are applied at JVM launch from
@@ -146,13 +151,15 @@ because the committer renames files a sync client may be holding open. See
 
 ## 5. Outputs
 
-| File | Written by |
-|---|---|
-| `data/parquet/analytics_company_financials.parquet` | `Build_analytics.ipynb` — one row per registered entity; this is what PowerBI connects to |
-| `data/benchmark_results.json` | `Benchmark_engines.ipynb` — configuration, timings, agreement checks |
-| `data/analytics_build_summary.json` | `Build_analytics.ipynb` — input profile, verification, scalability |
-| `data/profile_*.json` | `Analyse_data.ipynb` — field-level profile of both sources |
-| `data/diagnos*.json`, `data/w4_industry_municipality.json` | the diagnostic notebooks and workload W4 |
+| File                                                       | Written by                                                                                |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `data/parquet/ssb_population_2026.parquet`                 | `Import_ssb_population.ipynb` — municipality population dimension from SSB table 06913    |
+| `data/parquet/analytics_company_financials.parquet`        | `Build_analytics.ipynb` — one row per registered entity; this is what PowerBI connects to |
+| `data/geography_analysis.json`                             | `Analyse_geography.ipynb` — persisted population-band findings                            |
+| `data/benchmark_results.json`                              | `Benchmark_engines.ipynb` — configuration, timings, agreement checks                      |
+| `data/analytics_build_summary.json`                        | `Build_analytics.ipynb` — input profile, verification, scalability                        |
+| `data/profile_*.json`                                      | `Analyse_data.ipynb` — field-level profile of both sources                                |
+| `data/diagnos*.json`, `data/w4_industry_municipality.json` | the diagnostic notebooks and workload W4                                                  |
 
 In PowerBI: Get Data → Parquet → `data/parquet/analytics_company_financials.parquet`.
 Ratios must be computed from summed components
@@ -170,12 +177,12 @@ editing that file and rebuilding:
 docker compose up -d --build jupyter
 ```
 
-| Setting | Value |
-|---|---|
-| `spark.driver.memory` | `8g` |
-| `spark.master` | `local[4]` |
-| `spark.jars.packages` | `mongo-spark-connector_2.13:11.1.0` |
-| `spark.sql.session.timeZone` | `UTC` |
+| Setting                      | Value                               |
+| ---------------------------- | ----------------------------------- |
+| `spark.driver.memory`        | `6g`                                |
+| `spark.master`               | `local[4]`                          |
+| `spark.jars.packages`        | `mongo-spark-connector_2.13:11.1.0` |
+| `spark.sql.session.timeZone` | `UTC`                               |
 
 The image adds only `pymongo` and `requests` to
 `quay.io/jupyter/pyspark-notebook`, which already provides PySpark, pandas,
