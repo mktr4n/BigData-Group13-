@@ -1,10 +1,13 @@
 {
-  "built_at": "2026-09-11T11:00:18.418719+00:00",
+  "built_at": "2026-09-11T21:33:44.155499+00:00",
   "spark_version": "4.2.0",
   "spark_master": "local[4]",
   "driver_max_heap_gb": 8.0,
   "default_parallelism": 4,
   "cpu_cores": 12,
+  "ssb_population_file": "/home/jovyan/data/parquet/ssb_population_2026.parquet",
+  "ssb_source_table": "06913",
+  "ssb_population_retrieved_at": "2026-09-11T21:17:07.806375+00:00",
   "date_parse_check": {
     "stiftelsesdato": {
       "non_null": 675310,
@@ -28,6 +31,14 @@
     "distinct_organisasjonsnummer": 1171373,
     "source_filings": 445359,
     "rows_filed": 445359
+  },
+  "ssb_population_coverage": {
+    "matched_rows": 1108324,
+    "unmatched_rows": 63049,
+    "matched_pct": 94.61751295274861,
+    "unmatched_pct": 5.382487047251388,
+    "unmatched_no_kommunenummer": 62388,
+    "unmatched_kommunenummer_not_in_ssb": 661
   },
   "fetch_status_counts": {
     "no_data": 724931,
@@ -216,8 +227,8 @@
   },
   "output": {
     "file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
-    "bytes": 95615601,
-    "columns": 61
+    "bytes": 97095414,
+    "columns": 63
   },
   "verification": {
     "rows_on_disk": 1171373,
@@ -368,72 +379,72 @@
     "seconds": {
       "local[1]": {
         "times": [
-          19.116676637997443,
-          16.033362950998708,
-          17.187834309996106
+          15.866461771999639,
+          17.370280446000834,
+          16.02243219400043
         ],
         "error": null
       },
       "local[2]": {
         "times": [
-          12.729120125994086,
-          12.400199073003023,
-          12.947974740993232
+          12.96611540199956,
+          12.414436879000277,
+          12.365290042000197
         ],
         "error": null
       },
       "local[4]": {
         "times": [
-          12.190592558996286,
-          11.58508349499607,
-          11.527570957005082
+          12.581029933000536,
+          11.562161716000446,
+          11.045424223999362
         ],
         "error": null
       },
       "local[8]": {
         "times": [
-          13.500576409998757,
-          11.960099472002184,
-          11.663388692002627
+          10.848275045999799,
+          11.105475800000022,
+          11.310934095999983
         ],
         "error": null
       },
       "local[12]": {
         "times": [
-          12.044853897001303,
-          10.491340658998524,
-          10.471849262001342
+          12.269524493999597,
+          10.626859037999566,
+          11.275446153000303
         ],
         "error": null
       }
     },
     "derived": {
       "local[1]": {
-        "median_s": 17.187834309996106,
+        "median_s": 16.02243219400043,
         "speedup": 1.0,
         "efficiency": 1.0
       },
       "local[2]": {
-        "median_s": 12.729120125994086,
-        "speedup": 1.350276699400212,
-        "efficiency": 0.675138349700106
+        "median_s": 12.414436879000277,
+        "speedup": 1.290628995109982,
+        "efficiency": 0.645314497554991
       },
       "local[4]": {
-        "median_s": 11.58508349499607,
-        "speedup": 1.4836176465555924,
-        "efficiency": 0.3709044116388981
+        "median_s": 11.562161716000446,
+        "speedup": 1.3857644087288263,
+        "efficiency": 0.3464411021822066
       },
       "local[8]": {
-        "median_s": 11.960099472002184,
-        "speedup": 1.4370979397146075,
-        "efficiency": 0.17963724246432594
+        "median_s": 11.105475800000022,
+        "speedup": 1.4427506288384688,
+        "efficiency": 0.1803438286048086
       },
       "local[12]": {
-        "median_s": 10.491340658998524,
-        "speedup": 1.6382876954103986,
-        "efficiency": 0.1365239746175332
+        "median_s": 11.275446153000303,
+        "speedup": 1.421002058507192,
+        "efficiency": 0.11841683820893267
       }
     },
-    "fastest_setting": "local[12]"
+    "fastest_setting": "local[8]"
   }
 }

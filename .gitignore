@@ -7,6 +7,7 @@ data/ndjson/
 data/parquet/*
 __pycache__/
 *.pyc
+CS4010_Data_Management_Course_2026.pdf
 
 # Unattended pipeline transcript - a run log, not a result.
 data/pipeline_run.log

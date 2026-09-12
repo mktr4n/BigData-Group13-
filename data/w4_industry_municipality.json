@@ -524,11 +524,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "0301",
-  "antall": 12148,
-  "sumDriftsinntekter": 5010949917.0,
-  "sumDriftsresultat": 1270684416.0,
-  "sumEgenkapital": 517720633327.0,
-  "sumGjeld": 103932984869.0
+  "antall": 12162,
+  "sumDriftsinntekter": 5011240012.0,
+  "sumDriftsresultat": 1270396790.0,
+  "sumEgenkapital": 527816131739.0,
+  "sumGjeld": 105004536598.0
  },
  {
   "naeringskode": "00.000",
@@ -542,11 +542,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "1103",
-  "antall": 1691,
+  "antall": 1694,
   "sumDriftsinntekter": 563813274.0,
   "sumDriftsresultat": 27542335.0,
-  "sumEgenkapital": 57037055472.0,
-  "sumGjeld": 15169518021.0
+  "sumEgenkapital": 57037120972.0,
+  "sumGjeld": 15169559521.0
  },
  {
   "naeringskode": "00.000",
@@ -560,10 +560,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "1108",
-  "antall": 756,
+  "antall": 757,
   "sumDriftsinntekter": 90055312.0,
   "sumDriftsresultat": 67514123.0,
-  "sumEgenkapital": 8245215075.0,
+  "sumEgenkapital": 8245245075.0,
   "sumGjeld": 3978263915.0
  },
  {
@@ -605,10 +605,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "1120",
-  "antall": 197,
+  "antall": 198,
   "sumDriftsinntekter": 32923718.0,
   "sumDriftsresultat": 8667507.0,
-  "sumEgenkapital": 1029670883.0,
+  "sumEgenkapital": 1029700883.0,
   "sumGjeld": 248209289.0
  },
  {
@@ -623,10 +623,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "1122",
-  "antall": 90,
+  "antall": 91,
   "sumDriftsinntekter": 2285870.0,
   "sumDriftsresultat": -1262782.0,
-  "sumEgenkapital": 297029232.0,
+  "sumEgenkapital": 297072732.0,
   "sumGjeld": 52515085.0
  },
  {
@@ -740,11 +740,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "1505",
-  "antall": 154,
-  "sumDriftsinntekter": 7550014.0,
-  "sumDriftsresultat": -974676.0,
-  "sumEgenkapital": 3053048645.0,
-  "sumGjeld": 311666112.0
+  "antall": 155,
+  "sumDriftsinntekter": 7613014.0,
+  "sumDriftsresultat": -1013463.0,
+  "sumEgenkapital": 3053038380.0,
+  "sumGjeld": 312066023.0
  },
  {
   "naeringskode": "00.000",
@@ -794,11 +794,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "1516",
-  "antall": 76,
+  "antall": 77,
   "sumDriftsinntekter": 14645581.0,
-  "sumDriftsresultat": 327340.0,
-  "sumEgenkapital": 1024827213.0,
-  "sumGjeld": 124329078.0
+  "sumDriftsresultat": 324437.0,
+  "sumEgenkapital": 1024873134.0,
+  "sumGjeld": 125346016.0
  },
  {
   "naeringskode": "00.000",
@@ -1208,11 +1208,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "1851",
-  "antall": 6,
+  "antall": 7,
   "sumDriftsinntekter": 0.0,
-  "sumDriftsresultat": -990039.0,
-  "sumEgenkapital": 618408074.0,
-  "sumGjeld": 78374437.0
+  "sumDriftsresultat": -1006891.0,
+  "sumEgenkapital": 683987899.0,
+  "sumGjeld": 82373756.0
  },
  {
   "naeringskode": "00.000",
@@ -1370,10 +1370,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "3107",
-  "antall": 553,
+  "antall": 554,
   "sumDriftsinntekter": 211735986.0,
   "sumDriftsresultat": 38061118.0,
-  "sumEgenkapital": 3530171506.0,
+  "sumEgenkapital": 3530201506.0,
   "sumGjeld": 788893482.0
  },
  {
@@ -1451,20 +1451,20 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "3201",
-  "antall": 2254,
+  "antall": 2256,
   "sumDriftsinntekter": 745884487.0,
   "sumDriftsresultat": 85835815.0,
-  "sumEgenkapital": 78229611790.0,
-  "sumGjeld": 29232100473.0
+  "sumEgenkapital": 78229735290.0,
+  "sumGjeld": 29232480503.0
  },
  {
   "naeringskode": "00.000",
   "kommunenummer": "3203",
-  "antall": 1202,
-  "sumDriftsinntekter": 273662581.0,
-  "sumDriftsresultat": 1030917000.0,
-  "sumEgenkapital": 15470069027.0,
-  "sumGjeld": 3766417271.0
+  "antall": 1205,
+  "sumDriftsinntekter": 274450509.0,
+  "sumDriftsresultat": 1031667256.0,
+  "sumEgenkapital": 15470779809.0,
+  "sumGjeld": 3767698171.0
  },
  {
   "naeringskode": "00.000",
@@ -1478,11 +1478,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "3207",
-  "antall": 591,
-  "sumDriftsinntekter": 64801902.0,
-  "sumDriftsresultat": 10960563.0,
-  "sumEgenkapital": 2249013406.0,
-  "sumGjeld": 448401915.0
+  "antall": 592,
+  "sumDriftsinntekter": 65166848.0,
+  "sumDriftsresultat": 10837647.0,
+  "sumEgenkapital": 2280869970.0,
+  "sumGjeld": 453250999.0
  },
  {
   "naeringskode": "00.000",
@@ -1640,28 +1640,28 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "3301",
-  "antall": 783,
+  "antall": 784,
   "sumDriftsinntekter": 96715360.0,
-  "sumDriftsresultat": -29113902.0,
-  "sumEgenkapital": 5724623279.0,
-  "sumGjeld": 5333189566.0
+  "sumDriftsresultat": -29115230.0,
+  "sumEgenkapital": 5724808381.0,
+  "sumGjeld": 5333195136.0
  },
  {
   "naeringskode": "00.000",
   "kommunenummer": "3303",
-  "antall": 160,
+  "antall": 161,
   "sumDriftsinntekter": 50472440.0,
   "sumDriftsresultat": -324543944.0,
-  "sumEgenkapital": 1776218116.0,
+  "sumEgenkapital": 1776248116.0,
   "sumGjeld": 3744599095.0
  },
  {
   "naeringskode": "00.000",
   "kommunenummer": "3305",
-  "antall": 167,
+  "antall": 168,
   "sumDriftsinntekter": 19021547.0,
   "sumDriftsresultat": -210048.0,
-  "sumEgenkapital": 4630499826.0,
+  "sumEgenkapital": 4630529826.0,
   "sumGjeld": 255969179.0
  },
  {
@@ -1919,11 +1919,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "3420",
-  "antall": 93,
+  "antall": 94,
   "sumDriftsinntekter": 13909100.0,
-  "sumDriftsresultat": 2062847.0,
-  "sumEgenkapital": 332624943.0,
-  "sumGjeld": 92286664.0
+  "sumDriftsresultat": 1955152.0,
+  "sumEgenkapital": 332738802.0,
+  "sumGjeld": 93786664.0
  },
  {
   "naeringskode": "00.000",
@@ -2117,11 +2117,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "3442",
-  "antall": 79,
+  "antall": 80,
   "sumDriftsinntekter": 4455695.0,
-  "sumDriftsresultat": 676301.0,
-  "sumEgenkapital": 274984440.0,
-  "sumGjeld": 56024157.0
+  "sumDriftsresultat": 672435.0,
+  "sumEgenkapital": 275040764.0,
+  "sumGjeld": 56048373.0
  },
  {
   "naeringskode": "00.000",
@@ -2234,11 +2234,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "3905",
-  "antall": 502,
+  "antall": 504,
   "sumDriftsinntekter": 37027021.0,
-  "sumDriftsresultat": -18629486.0,
-  "sumEgenkapital": 3081007825.0,
-  "sumGjeld": 1318806915.0
+  "sumDriftsresultat": -18669013.0,
+  "sumEgenkapital": 3081118723.0,
+  "sumGjeld": 1318814115.0
  },
  {
   "naeringskode": "00.000",
@@ -2405,10 +2405,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4034",
-  "antall": 6,
+  "antall": 7,
   "sumDriftsinntekter": 0.0,
   "sumDriftsresultat": -73014.0,
-  "sumEgenkapital": 3100341.0,
+  "sumEgenkapital": 3124771.0,
   "sumGjeld": 1071681.0
  },
  {
@@ -2441,29 +2441,29 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4203",
-  "antall": 260,
+  "antall": 262,
   "sumDriftsinntekter": 113785601.0,
-  "sumDriftsresultat": -7951274.0,
-  "sumEgenkapital": 1452470411.0,
-  "sumGjeld": 628984594.0
+  "sumDriftsresultat": -8167929.0,
+  "sumEgenkapital": 1455626102.0,
+  "sumGjeld": 629846042.0
  },
  {
   "naeringskode": "00.000",
   "kommunenummer": "4204",
-  "antall": 972,
+  "antall": 974,
   "sumDriftsinntekter": 203756088.0,
   "sumDriftsresultat": 33771646.0,
-  "sumEgenkapital": 10878208912.0,
-  "sumGjeld": 2262881925.0
+  "sumEgenkapital": 10878268913.0,
+  "sumGjeld": 2262901925.0
  },
  {
   "naeringskode": "00.000",
   "kommunenummer": "4205",
-  "antall": 154,
-  "sumDriftsinntekter": 36756860.0,
-  "sumDriftsresultat": 2140921.0,
-  "sumEgenkapital": 374904359.0,
-  "sumGjeld": 209315968.0
+  "antall": 155,
+  "sumDriftsinntekter": 36956860.0,
+  "sumDriftsresultat": 2328752.0,
+  "sumEgenkapital": 375613180.0,
+  "sumGjeld": 209347474.0
  },
  {
   "naeringskode": "00.000",
@@ -2477,10 +2477,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4207",
-  "antall": 50,
+  "antall": 51,
   "sumDriftsinntekter": 1784862.0,
   "sumDriftsresultat": -239541.0,
-  "sumEgenkapital": 254887253.0,
+  "sumEgenkapital": 254917253.0,
   "sumGjeld": 24963904.0
  },
  {
@@ -2648,11 +2648,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4601",
-  "antall": 2987,
+  "antall": 2990,
   "sumDriftsinntekter": 8321025471.0,
-  "sumDriftsresultat": -652224996.0,
-  "sumEgenkapital": 531726081616.0,
-  "sumGjeld": 129379321587.0
+  "sumDriftsresultat": -652233513.0,
+  "sumEgenkapital": 531726163399.0,
+  "sumGjeld": 129379328087.0
  },
  {
   "naeringskode": "00.000",
@@ -2765,11 +2765,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4622",
-  "antall": 46,
+  "antall": 47,
   "sumDriftsinntekter": 3697240.0,
-  "sumDriftsresultat": 920177.0,
-  "sumEgenkapital": 104894456.0,
-  "sumGjeld": 42171088.0
+  "sumDriftsresultat": 918823.0,
+  "sumEgenkapital": 104916602.0,
+  "sumGjeld": 42172442.0
  },
  {
   "naeringskode": "00.000",
@@ -2783,11 +2783,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4624",
-  "antall": 251,
+  "antall": 253,
   "sumDriftsinntekter": 21659350.0,
   "sumDriftsresultat": 497868.0,
-  "sumEgenkapital": 1921813630.0,
-  "sumGjeld": 387030430.0
+  "sumEgenkapital": 1921861346.0,
+  "sumGjeld": 387036214.0
  },
  {
   "naeringskode": "00.000",
@@ -2810,11 +2810,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4627",
-  "antall": 207,
+  "antall": 209,
   "sumDriftsinntekter": 36775173.0,
-  "sumDriftsresultat": 23707068.0,
-  "sumEgenkapital": 528361011.0,
-  "sumGjeld": 144771901.0
+  "sumDriftsresultat": 23705656.0,
+  "sumEgenkapital": 528406600.0,
+  "sumGjeld": 144769601.0
  },
  {
   "naeringskode": "00.000",
@@ -2846,10 +2846,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "4631",
-  "antall": 161,
+  "antall": 162,
   "sumDriftsinntekter": 12851172.0,
   "sumDriftsresultat": -5089797.0,
-  "sumEgenkapital": 490309015.0,
+  "sumEgenkapital": 490339015.0,
   "sumGjeld": 84637027.0
  },
  {
@@ -3035,11 +3035,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "5001",
-  "antall": 2138,
+  "antall": 2141,
   "sumDriftsinntekter": 632009128.0,
-  "sumDriftsresultat": 111496760.0,
-  "sumEgenkapital": 20191258159.0,
-  "sumGjeld": 5710268180.0
+  "sumDriftsresultat": 110152039.0,
+  "sumEgenkapital": 20191547349.0,
+  "sumGjeld": 5711517531.0
  },
  {
   "naeringskode": "00.000",
@@ -3134,10 +3134,10 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "5029",
-  "antall": 47,
-  "sumDriftsinntekter": 649459.0,
-  "sumDriftsresultat": -1369655.0,
-  "sumEgenkapital": 36104579.0,
+  "antall": 48,
+  "sumDriftsinntekter": 650669.0,
+  "sumDriftsresultat": -1375954.0,
+  "sumEgenkapital": 36131033.0,
   "sumGjeld": 17652991.0
  },
  {
@@ -3179,11 +3179,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "5035",
-  "antall": 184,
+  "antall": 185,
   "sumDriftsinntekter": 7975127.0,
   "sumDriftsresultat": -10879545.0,
-  "sumEgenkapital": 1013233611.0,
-  "sumGjeld": 326346331.0
+  "sumEgenkapital": 1013257111.0,
+  "sumGjeld": 326352831.0
  },
  {
   "naeringskode": "00.000",
@@ -3377,11 +3377,11 @@
  {
   "naeringskode": "00.000",
   "kommunenummer": "5501",
-  "antall": 540,
+  "antall": 541,
   "sumDriftsinntekter": 63479275.0,
-  "sumDriftsresultat": -36987623.0,
-  "sumEgenkapital": 6701181860.0,
-  "sumGjeld": 1752788101.0
+  "sumDriftsresultat": -36989190.0,
+  "sumEgenkapital": 6701203792.0,
+  "sumGjeld": 1752789669.0
  },
  {
   "naeringskode": "00.000",
@@ -17921,10 +17921,10 @@
  {
   "naeringskode": "03.110",
   "kommunenummer": "5058",
-  "antall": 16,
+  "antall": 17,
   "sumDriftsinntekter": 126327785.0,
   "sumDriftsresultat": 35232996.0,
-  "sumEgenkapital": 255082374.0,
+  "sumEgenkapital": 255105549.0,
   "sumGjeld": 311487309.0
  },
  {
@@ -28730,11 +28730,11 @@
  {
   "naeringskode": "10.203",
   "kommunenummer": "1857",
-  "antall": 5,
+  "antall": 6,
   "sumDriftsinntekter": 299691449.0,
-  "sumDriftsresultat": 38904748.0,
-  "sumEgenkapital": 437168904.0,
-  "sumGjeld": 491263390.0
+  "sumDriftsresultat": 38902873.0,
+  "sumEgenkapital": 437190609.0,
+  "sumGjeld": 491273390.0
  },
  {
   "naeringskode": "10.203",
@@ -33748,6 +33748,15 @@
   "sumDriftsresultat": 733188.0,
   "sumEgenkapital": 4075869.0,
   "sumGjeld": 8204019.0
+ },
+ {
+  "naeringskode": "10.850",
+  "kommunenummer": "4020",
+  "antall": 1,
+  "sumDriftsinntekter": 43500.0,
+  "sumDriftsresultat": -158737.0,
+  "sumEgenkapital": -136800.0,
+  "sumGjeld": 164623.0
  },
  {
   "naeringskode": "10.850",
@@ -91531,6 +91540,15 @@
  },
  {
   "naeringskode": "39.000",
+  "kommunenummer": "3909",
+  "antall": 1,
+  "sumDriftsinntekter": 0.0,
+  "sumDriftsresultat": -1059569.0,
+  "sumEgenkapital": -795747.0,
+  "sumGjeld": 1142927.0
+ },
+ {
+  "naeringskode": "39.000",
   "kommunenummer": "4204",
   "antall": 1,
   "sumDriftsinntekter": 15000.0,
@@ -92045,10 +92063,10 @@
  {
   "naeringskode": "41.000",
   "kommunenummer": "1804",
-  "antall": 91,
+  "antall": 92,
   "sumDriftsinntekter": 1278630362.0,
-  "sumDriftsresultat": 87463847.0,
-  "sumEgenkapital": 647109926.0,
+  "sumDriftsresultat": 87447714.0,
+  "sumEgenkapital": 647133793.0,
   "sumGjeld": 596918049.0
  },
  {
@@ -113519,10 +113537,10 @@
  {
   "naeringskode": "43.320",
   "kommunenummer": "3207",
-  "antall": 42,
+  "antall": 43,
   "sumDriftsinntekter": 333050308.0,
   "sumDriftsresultat": 9141979.0,
-  "sumEgenkapital": 45970808.0,
+  "sumEgenkapital": 46000808.0,
   "sumGjeld": 83649832.0
  },
  {
@@ -114230,11 +114248,11 @@
  {
   "naeringskode": "43.320",
   "kommunenummer": "3907",
-  "antall": 43,
-  "sumDriftsinntekter": 298766118.0,
-  "sumDriftsresultat": 4127517.0,
-  "sumEgenkapital": 57228851.0,
-  "sumGjeld": 79705640.0
+  "antall": 44,
+  "sumDriftsinntekter": 300430118.0,
+  "sumDriftsresultat": 4241281.0,
+  "sumEgenkapital": 57330324.0,
+  "sumGjeld": 80111647.0
  },
  {
   "naeringskode": "43.320",
@@ -116201,11 +116219,11 @@
  {
   "naeringskode": "43.330",
   "kommunenummer": "4204",
-  "antall": 12,
-  "sumDriftsinntekter": 13622575.0,
-  "sumDriftsresultat": 574932.0,
-  "sumEgenkapital": 2050588.0,
-  "sumGjeld": 7130234.0
+  "antall": 13,
+  "sumDriftsinntekter": 14709110.0,
+  "sumDriftsresultat": 915286.0,
+  "sumEgenkapital": 2515770.0,
+  "sumGjeld": 7690851.0
  },
  {
   "naeringskode": "43.330",
@@ -120053,10 +120071,10 @@
  {
   "naeringskode": "43.410",
   "kommunenummer": "3411",
-  "antall": 9,
+  "antall": 10,
   "sumDriftsinntekter": 85668200.0,
   "sumDriftsresultat": 4567393.0,
-  "sumEgenkapital": 30111090.0,
+  "sumEgenkapital": 30134590.0,
   "sumGjeld": 31053930.0
  },
  {
@@ -140779,6 +140797,15 @@
  },
  {
   "naeringskode": "46.480",
+  "kommunenummer": "3301",
+  "antall": 1,
+  "sumDriftsinntekter": 298056.0,
+  "sumDriftsresultat": 8540.0,
+  "sumEgenkapital": 43161.0,
+  "sumGjeld": 1260974.0
+ },
+ {
+  "naeringskode": "46.480",
   "kommunenummer": "3303",
   "antall": 1,
   "sumDriftsinntekter": 14336945.0,
@@ -146954,10 +146981,10 @@
  {
   "naeringskode": "46.630",
   "kommunenummer": "4631",
-  "antall": 5,
+  "antall": 6,
   "sumDriftsinntekter": 43718898.0,
   "sumDriftsresultat": -1049664.0,
-  "sumEgenkapital": 36493387.0,
+  "sumEgenkapital": 36523387.0,
   "sumGjeld": 9191953.0
  },
  {
@@ -152786,10 +152813,10 @@
  {
   "naeringskode": "46.830",
   "kommunenummer": "3209",
-  "antall": 20,
+  "antall": 21,
   "sumDriftsinntekter": 231509026.0,
   "sumDriftsresultat": -2189343.0,
-  "sumEgenkapital": 253472390.0,
+  "sumEgenkapital": 253502390.0,
   "sumGjeld": 131846468.0
  },
  {
@@ -157727,10 +157754,10 @@
  {
   "naeringskode": "46.900",
   "kommunenummer": "3911",
-  "antall": 7,
+  "antall": 8,
   "sumDriftsinntekter": 43808216.0,
   "sumDriftsresultat": 865905.0,
-  "sumEgenkapital": 29500169.0,
+  "sumEgenkapital": 29530169.0,
   "sumGjeld": 12835279.0
  },
  {
@@ -165053,10 +165080,10 @@
  {
   "naeringskode": "47.270",
   "kommunenummer": "0301",
-  "antall": 123,
+  "antall": 124,
   "sumDriftsinntekter": 3986048365.0,
-  "sumDriftsresultat": 525546812.0,
-  "sumEgenkapital": 647510787.0,
+  "sumDriftsresultat": 525504800.0,
+  "sumEgenkapital": 647513774.0,
   "sumGjeld": 1354930720.0
  },
  {
@@ -169976,11 +170003,11 @@
  {
   "naeringskode": "47.400",
   "kommunenummer": "5501",
-  "antall": 11,
-  "sumDriftsinntekter": 59380451.0,
-  "sumDriftsresultat": 699071.0,
-  "sumEgenkapital": 8154994.0,
-  "sumGjeld": 12212615.0
+  "antall": 12,
+  "sumDriftsinntekter": 66067973.0,
+  "sumDriftsresultat": 1375315.0,
+  "sumEgenkapital": 8776885.0,
+  "sumGjeld": 13974770.0
  },
  {
   "naeringskode": "47.400",
@@ -170102,11 +170129,11 @@
  {
   "naeringskode": "47.510",
   "kommunenummer": "1103",
-  "antall": 12,
-  "sumDriftsinntekter": 45071884.0,
-  "sumDriftsresultat": -5634957.0,
-  "sumEgenkapital": 12332680.0,
-  "sumGjeld": 17055324.0
+  "antall": 13,
+  "sumDriftsinntekter": 45121884.0,
+  "sumDriftsresultat": -5587615.0,
+  "sumEgenkapital": 12369607.0,
+  "sumGjeld": 17066295.0
  },
  {
   "naeringskode": "47.510",
@@ -180740,10 +180767,10 @@
  {
   "naeringskode": "47.631",
   "kommunenummer": "3222",
-  "antall": 8,
+  "antall": 9,
   "sumDriftsinntekter": 38446669.0,
   "sumDriftsresultat": 771900.0,
-  "sumEgenkapital": 16848259.0,
+  "sumEgenkapital": 16878259.0,
   "sumGjeld": 14918776.0
  },
  {
@@ -185240,11 +185267,11 @@
  {
   "naeringskode": "47.710",
   "kommunenummer": "0301",
-  "antall": 523,
-  "sumDriftsinntekter": 19060217521.0,
-  "sumDriftsresultat": 845203249.0,
-  "sumEgenkapital": 3942025571.0,
-  "sumGjeld": 6875985897.0
+  "antall": 524,
+  "sumDriftsinntekter": 19060269950.0,
+  "sumDriftsresultat": 845178230.0,
+  "sumEgenkapital": 3942152862.0,
+  "sumGjeld": 6875992769.0
  },
  {
   "naeringskode": "47.710",
@@ -186032,11 +186059,11 @@
  {
   "naeringskode": "47.710",
   "kommunenummer": "3238",
-  "antall": 4,
+  "antall": 5,
   "sumDriftsinntekter": 1680918.0,
-  "sumDriftsresultat": -629695.0,
-  "sumEgenkapital": -2189207.0,
-  "sumGjeld": 4700123.0
+  "sumDriftsresultat": -641789.0,
+  "sumEgenkapital": -2171324.0,
+  "sumGjeld": 4701518.0
  },
  {
   "naeringskode": "47.710",
@@ -202745,11 +202772,11 @@
  {
   "naeringskode": "47.830",
   "kommunenummer": "3207",
-  "antall": 1,
+  "antall": 2,
   "sumDriftsinntekter": 0.0,
-  "sumDriftsresultat": 0.0,
-  "sumEgenkapital": 301061.0,
-  "sumGjeld": 0.0
+  "sumDriftsresultat": -105985.0,
+  "sumEgenkapital": 225304.0,
+  "sumGjeld": 974977.0
  },
  {
   "naeringskode": "47.830",
@@ -210296,10 +210323,10 @@
  {
   "naeringskode": "49.410",
   "kommunenummer": "4203",
-  "antall": 25,
+  "antall": 26,
   "sumDriftsinntekter": 523747044.0,
   "sumDriftsresultat": 15865310.0,
-  "sumEgenkapital": 232329664.0,
+  "sumEgenkapital": 232359664.0,
   "sumGjeld": 185322353.0
  },
  {
@@ -213428,11 +213455,11 @@
  {
   "naeringskode": "50.201",
   "kommunenummer": "1103",
-  "antall": 41,
+  "antall": 42,
   "sumDriftsinntekter": 4996746007.0,
-  "sumDriftsresultat": 721418394.0,
-  "sumEgenkapital": 3635692928.0,
-  "sumGjeld": 9469128791.0
+  "sumDriftsresultat": 721143329.0,
+  "sumEgenkapital": 3831408202.0,
+  "sumGjeld": 9661999408.0
  },
  {
   "naeringskode": "50.201",
@@ -227216,10 +227243,10 @@
  {
   "naeringskode": "55.200",
   "kommunenummer": "3107",
-  "antall": 4,
+  "antall": 5,
   "sumDriftsinntekter": 8852994.0,
-  "sumDriftsresultat": 1996618.0,
-  "sumEgenkapital": 1545850.0,
+  "sumDriftsresultat": 1989802.0,
+  "sumEgenkapital": 1575850.0,
   "sumGjeld": 5369910.0
  },
  {
@@ -231653,10 +231680,10 @@
  {
   "naeringskode": "56.110",
   "kommunenummer": "0301",
-  "antall": 1775,
+  "antall": 1776,
   "sumDriftsinntekter": 24715867040.0,
   "sumDriftsresultat": 679335791.0,
-  "sumEgenkapital": 8479270189.0,
+  "sumEgenkapital": 8479300189.0,
   "sumGjeld": 13641365128.0
  },
  {
@@ -231851,11 +231878,11 @@
  {
   "naeringskode": "56.110",
   "kommunenummer": "1505",
-  "antall": 40,
-  "sumDriftsinntekter": 233316984.0,
-  "sumDriftsresultat": 8155040.0,
-  "sumEgenkapital": 23199321.0,
-  "sumGjeld": 62985675.0
+  "antall": 41,
+  "sumDriftsinntekter": 235557809.0,
+  "sumDriftsresultat": 7780611.0,
+  "sumEgenkapital": 22845245.0,
+  "sumGjeld": 63631567.0
  },
  {
   "naeringskode": "56.110",
@@ -232598,11 +232625,11 @@
  {
   "naeringskode": "56.110",
   "kommunenummer": "3216",
-  "antall": 26,
-  "sumDriftsinntekter": 118796725.0,
-  "sumDriftsresultat": 204884.0,
-  "sumEgenkapital": 10057036.0,
-  "sumGjeld": 43187004.0
+  "antall": 27,
+  "sumDriftsinntekter": 121670419.0,
+  "sumDriftsresultat": 611714.0,
+  "sumEgenkapital": 10393297.0,
+  "sumGjeld": 43655137.0
  },
  {
   "naeringskode": "56.110",
@@ -233399,11 +233426,11 @@
  {
   "naeringskode": "56.110",
   "kommunenummer": "4026",
-  "antall": 4,
-  "sumDriftsinntekter": 21600658.0,
-  "sumDriftsresultat": -32815.0,
-  "sumEgenkapital": -360700.0,
-  "sumGjeld": 6382807.0
+  "antall": 5,
+  "sumDriftsinntekter": 22031104.0,
+  "sumDriftsresultat": -59797.0,
+  "sumEgenkapital": -357681.0,
+  "sumGjeld": 6814424.0
  },
  {
   "naeringskode": "56.110",
@@ -233840,11 +233867,11 @@
  {
   "naeringskode": "56.110",
   "kommunenummer": "4627",
-  "antall": 16,
-  "sumDriftsinntekter": 68835860.0,
-  "sumDriftsresultat": -384880.0,
-  "sumEgenkapital": 21501587.0,
-  "sumGjeld": 18148813.0
+  "antall": 17,
+  "sumDriftsinntekter": 68906291.0,
+  "sumDriftsresultat": -350410.0,
+  "sumEgenkapital": 21553404.0,
+  "sumGjeld": 18189166.0
  },
  {
   "naeringskode": "56.110",
@@ -249869,11 +249896,11 @@
  {
   "naeringskode": "62.100",
   "kommunenummer": "0301",
-  "antall": 2574,
+  "antall": 2575,
   "sumDriftsinntekter": 40533823894.0,
-  "sumDriftsresultat": -626793551.0,
-  "sumEgenkapital": 74026725602.0,
-  "sumGjeld": 43543790068.0
+  "sumDriftsresultat": -626877193.0,
+  "sumEgenkapital": 74026671750.0,
+  "sumGjeld": 43543873721.0
  },
  {
   "naeringskode": "62.100",
@@ -250400,10 +250427,10 @@
  {
   "naeringskode": "62.100",
   "kommunenummer": "1841",
-  "antall": 3,
+  "antall": 4,
   "sumDriftsinntekter": 0.0,
-  "sumDriftsresultat": -58817.0,
-  "sumEgenkapital": 7577944.0,
+  "sumDriftsresultat": -67517.0,
+  "sumEgenkapital": 7599244.0,
   "sumGjeld": 289.0
  },
  {
@@ -251318,10 +251345,10 @@
  {
   "naeringskode": "62.100",
   "kommunenummer": "3911",
-  "antall": 34,
+  "antall": 35,
   "sumDriftsinntekter": 53506756.0,
-  "sumDriftsresultat": -799446.0,
-  "sumEgenkapital": 127749055.0,
+  "sumDriftsresultat": -815105.0,
+  "sumEgenkapital": 127763396.0,
   "sumGjeld": 36915615.0
  },
  {
@@ -251642,11 +251669,11 @@
  {
   "naeringskode": "62.100",
   "kommunenummer": "4601",
-  "antall": 533,
-  "sumDriftsinntekter": 2701094182.0,
-  "sumDriftsresultat": -28806309.0,
-  "sumEgenkapital": 3750095780.0,
-  "sumGjeld": 3488916710.0
+  "antall": 535,
+  "sumDriftsinntekter": 2701433885.0,
+  "sumDriftsresultat": -29217456.0,
+  "sumEgenkapital": 3749744633.0,
+  "sumGjeld": 3489440037.0
  },
  {
   "naeringskode": "62.100",
@@ -252209,11 +252236,11 @@
  {
   "naeringskode": "62.100",
   "kommunenummer": "5501",
-  "antall": 94,
-  "sumDriftsinntekter": 240593313.0,
-  "sumDriftsresultat": -22815651.0,
-  "sumEgenkapital": 229935266.0,
-  "sumGjeld": 163683183.0
+  "antall": 95,
+  "sumDriftsinntekter": 240609813.0,
+  "sumDriftsresultat": -22815897.0,
+  "sumEgenkapital": 229961373.0,
+  "sumGjeld": 163781300.0
  },
  {
   "naeringskode": "62.100",
@@ -253109,10 +253136,10 @@
  {
   "naeringskode": "62.200",
   "kommunenummer": "3201",
-  "antall": 434,
+  "antall": 435,
   "sumDriftsinntekter": 15525323462.0,
   "sumDriftsresultat": 32373664.0,
-  "sumEgenkapital": 16793587564.0,
+  "sumEgenkapital": 16793563348.0,
   "sumGjeld": 13468244613.0
  },
  {
@@ -253136,10 +253163,10 @@
  {
   "naeringskode": "62.200",
   "kommunenummer": "3207",
-  "antall": 144,
+  "antall": 145,
   "sumDriftsinntekter": 411182180.0,
-  "sumDriftsresultat": 28524455.0,
-  "sumEgenkapital": 568431064.0,
+  "sumDriftsresultat": 28523120.0,
+  "sumEgenkapital": 568453229.0,
   "sumGjeld": 141429844.0
  },
  {
@@ -253982,10 +254009,10 @@
  {
   "naeringskode": "62.200",
   "kommunenummer": "4205",
-  "antall": 13,
+  "antall": 14,
   "sumDriftsinntekter": 69343964.0,
   "sumDriftsresultat": 7264800.0,
-  "sumEgenkapital": 7892265.0,
+  "sumEgenkapital": 7922265.0,
   "sumGjeld": 28459716.0
  },
  {
@@ -261947,10 +261974,10 @@
  {
   "naeringskode": "68.110",
   "kommunenummer": "1103",
-  "antall": 316,
+  "antall": 317,
   "sumDriftsinntekter": 549918809.0,
   "sumDriftsresultat": 36090578.0,
-  "sumEgenkapital": 11816151018.0,
+  "sumEgenkapital": 11816181018.0,
   "sumGjeld": 6366509147.0
  },
  {
@@ -263621,11 +263648,11 @@
  {
   "naeringskode": "68.110",
   "kommunenummer": "3909",
-  "antall": 136,
-  "sumDriftsinntekter": 75006874.0,
-  "sumDriftsresultat": -43241714.0,
-  "sumEgenkapital": 1080410792.0,
-  "sumGjeld": 1055684035.0
+  "antall": 137,
+  "sumDriftsinntekter": 75117773.0,
+  "sumDriftsresultat": -45448557.0,
+  "sumEgenkapital": 1077974477.0,
+  "sumGjeld": 1063353902.0
  },
  {
   "naeringskode": "68.110",
@@ -265178,11 +265205,11 @@
  {
   "naeringskode": "68.120",
   "kommunenummer": "1149",
-  "antall": 94,
+  "antall": 95,
   "sumDriftsinntekter": 194758820.0,
-  "sumDriftsresultat": -6339194.0,
-  "sumEgenkapital": 359051702.0,
-  "sumGjeld": 1108697757.0
+  "sumDriftsresultat": -6355670.0,
+  "sumEgenkapital": 359068851.0,
+  "sumGjeld": 1121233834.0
  },
  {
   "naeringskode": "68.120",
@@ -265601,10 +265628,10 @@
  {
   "naeringskode": "68.120",
   "kommunenummer": "1840",
-  "antall": 5,
+  "antall": 6,
   "sumDriftsinntekter": 1594799.0,
   "sumDriftsresultat": 1139999.0,
-  "sumEgenkapital": 3794630.0,
+  "sumEgenkapital": 3824630.0,
   "sumGjeld": 19334419.0
  },
  {
@@ -265880,11 +265907,11 @@
  {
   "naeringskode": "68.120",
   "kommunenummer": "3212",
-  "antall": 38,
-  "sumDriftsinntekter": 33744216.0,
-  "sumDriftsresultat": -22381173.0,
-  "sumEgenkapital": 233786949.0,
-  "sumGjeld": 192726146.0
+  "antall": 39,
+  "sumDriftsinntekter": 33836791.0,
+  "sumDriftsresultat": -22339244.0,
+  "sumEgenkapital": 233844584.0,
+  "sumGjeld": 192735106.0
  },
  {
   "naeringskode": "68.120",
@@ -267383,10 +267410,10 @@
  {
   "naeringskode": "68.120",
   "kommunenummer": "5001",
-  "antall": 550,
+  "antall": 551,
   "sumDriftsinntekter": 4247805314.0,
   "sumDriftsresultat": 400798570.0,
-  "sumEgenkapital": 17445649307.0,
+  "sumEgenkapital": 17445679307.0,
   "sumGjeld": 23892412619.0
  },
  {
@@ -267932,11 +267959,11 @@
  {
   "naeringskode": "68.200",
   "kommunenummer": "0301",
-  "antall": 11346,
-  "sumDriftsinntekter": 91484619109.0,
-  "sumDriftsresultat": 43483106511.0,
-  "sumEgenkapital": 908294195382.0,
-  "sumGjeld": 868141020041.0
+  "antall": 11347,
+  "sumDriftsinntekter": 91484671224.0,
+  "sumDriftsresultat": 43483129269.0,
+  "sumEgenkapital": 908295213133.0,
+  "sumGjeld": 868141880078.0
  },
  {
   "naeringskode": "68.200",
@@ -267968,11 +267995,11 @@
  {
   "naeringskode": "68.200",
   "kommunenummer": "1108",
-  "antall": 819,
-  "sumDriftsinntekter": 1654264311.0,
-  "sumDriftsresultat": 717223971.0,
-  "sumEgenkapital": 8756499098.0,
-  "sumGjeld": 11287927124.0
+  "antall": 820,
+  "sumDriftsinntekter": 1654898808.0,
+  "sumDriftsresultat": 717858279.0,
+  "sumEgenkapital": 8756993909.0,
+  "sumGjeld": 11341685548.0
  },
  {
   "naeringskode": "68.200",
@@ -268886,11 +268913,11 @@
  {
   "naeringskode": "68.200",
   "kommunenummer": "3203",
-  "antall": 922,
+  "antall": 923,
   "sumDriftsinntekter": 2468079244.0,
-  "sumDriftsresultat": 969565357.0,
-  "sumEgenkapital": 23761861094.0,
-  "sumGjeld": 22012897596.0
+  "sumDriftsresultat": 969562357.0,
+  "sumEgenkapital": 23761881594.0,
+  "sumGjeld": 22012904096.0
  },
  {
   "naeringskode": "68.200",
@@ -270812,11 +270839,11 @@
  {
   "naeringskode": "68.200",
   "kommunenummer": "5503",
-  "antall": 328,
-  "sumDriftsinntekter": 678322613.0,
-  "sumDriftsresultat": 257301763.0,
-  "sumEgenkapital": 4178850264.0,
-  "sumGjeld": 5088521329.0
+  "antall": 329,
+  "sumDriftsinntekter": 686915582.0,
+  "sumDriftsresultat": 256143847.0,
+  "sumEgenkapital": 4199827277.0,
+  "sumGjeld": 5114295634.0
  },
  {
   "naeringskode": "68.200",
@@ -272153,11 +272180,11 @@
  {
   "naeringskode": "68.320",
   "kommunenummer": "0301",
-  "antall": 716,
-  "sumDriftsinntekter": 7190784815.0,
-  "sumDriftsresultat": 698330138.0,
-  "sumEgenkapital": 41606286113.0,
-  "sumGjeld": 36534284877.0
+  "antall": 717,
+  "sumDriftsinntekter": 7190791713.0,
+  "sumDriftsresultat": 698337037.0,
+  "sumEgenkapital": 41606331493.0,
+  "sumGjeld": 36534286394.0
  },
  {
   "naeringskode": "68.320",
@@ -279713,11 +279740,11 @@
  {
   "naeringskode": "70.200",
   "kommunenummer": "0301",
-  "antall": 4674,
+  "antall": 4676,
   "sumDriftsinntekter": 17565187923.0,
-  "sumDriftsresultat": 1443008239.0,
-  "sumEgenkapital": 80669998237.0,
-  "sumGjeld": 29989252308.0
+  "sumDriftsresultat": 1442140239.0,
+  "sumEgenkapital": 80670051737.0,
+  "sumGjeld": 29989418308.0
  },
  {
   "naeringskode": "70.200",
@@ -280604,19 +280631,19 @@
  {
   "naeringskode": "70.200",
   "kommunenummer": "3203",
-  "antall": 573,
+  "antall": 574,
   "sumDriftsinntekter": 677032017.0,
-  "sumDriftsresultat": 57367963.0,
-  "sumEgenkapital": 2015891052.0,
+  "sumDriftsresultat": 57359952.0,
+  "sumEgenkapital": 2015906555.0,
   "sumGjeld": 754138503.0
  },
  {
   "naeringskode": "70.200",
   "kommunenummer": "3205",
-  "antall": 211,
+  "antall": 212,
   "sumDriftsinntekter": 303027071.0,
   "sumDriftsresultat": 86827382.0,
-  "sumEgenkapital": 941072268.0,
+  "sumEgenkapital": 941095768.0,
   "sumGjeld": 480731456.0
  },
  {
@@ -280667,10 +280694,10 @@
  {
   "naeringskode": "70.200",
   "kommunenummer": "3218",
-  "antall": 50,
+  "antall": 51,
   "sumDriftsinntekter": 59422751.0,
   "sumDriftsresultat": 4582719.0,
-  "sumEgenkapital": 116934956.0,
+  "sumEgenkapital": 116964956.0,
   "sumGjeld": 46090876.0
  },
  {
@@ -283241,11 +283268,11 @@
  {
   "naeringskode": "71.110",
   "kommunenummer": "3203",
-  "antall": 28,
+  "antall": 29,
   "sumDriftsinntekter": 56830132.0,
-  "sumDriftsresultat": 6807265.0,
-  "sumEgenkapital": 38435454.0,
-  "sumGjeld": 27971400.0
+  "sumDriftsresultat": 6799070.0,
+  "sumEgenkapital": 38450759.0,
+  "sumGjeld": 28051400.0
  },
  {
   "naeringskode": "71.110",
@@ -284438,11 +284465,11 @@
  {
   "naeringskode": "71.121",
   "kommunenummer": "0301",
-  "antall": 526,
-  "sumDriftsinntekter": 22283332331.0,
-  "sumDriftsresultat": 1318690197.0,
-  "sumEgenkapital": 6972187936.0,
-  "sumGjeld": 10912791640.0
+  "antall": 527,
+  "sumDriftsinntekter": 22283689084.0,
+  "sumDriftsresultat": 1319046950.0,
+  "sumEgenkapital": 6972496204.0,
+  "sumGjeld": 10912959313.0
  },
  {
   "naeringskode": "71.121",
@@ -285104,20 +285131,20 @@
  {
   "naeringskode": "71.121",
   "kommunenummer": "3105",
-  "antall": 51,
-  "sumDriftsinntekter": 349835546.0,
-  "sumDriftsresultat": 17044336.0,
-  "sumEgenkapital": 150098836.0,
-  "sumGjeld": 151992577.0
+  "antall": 52,
+  "sumDriftsinntekter": 349849196.0,
+  "sumDriftsresultat": 17032710.0,
+  "sumEgenkapital": 150110587.0,
+  "sumGjeld": 151999167.0
  },
  {
   "naeringskode": "71.121",
   "kommunenummer": "3107",
-  "antall": 68,
+  "antall": 69,
   "sumDriftsinntekter": 308351233.0,
-  "sumDriftsresultat": 25531245.0,
-  "sumEgenkapital": 74283898.0,
-  "sumGjeld": 93672128.0
+  "sumDriftsresultat": 25530675.0,
+  "sumEgenkapital": 75001699.0,
+  "sumGjeld": 94905428.0
  },
  {
   "naeringskode": "71.121",
@@ -288533,11 +288560,11 @@
  {
   "naeringskode": "71.129",
   "kommunenummer": "0301",
-  "antall": 1229,
+  "antall": 1230,
   "sumDriftsinntekter": 26289514920.0,
-  "sumDriftsresultat": 712548875.0,
-  "sumEgenkapital": 62881907837.0,
-  "sumGjeld": 32121383108.0
+  "sumDriftsresultat": 712424450.0,
+  "sumEgenkapital": 62881813412.0,
+  "sumGjeld": 32121484258.0
  },
  {
   "naeringskode": "71.129",
@@ -301196,10 +301223,10 @@
  {
   "naeringskode": "74.130",
   "kommunenummer": "0301",
-  "antall": 241,
-  "sumDriftsinntekter": 967324118.0,
-  "sumDriftsresultat": 52950220.0,
-  "sumEgenkapital": 327999002.0,
+  "antall": 242,
+  "sumDriftsinntekter": 967333618.0,
+  "sumDriftsresultat": 52907762.0,
+  "sumEgenkapital": 328050044.0,
   "sumGjeld": 328770361.0
  },
  {
@@ -301988,10 +302015,10 @@
  {
   "naeringskode": "74.130",
   "kommunenummer": "4601",
-  "antall": 46,
-  "sumDriftsinntekter": 99278428.0,
-  "sumDriftsresultat": 3127732.0,
-  "sumEgenkapital": 26133549.0,
+  "antall": 47,
+  "sumDriftsinntekter": 99280482.0,
+  "sumDriftsresultat": 3118161.0,
+  "sumEgenkapital": 26147478.0,
   "sumGjeld": 31052641.0
  },
  {
@@ -314426,10 +314453,10 @@
  {
   "naeringskode": "77.320",
   "kommunenummer": "3116",
-  "antall": 4,
+  "antall": 5,
   "sumDriftsinntekter": 29216720.0,
-  "sumDriftsresultat": -2245687.0,
-  "sumEgenkapital": -2515599.0,
+  "sumDriftsresultat": -2252239.0,
+  "sumEgenkapital": -2492148.0,
   "sumGjeld": 14832524.0
  },
  {
@@ -327836,11 +327863,11 @@
  {
   "naeringskode": "79.902",
   "kommunenummer": "1865",
-  "antall": 8,
-  "sumDriftsinntekter": 4019668.0,
-  "sumDriftsresultat": -54190.0,
-  "sumEgenkapital": 175041.0,
-  "sumGjeld": 1617364.0
+  "antall": 9,
+  "sumDriftsinntekter": 4107501.0,
+  "sumDriftsresultat": -80502.0,
+  "sumEgenkapital": 168954.0,
+  "sumGjeld": 2506034.0
  },
  {
   "naeringskode": "79.902",
@@ -330896,11 +330923,11 @@
  {
   "naeringskode": "81.100",
   "kommunenummer": "3301",
-  "antall": 33,
-  "sumDriftsinntekter": 62063828.0,
-  "sumDriftsresultat": -1754986.0,
-  "sumEgenkapital": 20724406.0,
-  "sumGjeld": 30111355.0
+  "antall": 34,
+  "sumDriftsinntekter": 62121272.0,
+  "sumDriftsresultat": -1718971.0,
+  "sumEgenkapital": 20777428.0,
+  "sumGjeld": 30126358.0
  },
  {
   "naeringskode": "81.100",
@@ -333353,11 +333380,11 @@
  {
   "naeringskode": "81.210",
   "kommunenummer": "3420",
-  "antall": 2,
-  "sumDriftsinntekter": 1835982.0,
-  "sumDriftsresultat": 460099.0,
-  "sumEgenkapital": 1039847.0,
-  "sumGjeld": 507913.0
+  "antall": 3,
+  "sumDriftsinntekter": 1850180.0,
+  "sumDriftsresultat": 474297.0,
+  "sumEgenkapital": 1075852.0,
+  "sumGjeld": 509606.0
  },
  {
   "naeringskode": "81.210",
@@ -338627,11 +338654,11 @@
  {
   "naeringskode": "82.200",
   "kommunenummer": "0301",
-  "antall": 74,
-  "sumDriftsinntekter": 767056351.0,
-  "sumDriftsresultat": 80097034.0,
-  "sumEgenkapital": 298328511.0,
-  "sumGjeld": 341344081.0
+  "antall": 75,
+  "sumDriftsinntekter": 816473157.0,
+  "sumDriftsresultat": 80194156.0,
+  "sumEgenkapital": 298349185.0,
+  "sumGjeld": 345182193.0
  },
  {
   "naeringskode": "82.200",
@@ -345224,10 +345251,10 @@
  {
   "naeringskode": "85.510",
   "kommunenummer": "0301",
-  "antall": 276,
+  "antall": 277,
   "sumDriftsinntekter": 359551350.0,
-  "sumDriftsresultat": 20976223.0,
-  "sumEgenkapital": 390154946.0,
+  "sumDriftsresultat": 20964737.0,
+  "sumEgenkapital": 390143460.0,
   "sumGjeld": 167032175.0
  },
  {
@@ -347816,11 +347843,11 @@
  {
   "naeringskode": "85.531",
   "kommunenummer": "3107",
-  "antall": 8,
+  "antall": 9,
   "sumDriftsinntekter": 44019510.0,
-  "sumDriftsresultat": 1392110.0,
-  "sumEgenkapital": 11753670.0,
-  "sumGjeld": 21087259.0
+  "sumDriftsresultat": 1385610.0,
+  "sumEgenkapital": 11770670.0,
+  "sumGjeld": 21093759.0
  },
  {
   "naeringskode": "85.531",
@@ -357698,10 +357725,10 @@
  {
   "naeringskode": "86.230",
   "kommunenummer": "3905",
-  "antall": 27,
+  "antall": 28,
   "sumDriftsinntekter": 149330415.0,
-  "sumDriftsresultat": 24933355.0,
-  "sumEgenkapital": 172145320.0,
+  "sumDriftsresultat": 24928585.0,
+  "sumEgenkapital": 172166435.0,
   "sumGjeld": 67439913.0
  },
  {
@@ -364268,10 +364295,10 @@
  {
   "naeringskode": "86.992",
   "kommunenummer": "3301",
-  "antall": 7,
+  "antall": 8,
   "sumDriftsinntekter": 14213723.0,
-  "sumDriftsresultat": 4227102.0,
-  "sumEgenkapital": 9877284.0,
+  "sumDriftsresultat": 4226164.0,
+  "sumEgenkapital": 9899846.0,
   "sumGjeld": 2715749.0
  },
  {
@@ -366104,11 +366131,11 @@
  {
   "naeringskode": "86.993",
   "kommunenummer": "3911",
-  "antall": 8,
+  "antall": 9,
   "sumDriftsinntekter": 10215335.0,
-  "sumDriftsresultat": 1083133.0,
-  "sumEgenkapital": 9691365.0,
-  "sumGjeld": 3972018.0
+  "sumDriftsresultat": 1057109.0,
+  "sumEgenkapital": 9712341.0,
+  "sumGjeld": 4011042.0
  },
  {
   "naeringskode": "86.993",
@@ -374231,11 +374258,11 @@
  {
   "naeringskode": "90.120",
   "kommunenummer": "4003",
-  "antall": 2,
-  "sumDriftsinntekter": 0.0,
-  "sumDriftsresultat": -10632.0,
-  "sumEgenkapital": 57373.0,
-  "sumGjeld": 67513.0
+  "antall": 3,
+  "sumDriftsinntekter": 71780.0,
+  "sumDriftsresultat": -97424.0,
+  "sumEgenkapital": -5919.0,
+  "sumGjeld": 224168.0
  },
  {
   "naeringskode": "90.120",
@@ -377102,10 +377129,10 @@
  {
   "naeringskode": "90.209",
   "kommunenummer": "3403",
-  "antall": 1,
+  "antall": 2,
   "sumDriftsinntekter": 1300942.0,
-  "sumDriftsresultat": -96540.0,
-  "sumEgenkapital": -49017.0,
+  "sumDriftsresultat": -100473.0,
+  "sumEgenkapital": -29449.0,
   "sumGjeld": 515438.0
  },
  {
@@ -386129,10 +386156,10 @@
  {
   "naeringskode": "93.190",
   "kommunenummer": "5001",
-  "antall": 25,
+  "antall": 26,
   "sumDriftsinntekter": 101416117.0,
-  "sumDriftsresultat": 17144960.0,
-  "sumEgenkapital": 45742312.0,
+  "sumDriftsresultat": 17127419.0,
+  "sumEgenkapital": 45754772.0,
   "sumGjeld": 141043842.0
  },
  {
@@ -386273,11 +386300,11 @@
  {
   "naeringskode": "93.190",
   "kommunenummer": "5503",
-  "antall": 6,
-  "sumDriftsinntekter": 67263129.0,
-  "sumDriftsresultat": 1136313.0,
-  "sumEgenkapital": 9127324.0,
-  "sumGjeld": 18125452.0
+  "antall": 7,
+  "sumDriftsinntekter": 67443320.0,
+  "sumDriftsresultat": 1130676.0,
+  "sumEgenkapital": 9152114.0,
+  "sumGjeld": 18345656.0
  },
  {
   "naeringskode": "93.190",
@@ -393275,11 +393302,11 @@
  {
   "naeringskode": "95.290",
   "kommunenummer": "5001",
-  "antall": 11,
-  "sumDriftsinntekter": 36340295.0,
-  "sumDriftsresultat": 1421638.0,
-  "sumEgenkapital": 4817721.0,
-  "sumGjeld": 15432947.0
+  "antall": 12,
+  "sumDriftsinntekter": 37642435.0,
+  "sumDriftsresultat": 1439550.0,
+  "sumEgenkapital": 4845235.0,
+  "sumGjeld": 16290488.0
  },
  {
   "naeringskode": "95.290",
@@ -393419,11 +393446,11 @@
  {
   "naeringskode": "95.310",
   "kommunenummer": "1122",
-  "antall": 11,
-  "sumDriftsinntekter": 51730224.0,
-  "sumDriftsresultat": 2588899.0,
-  "sumEgenkapital": 9383103.0,
-  "sumGjeld": 33276196.0
+  "antall": 12,
+  "sumDriftsinntekter": 51859635.0,
+  "sumDriftsresultat": 2514281.0,
+  "sumEgenkapital": 9487397.0,
+  "sumGjeld": 33291977.0
  },
  {
   "naeringskode": "95.310",
@@ -403292,11 +403319,11 @@
  {
   "naeringskode": "96.300",
   "kommunenummer": "3907",
-  "antall": 4,
-  "sumDriftsinntekter": 8917409.0,
-  "sumDriftsresultat": 23832.0,
-  "sumEgenkapital": 2252892.0,
-  "sumGjeld": 4032841.0
+  "antall": 5,
+  "sumDriftsinntekter": 23023983.0,
+  "sumDriftsresultat": 3260720.0,
+  "sumEgenkapital": 2810886.0,
+  "sumGjeld": 15959854.0
  },
  {
   "naeringskode": "96.300",

@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-09-06T13:43:41.855791+00:00",
+  "created_at": "2026-09-11T21:39:37.719860+00:00",
   "source_file": "/home/jovyan/data/parquet/analytics_company_financials.parquet",
   "rows": 1171373,
   "population_bands": [
@@ -29,8 +29,8 @@
       "population_band": "100k_plus",
       "organisasjonsform_kode": "AS",
       "entities": 174885,
-      "filed": 162817,
-      "filing_rate_pct": 93.0994653629528
+      "filed": 163149,
+      "filing_rate_pct": 93.28930440003431
     },
     {
       "population_band": "100k_plus",
@@ -316,8 +316,8 @@
       "population_band": "20k_to_100k",
       "organisasjonsform_kode": "AS",
       "entities": 153715,
-      "filed": 143823,
-      "filing_rate_pct": 93.56471391861562
+      "filed": 144074,
+      "filing_rate_pct": 93.72800312266207
     },
     {
       "population_band": "20k_to_100k",
@@ -582,8 +582,8 @@
       "population_band": "5k_to_20k",
       "organisasjonsform_kode": "AS",
       "entities": 73536,
-      "filed": 69368,
-      "filing_rate_pct": 94.33202785030461
+      "filed": 69461,
+      "filing_rate_pct": 94.45849651871193
     },
     {
       "population_band": "5k_to_20k",
@@ -862,8 +862,8 @@
       "population_band": "missing",
       "organisasjonsform_kode": "AS",
       "entities": 293,
-      "filed": 265,
-      "filing_rate_pct": 90.44368600682594
+      "filed": 266,
+      "filing_rate_pct": 90.78498293515358
     },
     {
       "population_band": "missing",
@@ -960,8 +960,8 @@
       "population_band": "under_5k",
       "organisasjonsform_kode": "AS",
       "entities": 29152,
-      "filed": 27509,
-      "filing_rate_pct": 94.36402305159166
+      "filed": 27547,
+      "filing_rate_pct": 94.49437431394072
     },
     {
       "population_band": "under_5k",
@@ -1177,38 +1177,38 @@
   "financial_by_band": [
     {
       "population_band": "100k_plus",
-      "filed_entities": 181607,
-      "mean_margin_pct": -27331.66829343825,
-      "median_margin_pct": 6.905675675675675,
-      "mean_revenue": 135826339.5819225
+      "filed_entities": 181939,
+      "mean_margin_pct": -27306.276629000557,
+      "median_margin_pct": 6.904851132248224,
+      "mean_revenue": 135577084.88322628
     },
     {
       "population_band": "20k_to_100k",
-      "filed_entities": 157474,
-      "mean_margin_pct": -3730.78077440724,
-      "median_margin_pct": 6.519276556885428,
-      "mean_revenue": 22374202.107519023
+      "filed_entities": 157725,
+      "mean_margin_pct": -3728.7033262400387,
+      "median_margin_pct": 6.519068789086779,
+      "mean_revenue": 22338702.840233855
     },
     {
       "population_band": "5k_to_20k",
-      "filed_entities": 73954,
-      "mean_margin_pct": -632.392175217849,
-      "median_margin_pct": 6.206376848886418,
-      "mean_revenue": 15828825.278973456
+      "filed_entities": 74047,
+      "mean_margin_pct": -632.8906227555618,
+      "median_margin_pct": 6.201651128909804,
+      "mean_revenue": 15810583.264969792
     },
     {
       "population_band": "missing",
-      "filed_entities": 2461,
-      "mean_margin_pct": -11.776792109586914,
+      "filed_entities": 2462,
+      "mean_margin_pct": -11.8494809236215,
       "median_margin_pct": 7.739605508222601,
-      "mean_revenue": 99396375.00330189
+      "mean_revenue": 99349589.36539368
     },
     {
       "population_band": "under_5k",
-      "filed_entities": 29148,
-      "mean_margin_pct": -592.5934947406986,
-      "median_margin_pct": 5.645167570834248,
-      "mean_revenue": 11732950.745060775
+      "filed_entities": 29186,
+      "mean_margin_pct": -592.314501691538,
+      "median_margin_pct": 5.644913387575142,
+      "mean_revenue": 11722949.63880538
     }
   ],
   "distress_by_band": [
