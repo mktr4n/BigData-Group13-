@@ -149,3 +149,8 @@ into `data/`. Committing directly into a synced folder fails intermittently, bec
 In PowerBI: Get Data → Parquet → `data/parquet/analytics_company_financials.parquet`. Ratios must be computed from summed components
 (`DIVIDE(SUM(operating_income), SUM(revenue))`), not by averaging the stored per-company ratio — the two differ substantially given the skew.
 
+## Power BI Dashboard
+
+The Power BI dashboard (final_bigdata.pbix) is available under 
+[Releases](https://github.com/mktr4n/BigData-Group13-/releases/tag/v1.0) 
+due to file size (133 MB). 
