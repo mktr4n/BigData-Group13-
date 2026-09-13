@@ -45,7 +45,8 @@ Place the two dataset files in `data/`:
 - `enheter_alle.json` — the bulk register export, a single JSON array of ~1.17M entities (~2.0 GB). If you downloaded it compressed, extract it here. URL for download: https://data.brreg.no/enhetsregisteret/api/enheter/lastned
 - `financial_data.archive.gz` — a `mongodump` archive of the fetched annual accounts. Leave it compressed; `mongorestore` reads it as-is.
 
-## 2. Start the stack
+## 2. Build containers and start the stack
+The image adds only `pymongo` and `requests` to `quay.io/jupyter/pyspark-notebook`
 
 ```
 docker compose up -d --build
@@ -154,8 +155,3 @@ into `data/`. Committing directly into a synced folder fails intermittently, bec
 In PowerBI: Get Data → Parquet → `data/parquet/analytics_company_financials.parquet`. Ratios must be computed from summed components
 (`DIVIDE(SUM(operating_income), SUM(revenue))`), not by averaging the stored per-company ratio — the two differ substantially given the skew.
 
-## Configuration
-
-The image adds only `pymongo` and `requests` to
-`quay.io/jupyter/pyspark-notebook`, which already provides PySpark, pandas,
-pyarrow, scikit-learn, scipy and matplotlib.
