@@ -153,4 +153,4 @@ In PowerBI: Get Data → Parquet → `data/parquet/analytics_company_financials.
 
 The Power BI dashboard (final_bigdata.pbix) is available under 
 [Releases](https://github.com/mktr4n/BigData-Group13-/releases/tag/v1.0) 
-due to file size (133 MB). 
+due to file size (130 MB). 
