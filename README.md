@@ -156,7 +156,7 @@ The Power BI dashboard (final_bigdata.pbix) is available under
 due to file size (130 MB). 
 
 The dashboard contains:
-- Q1: Municipal profitability (Figures 5.1–5.7)
-- Q2: Sector profitability (Figures 5.8–5.12)
-- Q3: Sector registration trends (Figure 5.13)
-- Q5: Market saturation analysis (Figures 5.14–5.15)
+- Municipal profitability (Figures 5.1–5.7)
+- Sector profitability (Figures 5.8–5.12)
+- Sector registration trends (Figure 5.13)
+- Market saturation analysis (Figures 5.14–5.15)
