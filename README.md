@@ -154,3 +154,9 @@ In PowerBI: Get Data → Parquet → `data/parquet/analytics_company_financials.
 The Power BI dashboard (final_bigdata.pbix) is available under 
 [Releases](https://github.com/mktr4n/BigData-Group13-/releases/tag/v1.0) 
 due to file size (130 MB). 
+
+The dashboard contains:
+- Q1: Municipal profitability (Figures 5.1–5.7)
+- Q2: Sector profitability (Figures 5.8–5.12)
+- Q3: Sector registration trends (Figure 5.13)
+- Q5: Market saturation analysis (Figures 5.14–5.15)
