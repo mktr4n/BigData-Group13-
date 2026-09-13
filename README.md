@@ -16,6 +16,7 @@ processing. No host-level Python, Java or MongoDB installation is needed.
 ## 1. Set up folder stucture and get the data
 
 ### Folders and files
+```
 
 ├───data/
 │   ├───ndjson/
@@ -37,6 +38,7 @@ processing. No host-level Python, Java or MongoDB installation is needed.
 │   └───staged_write.py
 └───docker-compose.yml
 └───run_pipeline.cmd
+```
 
 Place the two dataset files in `data/`:
 
