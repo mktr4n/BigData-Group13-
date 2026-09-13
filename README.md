@@ -1,9 +1,6 @@
 # Group 13 — CS4010 Big Data
 
-An end-to-end pipeline using data from the Norwegian business register
-(Brønnøysundregistrene), enriched with annual accounts from the
-Regnskapsregisteret API and population data from Statistics Norway, mirrored to Parquet and NDJSON, benchmarked across
-query engines and storage formats, and reduced to a curated table for PowerBI.
+An end-to-end pipeline using data from the Norwegian business register (Brønnøysundregistrene), enriched with annual accounts from the Regnskapsregisteret API and population data from Statistics Norway, mirrored to Parquet and NDJSON, benchmarked across query engines and storage formats, and reduced to a curated table for PowerBI.
 
 Everything runs in Docker: MongoDB for storage, JupyterLab with PySpark for
 processing. No host-level Python, Java or MongoDB installation is needed.
@@ -11,32 +8,28 @@ processing. No host-level Python, Java or MongoDB installation is needed.
 ## Prerequisites
 
 - Docker Desktop
-- ~15 GB free disk (2.0 GB source file, MongoDB volume, Parquet and NDJSON mirrors)
+- ~15 GB free disk (Jupyter image, 2.0 GB source file, MongoDB volume, Parquet and NDJSON mirrors)
 
-## 1. Set up folder stucture and get the data
+## 1. Set up folder structure and get the data
 
 ### Folders and files
 ```
 
 ├───data/
-│   ├───ndjson/
-│   │   └───financial_data/
-│   └───parquet/
-│   |  ├───companies/
-│   |  ├───financial_data/
-│   |  └───ssb_population_2026.parquet/
 │   └───enheter_alle.json
 │   └───financial_data.archive.gz
 ├───jupyter/
 │   └───Dockerfile
 │   └───spark-defaults.conf
-└───notebooks/
+├───notebooks/
 │   └───<all notebooks>
 │   └───schemas.py
 │   └───bootstrap.py
 │   └───mirrors.py
 │   └───staged_write.py
-└───docker-compose.yml
+│   └───run_pipeline.py 
+│   └───discover_mongo.py
+├───docker-compose.yml
 └───run_pipeline.cmd
 ```
 
@@ -44,6 +37,7 @@ Place the two dataset files in `data/`:
 
 - `enheter_alle.json` — the bulk register export, a single JSON array of ~1.17M entities (~2.0 GB). If you downloaded it compressed, extract it here. URL for download: https://data.brreg.no/enhetsregisteret/api/enheter/lastned
 - `financial_data.archive.gz` — a `mongodump` archive of the fetched annual accounts. Leave it compressed; `mongorestore` reads it as-is.
+- Subfolders for data/ are created automatically when running the notebooks
 
 ## 2. Build containers and start the stack
 The image adds only `pymongo` and `requests` to `quay.io/jupyter/pyspark-notebook`
@@ -78,7 +72,7 @@ docker exec group13_mongodb mongoimport --db companiesdb --collection companies 
 docker exec group13_mongodb mongorestore --gzip --archive=/import/financial_data.archive.gz --drop
 ```
 
-`--jsonArray` is required because the register file is a single JSON array rather than newline-delimited JSON. `mongorestore --drop` replaces `financial_data` outright so additional financial data fetched from the API with scipt will be lost.
+`--jsonArray` is required because the register file is a single JSON array rather than newline-delimited JSON. `mongorestore --drop` replaces `financial_data` outright so additional financial data fetched from the API with script will be lost.
 
 Verify the load — databases, collections, document counts and the top-level fields of a sample document:
 
@@ -119,10 +113,10 @@ Open http://localhost:8889/lab?token=group13 and run the core path in this order
 4. `Build_analytics.ipynb` — joins SSB by `kommunenummer` and builds the curated PowerBI table.
 5. `Analyse_geography.ipynb` — compares company type, filing coverage, distress, financial performance, and industry mix across population bands.
 
-The provided financial archive already contains the API results. Run `Fetch_all_financial_data.ipynb` only when extending or refreshing that data; run `Export_to_ndjson.ipynb` and `Benchmark_engines.ipynb` separately when you want to reproduce the storage-format benchmark.
+The provided financial archive contains API results from the first run at 2026-08-26. Running `Fetch_all_financial_data.ipynb` is only required when starting from scratch, or extending or refreshing that data; run `Export_to_ndjson.ipynb` and `Benchmark_engines.ipynb` separately when you want to reproduce the storage-format benchmark.
 
 `Analyse_data.ipynb` must be run before changing `schemas.py`, because the explicit schemas are derived from its full profiling pass. After a schema or
-source-data change, rerun the affected export before building analytics.
+source-data change, rerun the affected export before building analytics. If only the schema file itself is changed (manually), FORCE_REFRESH in the export notebooks must be set as we do have not included `schemas.py` in the signature used to detect changes.
 
 `Diagnose_variant_a.ipynb` and `Diagnose_balance_and_layout.ipynb` are investigations into specific results and are not part of the main chain.
 
