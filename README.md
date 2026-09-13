@@ -1,4 +1,4 @@
-# Group 13 — CS4010 Big Data
+# Group 13 — CS4010 - Exploring Norwegian company register data
 
 An end-to-end pipeline using data from the Norwegian business register (Brønnøysundregistrene), enriched with annual accounts from the Regnskapsregisteret API and population data from Statistics Norway, mirrored to Parquet and NDJSON, benchmarked across query engines and storage formats, and reduced to a curated table for PowerBI.
 
