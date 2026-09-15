@@ -3,7 +3,7 @@
 An end-to-end pipeline using data from the Norwegian business register (Brønnøysundregistrene), enriched with annual accounts from the Regnskapsregisteret API and population data from Statistics Norway, mirrored to Parquet and NDJSON, benchmarked across query engines and storage formats, and reduced to a curated table for PowerBI.
 
 Everything runs in Docker: MongoDB for storage, JupyterLab with PySpark for
-processing. No host-level Python, Java or MongoDB installation is needed.
+processing. 
 
 ## Prerequisites
 
@@ -16,20 +16,24 @@ processing. No host-level Python, Java or MongoDB installation is needed.
 ```
 
 ├───data/
-│   └───enheter_alle.json
+│   └───enheter_alle.json	 <- the dataset (2.0 GB, not included in submission)
 │   └───financial_data.archive.gz
+│   └───parquet/                 <- written by Export_to_parquet.ipynb
+│   └───ndjson/                  <- written by Export_to_ndjson.ipynb
+│   └───*.json                   <- recorded results: benchmark, build summary, profiles
 ├───jupyter/
 │   └───Dockerfile
 │   └───spark-defaults.conf
 ├───notebooks/
 │   └───<all notebooks>
-│   └───schemas.py
+│   └───schemas.py		 <- Spark schemas shared by the exports and the benchmark
 │   └───bootstrap.py
 │   └───mirrors.py
-│   └───staged_write.py
+│   └───staged_write.py		 <- writes Spark output without committing on the synced mount
 │   └───run_pipeline.py 
 │   └───discover_mongo.py
 ├───docker-compose.yml
+├───README.md
 └───run_pipeline.cmd
 ```
 

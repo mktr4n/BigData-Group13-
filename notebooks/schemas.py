@@ -3,8 +3,7 @@ Hardcoded Spark schemas for the Brreg company register and the
 Regnskapsregisteret financial statements.
 
 Derived from a full profiling pass over all 1,171,373 raw records and all
-1,170,290 financial_data documents held at the time of profiling (see
-Analyse_data.ipynb; financial_data grows on each fetch run, and stood at
+held at the time of profiling (see Analyse_data.ipynb; financial_data grows on each fetch run, and stood at
 1,170,292 on 2026-09-04). Every path below
 was observed with exactly one BSON/JSON type, so no field is at risk of being
 silently nulled by a type mismatch.

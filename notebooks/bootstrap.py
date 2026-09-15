@@ -6,11 +6,7 @@ Why this exists
 Five notebooks opened with the same twenty lines: the same container paths, the
 same `SparkSession.builder...getOrCreate()`, the same readback of the connector
 coordinate and the Mongo URI off `SparkConf`, and the same block of print
-statements. Copied that many times the block had already begun to drift - one
-notebook carried an `ANALYTICS_FILE` pointing at `data/` rather than
-`data/parquet/`, two carried constants they never used, and the printed
-description differed between them, so two runs of the same stack did not
-document themselves the same way.
+statements. 
 
 None of that is JVM configuration. Driver memory, thread count, the connector
 package and the connection URIs still live in `jupyter/spark-defaults.conf` and
